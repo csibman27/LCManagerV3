@@ -15,7 +15,13 @@ export const serverMemStore = {
   },
 
   async getServerById(id) {
-    return servers.find((server) => server._id === id);
+    const list = servers.find((server) => server._id === id);
+    list.machines = await machineMemStore.getMachinesByServerId(list._id);
+    return list;
+  },
+
+  async getUserMachines(userid) {
+    return servers.filter((server) => server.userid === userid);
   },
 
   async deleteServerById(id) {
