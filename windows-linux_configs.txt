@@ -1,0 +1,8 @@
+Package.json
+
+Windows config for eslint:
+"lint": "eslint . --ext .js",
+
+
+Linux Config for eslint:
+"lint": "./node_modules/.bin/eslint . --ext .js",
