@@ -16,5 +16,5 @@ export const webRoutes = [
   { method: "POST", path: "/dashboard/addserver", config: dashboardController.addServer },
 
   { method: "GET", path: "/server/{id}", config: serverController.index },
-  { method: "POST", path: "/server/{id}/addmachine", config: serverController.addMachine },
+  { method: "POST", path: "/server/{id}/addservice", config: serverController.addService },
 ];

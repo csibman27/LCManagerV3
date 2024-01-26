@@ -12,10 +12,10 @@ export const serverController = {
     },
   },
 
-  addMachine: {
+  addService: {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
-      const newMachine = {
+      const newService = {
         title: request.payload.title,
         cab: request.payload.cab,
         idrac: request.payload.idrac,
@@ -23,7 +23,7 @@ export const serverController = {
         firmware: request.payload.firmware,
         // date: Number(request.payload.duration),
       };
-      await db.machineStore.addMachine(server._id, newMachine);
+      await db.serviceStore.addService(server._id, newService);
       return h.redirect(`/server/${server._id}`);
     },
   },

@@ -12,7 +12,7 @@ export const UserCredentialsSpec = {
   password: Joi.string().required(),
 };
 
-export const MachineSpec = {
+export const ServiceSpec = {
   title: Joi.string().required(),
   // detail1: Joi.string().required(),
   // detail2: Joi.number().allow("").optional(),

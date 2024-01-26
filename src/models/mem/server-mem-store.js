@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { machineMemStore } from "./machine-mem-store.js";
+import { serviceMemStore } from "./service-mem-store.js";
 
 let servers = [];
 
@@ -16,11 +16,11 @@ export const serverMemStore = {
 
   async getServerById(id) {
     const list = servers.find((server) => server._id === id);
-    list.machines = await machineMemStore.getMachinesByServerId(list._id);
+    list.machines = await serviceMemStore.getServicesByServerId(list._id);
     return list;
   },
 
-  async getUserMachines(userid) {
+  async getUserServices(userid) {
     return servers.filter((server) => server.userid === userid);
   },
 
