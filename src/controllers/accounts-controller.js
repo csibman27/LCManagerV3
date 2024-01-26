@@ -1,3 +1,4 @@
+import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 export const accountsController = {
@@ -15,6 +16,13 @@ export const accountsController = {
   },
   signup: {
     auth: false,
+    validate: {
+      payload: UserSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("signup-view", { title: "Sign up error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
@@ -29,6 +37,13 @@ export const accountsController = {
   },
   login: {
     auth: false,
+    validate: {
+      payload: UserCredentialsSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("login-view", { title: "Log in error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
@@ -40,8 +55,8 @@ export const accountsController = {
     },
   },
   logout: {
-    auth: false,
     handler: function (request, h) {
+      request.cookieAuth.clear();
       return h.redirect("/");
     },
   },
@@ -49,8 +64,8 @@ export const accountsController = {
   async validate(request, session) {
     const user = await db.userStore.getUserById(session.id);
     if (!user) {
-      return { valid: false };
+      return { isValid: false };
     }
-    return { valid: true, credentials: user };
+    return { isValid: true, credentials: user };
   },
 };

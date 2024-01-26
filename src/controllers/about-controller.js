@@ -1,5 +1,3 @@
-import { db } from "../models/db.js";
-
 export const aboutController = {
   index: {
     handler: function (request, h) {
