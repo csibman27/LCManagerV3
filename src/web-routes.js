@@ -9,11 +9,12 @@ export const webRoutes = [
   { method: "GET", path: "/login", config: accountsController.showLogin },
   { method: "GET", path: "/logout", config: accountsController.logout },
   { method: "GET", path: "/about", config: aboutController.index },
-  { method: "GET", path: "/servers/{id}", config: serverController.index },
   { method: "POST", path: "/register", config: accountsController.signup },
   { method: "POST", path: "/authenticate", config: accountsController.login },
-  { method: "POST", path: "/server/{id}/addMachine", config: serverController.addMachine },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addserver", config: dashboardController.addServer },
+
+  { method: "GET", path: "/server/{id}", config: serverController.index },
+  { method: "POST", path: "/server/{id}/addmachine", config: serverController.addMachine },
 ];

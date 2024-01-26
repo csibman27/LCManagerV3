@@ -51,6 +51,7 @@ export const accountsController = {
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id });
+      // console.log(user._id);
       return h.redirect("/dashboard");
     },
   },

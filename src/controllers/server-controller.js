@@ -17,10 +17,13 @@ export const serverController = {
       const server = await db.serverStore.getServerById(request.params.id);
       const newMachine = {
         title: request.payload.title,
-        description: request.payload.description,
-        // ipv4: Number(request.payload.duration),
+        cab: request.payload.cab,
+        idrac: request.payload.idrac,
+        bios: request.payload.bios,
+        firmware: request.payload.firmware,
+        // date: Number(request.payload.duration),
       };
-      await db.serverStore.addMachine(server._id, newMachine);
+      await db.machineStore.addMachine(server._id, newMachine);
       return h.redirect(`/server/${server._id}`);
     },
   },

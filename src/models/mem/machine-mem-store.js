@@ -26,6 +26,12 @@ export const machineMemStore = {
     return machines.filter((machine) => machine.machineid === serverId);
   },
 
+  async getServerById(id) {
+    const list = servers.find((server) => server._id === id);
+    list.machines = await machineMemStore.getMachinesByServerId(list._id);
+    return list;
+  },
+
   async deleteMachine(id) {
     const index = machines.findIndex((machine) => machine._id === id);
     machines.splice(index, 1);

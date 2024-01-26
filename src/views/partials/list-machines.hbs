@@ -1,19 +1,79 @@
 <table class="table is-fullwidth">
   <thead>
     <tr>
-      <th>Machine</th>
-      <th>Description</th>
+        <th>Name</th>
+        <th>Cab</th>
+        <th>Idrac</th>
+        <th>Bios Version</th>
+        <th>Firmware Version</th>
+        <th>Service Tag</th>
+        <th>Stakeholder</th>
+        <th>OS</th>
+        <th>Project</th>
+        <th>Service</th>
+        <th>Last Modified</th>
+        <th>Maas Ip</th>
+        <th>Description</th>
+        <th>Monitored</th>
+        <th>Backups</th>
+        <th>Syslog</th>
+        <th>Login</th>
     </tr>
   </thead>
   <tbody>
     {{#each server.machines}}
       <tr>
-        <td>
-          {{title}}
-        </td>
-        <td>
-          {{description}}
-        </td>
+          <td>
+              {{title}}
+          </td>
+          <td>
+              {{cab}}
+          </td>
+          <td>
+              {{idrac}}
+          </td>
+          <td>
+              {{bios}}
+          </td>
+          <td>
+              {{firmware}}
+          </td>
+          <td>
+              {{tag}}
+          </td>
+          <td>
+              {{stakeholder}}
+          </td>
+          <td>
+              {{os}}
+          </td>
+          <td>
+              {{project}}
+          </td>
+          <td>
+              {{service}}
+          </td>
+          <td>
+              {{modified}}
+          </td>
+          <td>
+              {{maas}}
+          </td>
+          <td>
+              {{description}}
+          </td>
+          <td>
+              {{monitored}}
+          </td>
+          <td>
+              {{backups}}
+          </td>
+          <td>
+              {{syslog}}
+          </td>
+          <td>
+              {{login}}
+          </td>
       </tr>
     {{/each}}
   </tbody>
