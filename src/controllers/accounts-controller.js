@@ -37,6 +37,7 @@ export const accountsController = {
   },
   login: {
     auth: false,
+    // joi schema
     validate: {
       payload: UserCredentialsSpec,
       options: { abortEarly: false },

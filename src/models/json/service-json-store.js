@@ -2,7 +2,7 @@ import { v4 } from "uuid";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 
-const db = new Low(new JSONFile("./src/models/json/services.json"));
+const db = new Low(new JSONFile("./src/models/json/services.json"), {});
 db.data = { services: [] };
 
 export const serviceJsonStore = {

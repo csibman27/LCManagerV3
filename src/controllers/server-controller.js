@@ -1,5 +1,5 @@
 import { db } from "../models/db.js";
-import { userMemStore } from "../models/mem/user-mem-store.js";
+import { ServiceSpec } from "../models/joi-schemas.js";
 
 export const serverController = {
   index: {
@@ -16,12 +16,21 @@ export const serverController = {
   },
 
   addService: {
+    // joi schema security
+    validate: {
+      payload: ServiceSpec,
+      options: { abortEarly: false },
+      failAction: async function (request, h, error) {
+        const currentServer = await db.serverStore.getServerById(request.params.id);
+        return h.view("server-view", { title: "Add Service error", server: currentServer, errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const newService = {
         title: request.payload.title,
         os: request.payload.os,
-        desc: request.payload.description,
+        desc: request.payload.desc,
         monitored: request.payload.monitored,
         backups: request.payload.backups,
         syslog: request.payload.syslog,

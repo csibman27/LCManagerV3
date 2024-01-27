@@ -1,3 +1,20 @@
 {
-  "servers": []
+  "servers": [
+    {
+      "title": "R720-1",
+      "cab": 1,
+      "os": "Ubuntu 22.04 LTS",
+      "idrac": "192.168.1.1",
+      "desc": "Ubuntu 22.04 LTS",
+      "backupTo": "SAN",
+      "monitoredWith": "Checkmk",
+      "support": "Available",
+      "service": "Openstack",
+      "bios": "2.9",
+      "firmware": "24.21",
+      "maas": "10.37.25.11",
+      "date": "2024-01-27T14:56:54.316Z",
+      "_id": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
+    }
+  ]
 }

@@ -3,7 +3,7 @@ import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 import { serviceJsonStore } from "./service-json-store.js";
 
-const db = new Low(new JSONFile("./src/models/json/servers.json"));
+const db = new Low(new JSONFile("./src/models/json/servers.json"), {});
 db.data = { servers: [] };
 
 export const serverJsonStore = {

@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import { ServerSpec } from "../models/joi-schemas.js";
 
 const newDate = new Date();
 
@@ -19,8 +20,18 @@ export const dashboardController = {
   },
 
   addServer: {
+    // joi schema
+    validate: {
+      payload: ServerSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("dashboard-view", { title: "Add Server error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
       const newServer = {
+        userid: loggedInUser._id,
         title: request.payload.title,
         cab: Number(request.payload.cab),
         os: request.payload.os,
