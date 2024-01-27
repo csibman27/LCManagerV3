@@ -9,13 +9,13 @@ export const serviceMemStore = {
 
   async addService(serverId, service) {
     service._id = v4();
-    service.serviceid = serverId;
+    service.serverid = serverId;
     services.push(service);
     return service;
   },
 
   async getServicesByServerId(id) {
-    return services.filter((service) => service.serviceid === id);
+    return services.filter((service) => service.serverid === id);
   },
 
   async getServiceById(id) {
@@ -23,12 +23,12 @@ export const serviceMemStore = {
   },
 
   async getServerServices(serverId) {
-    return services.filter((service) => service.serviceid === serverId);
+    return services.filter((service) => service.serverid === serverId);
   },
 
   async getServerById(id) {
     const list = servers.find((server) => server._id === id);
-    list.services = await serviceMemStore.getMachinesByServerId(list._id);
+    list.services = await serviceMemStore.getServicesByServerId(list._id);
     return list;
   },
 
@@ -43,6 +43,6 @@ export const serviceMemStore = {
 
   async updateService(service, updatedService) {
     service.title = updatedService.title;
-    service.description = updatedService.description;
+    // service.description = updatedService.description;
   },
 };

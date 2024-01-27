@@ -7,10 +7,12 @@ export const dashboardController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const servers = await db.serverStore.getAllServers();
+      const company = "[Company name]";
       const viewData = {
         title: "LCManager Dashboard",
         user: loggedInUser,
         servers: servers,
+        company: company,
       };
       return h.view("dashboard-view", viewData);
     },

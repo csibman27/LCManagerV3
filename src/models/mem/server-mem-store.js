@@ -16,7 +16,7 @@ export const serverMemStore = {
 
   async getServerById(id) {
     const list = servers.find((server) => server._id === id);
-    list.machines = await serviceMemStore.getServicesByServerId(list._id);
+    list.services = await serviceMemStore.getServicesByServerId(list._id);
     return list;
   },
 

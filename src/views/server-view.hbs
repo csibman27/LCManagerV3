@@ -2,8 +2,12 @@
 
 <section class="section">
     <div class="title">
-        {{server.title}}
+        {{server.title}} {{server.service}}
     </div>
-    {{> list-services}}
     {{> add-service}}
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-5xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Services Data</span> Scalable Database.</h2>
+    <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">{{company}} Data Center Services list.</p>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    {{> list-services}}
 </section>

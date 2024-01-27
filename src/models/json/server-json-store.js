@@ -1,46 +1,46 @@
 import { v4 } from "uuid";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
-import { trackJsonStore } from "./services-json-store.js";
+import { serviceJsonStore } from "./service-json-store.js";
 
-const db = new Low(new JSONFile("./src/models/json/playlists.json"));
-db.data = { playlists: [] };
+const db = new Low(new JSONFile("./src/models/json/servers.json"));
+db.data = { servers: [] };
 
-export const playlistJsonStore = {
-  async getAllPlaylists() {
+export const serverJsonStore = {
+  async getAllServers() {
     await db.read();
-    return db.data.playlists;
+    return db.data.servers;
   },
 
-  async addPlaylist(playlist) {
+  async addServer(server) {
     await db.read();
-    playlist._id = v4();
-    db.data.playlists.push(playlist);
+    server._id = v4();
+    db.data.servers.push(server);
     await db.write();
-    return playlist;
+    return server;
   },
 
-  async getPlaylistById(id) {
+  async getServerById(id) {
     await db.read();
-    const list = db.data.playlists.find((playlist) => playlist._id === id);
-    list.tracks = await trackJsonStore.getTracksByPlaylistId(list._id);
+    const list = db.data.servers.find((server) => server._id === id);
+    list.services = await serviceJsonStore.getServicesByServerId(list._id);
     return list;
   },
 
-  async getUserPlaylists(userid) {
+  async getUserServers(userid) {
     await db.read();
-    return db.data.playlists.filter((playlist) => playlist.userid === userid);
+    return db.data.servers.filter((server) => server.userid === userid);
   },
 
-  async deletePlaylistById(id) {
+  async deleteServerById(id) {
     await db.read();
-    const index = db.data.playlists.findIndex((playlist) => playlist._id === id);
-    db.data.playlists.splice(index, 1);
+    const index = db.data.servers.findIndex((server) => server._id === id);
+    db.data.servers.splice(index, 1);
     await db.write();
   },
 
-  async deleteAllPlaylists() {
-    db.data.playlists = [];
+  async deleteAllServers() {
+    db.data.servers = [];
     await db.write();
   },
 };
