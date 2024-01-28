@@ -6,6 +6,8 @@ import Handlebars from "handlebars";
 import Cookie from "@hapi/cookie";
 import Joi from "joi";
 import dotenv from "dotenv";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import pkg from "handlebars-paginate";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
@@ -15,6 +17,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const test = 1998;
+
+// pagination
+const { paginate } = pkg;
+Handlebars.registerHelper("paginate", paginate);
 
 async function init() {
   const server = Hapi.server({

@@ -50,4 +50,16 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+
+  deleteServer: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      await db.serverStore.deleteServerById(server._id);
+      return h.redirect("/dashboard");
+    },
+  },
+
+  searchServer: {
+    handler: async function (request, h) {},
+  },
 };

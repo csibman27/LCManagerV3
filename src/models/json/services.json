@@ -3,68 +3,13 @@
     {
       "title": "Mamba",
       "os": "Ubuntu 22.04 LTS",
-      "desc": "timekeeping service",
-      "monitored": "Checkmk",
-      "backups": "SAN",
-      "syslog": "N/A",
-      "login": "sysadmin",
-      "_id": "41d69c66-aee2-4016-b2a6-67d158c27cd1",
-      "serverid": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
-    },
-    {
-      "title": "asd",
-      "os": "asd",
-      "desc": "asd",
-      "monitored": "a",
-      "backups": "sd",
-      "syslog": "ads",
-      "login": "asd",
-      "_id": "3f724939-bd20-49eb-8852-bc590e726383",
-      "serverid": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
-    },
-    {
-      "title": "a",
-      "os": "a",
-      "desc": "a",
-      "monitored": "a",
-      "backups": "a",
-      "syslog": "a",
-      "login": "a",
-      "_id": "89755e30-fd66-4c18-8ef2-364acb01fe87",
-      "serverid": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
-    },
-    {
-      "title": "c",
-      "os": "c",
-      "desc": "c",
-      "monitored": "c",
-      "backups": "c",
-      "syslog": "c",
-      "login": "c",
-      "_id": "40e5fae3-4d70-43ba-83f7-e3e7409c90bf",
-      "serverid": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
-    },
-    {
-      "title": "a",
-      "os": "a",
-      "desc": "aa",
-      "monitored": "sdasd",
-      "backups": "asd",
-      "syslog": "asd",
-      "login": "asd",
-      "_id": "b85f2c06-5fb2-4344-a65b-92b6c26c368f",
-      "serverid": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
-    },
-    {
-      "title": "a",
-      "os": "",
       "desc": "",
-      "monitored": "a",
-      "backups": "a",
+      "monitored": "Checkmk",
+      "backups": "emerald",
       "syslog": "",
-      "login": "",
-      "_id": "ca3a8c97-2e4b-488b-b7e8-47a7d8225ac6",
-      "serverid": "c22809dd-4f36-456e-85ec-c45d387f1b7d"
+      "login": "sysadmin",
+      "_id": "84f84f40-da4a-43c1-a5b8-3b2d7a63a845",
+      "serverid": "658361ae-e9b9-4e1d-a992-696052bccb06"
     }
   ]
 }
