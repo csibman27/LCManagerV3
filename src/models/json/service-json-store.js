@@ -46,6 +46,10 @@ export const serviceJsonStore = {
     service.title = updatedService.title;
     service.os = updatedService.os;
     service.desc = updatedService.desc;
+    service.monitored = updatedService.monitored;
+    service.backups = updatedService.backups;
+    service.syslog = updatedService.syslog;
+    service.login = updatedService.login;
     await db.write();
   },
 };

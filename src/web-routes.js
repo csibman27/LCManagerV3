@@ -18,4 +18,6 @@ export const webRoutes = [
 
   { method: "GET", path: "/server/{id}", config: serverController.index },
   { method: "POST", path: "/server/{id}/addservice", config: serverController.addService },
+  { method: "GET", path: "/server/{id}/deleteservice/{serviceid}", config: serverController.deleteService },
+  { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serverController.index },
 ];

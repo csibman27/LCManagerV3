@@ -8,7 +8,7 @@
         <th>Backups</th>
         <th>Syslog</th>
         <th>Login</th>
-        <th>Last Modified</th>
+        <th>Functions</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +34,14 @@
           </td>
           <td>
               {{login}}
+          </td>
+          <td>
+              <a href="/server/{{../server._id}}/editplacemark/{{_id}}" class="ui icon button">
+                  <i class="fas fa-edit"></i>
+              </a>
+              <a href="/server/{{../server._id}}/deleteservice/{{_id}}" class="ui icon button"> <!--card-footer-item-->
+                  <i class="fa-regular fa-trash-can"></i>
+              </a>
           </td>
       </tr>
     {{/each}}

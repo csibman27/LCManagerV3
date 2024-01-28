@@ -45,6 +45,5 @@ export const serviceMemStore = {
 
   async updateService(service, updatedService) {
     service.title = updatedService.title;
-    // service.description = updatedService.description;
   },
 };

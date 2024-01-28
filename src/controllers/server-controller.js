@@ -44,4 +44,12 @@ export const serverController = {
       return h.redirect(`/server/${server._id}`);
     },
   },
+
+  deleteService: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      await db.serviceStore.deleteService(request.params.serviceid);
+      return h.redirect(`/server/${server._id}`);
+    },
+  },
 };
