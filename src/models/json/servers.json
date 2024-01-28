@@ -481,22 +481,6 @@
       "_id": "064215e6-7fef-4707-8e42-0defc20a068a"
     },
     {
-      "title": "Anderson Group",
-      "cab": 34,
-      "os": "Last Days of Pompeii, The",
-      "idrac": "113.178.58.251",
-      "desc": "SALICYLIC ACID",
-      "backupTo": "US",
-      "monitoredWith": "Aivee",
-      "support": false,
-      "service": "Wrapsafe",
-      "bios": "7.5",
-      "firmware": "5.9",
-      "maas": true,
-      "date": "9/21/2023",
-      "_id": "ca163881-d92a-42e5-bf02-ccfdc39bee4e"
-    },
-    {
       "title": "Watsica, Ortiz and Stokes",
       "cab": 35,
       "os": "Mad Miss Manton, The",

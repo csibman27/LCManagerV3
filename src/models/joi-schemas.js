@@ -13,7 +13,7 @@ export const UserCredentialsSpec = {
 };
 
 export const ServiceSpec = {
-  title: Joi.string().required(),
+  name: Joi.string().required(),
   os: Joi.string().allow("").optional(),
   desc: Joi.string().allow("").optional(),
   monitored: Joi.string().required(),

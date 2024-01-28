@@ -2,6 +2,7 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { serverController } from "./controllers/server-controller.js";
+import { serviceController } from "./controllers/service-controller.js";
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -19,5 +20,7 @@ export const webRoutes = [
   { method: "GET", path: "/server/{id}", config: serverController.index },
   { method: "POST", path: "/server/{id}/addservice", config: serverController.addService },
   { method: "GET", path: "/server/{id}/deleteservice/{serviceid}", config: serverController.deleteService },
-  { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serverController.index },
+
+  { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serviceController.index },
+  { method: "POST", path: "/server/{id}/updateservice/{serviceid}", config: serviceController.update },
 ];

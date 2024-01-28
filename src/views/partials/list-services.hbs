@@ -15,7 +15,7 @@
     {{#each server.services}}
       <tr>
           <td>
-              {{title}}
+              {{name}}
           </td>
           <td>
               {{os}}
@@ -36,7 +36,7 @@
               {{login}}
           </td>
           <td>
-              <a href="/server/{{../server._id}}/editplacemark/{{_id}}" class="ui icon button">
+              <a href="/server/{{../server._id}}/editservice/{{_id}}" class="ui icon button">
                   <i class="fas fa-edit"></i>
               </a>
               <a href="/server/{{../server._id}}/deleteservice/{{_id}}" class="ui icon button"> <!--card-footer-item-->

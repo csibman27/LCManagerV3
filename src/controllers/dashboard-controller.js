@@ -8,6 +8,7 @@ export const dashboardController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const servers = await db.serverStore.getAllServers();
+      servers.sort((a, b) => (a.title > b.title ? 1 : -1));
       const company = "[Company name]";
       const viewData = {
         title: "LCManager Dashboard",
@@ -54,6 +55,12 @@ export const dashboardController = {
   deleteServer: {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
+      let serverServices = [];
+      serverServices = await db.serviceStore.getServicesByServerId(server._id);
+      for (let i = 0; i < serverServices.length; i += 1) {
+        // eslint-disable-next-line no-await-in-loop
+        await db.serviceStore.deleteService(serverServices[i]);
+      }
       await db.serverStore.deleteServerById(server._id);
       return h.redirect("/dashboard");
     },

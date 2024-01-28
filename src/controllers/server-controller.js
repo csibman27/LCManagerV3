@@ -17,18 +17,18 @@ export const serverController = {
 
   addService: {
     // joi schema security
-    validate: {
-      payload: ServiceSpec,
-      options: { abortEarly: false },
-      failAction: async function (request, h, error) {
-        const currentServer = await db.serverStore.getServerById(request.params.id);
-        return h.view("server-view", { title: "Add Service error", server: currentServer, errors: error.details }).takeover().code(400);
-      },
-    },
+    // validate: {
+    //   payload: ServiceSpec,
+    //   options: { abortEarly: false },
+    //   failAction: async function (request, h, error) {
+    //     const currentServer = await db.serverStore.getServerById(request.params.id);
+    //     return h.view("server-view", { title: "Add Service error", server: currentServer, errors: error.details }).takeover().code(400);
+    //   },
+    // },
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const newService = {
-        title: request.payload.title,
+        name: request.payload.name,
         os: request.payload.os,
         desc: request.payload.desc,
         monitored: request.payload.monitored,
