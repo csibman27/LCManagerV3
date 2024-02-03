@@ -17,27 +17,24 @@ export const serverController = {
 
   addService: {
     // joi schema security
-    // validate: {
-    //   payload: ServiceSpec,
-    //   options: { abortEarly: false },
-    //   failAction: async function (request, h, error) {
-    //     const currentServer = await db.serverStore.getServerById(request.params.id);
-    //     return h.view("server-view", { title: "Add Service error", server: currentServer, errors: error.details }).takeover().code(400);
-    //   },
-    // },
+    validate: {
+      payload: ServiceSpec,
+      options: { abortEarly: false },
+      failAction: async function (request, h, error) {
+        const currentServer = await db.serverStore.getServerById(request.params.id);
+        return h.view("server-view", { title: "Add Service error", server: currentServer, errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const newService = {
-        name: request.payload.name,
+        serviceName: request.payload.serviceName,
         os: request.payload.os,
         desc: request.payload.desc,
         monitored: request.payload.monitored,
         backups: request.payload.backups,
         syslog: request.payload.syslog,
         login: request.payload.login,
-        // modified: logged in user name
-        // firmware: request.payload.firmware,
-        // date: Number(request.payload.duration),
       };
       await db.serviceStore.addService(server._id, newService);
       console.log(newService);

@@ -7,7 +7,6 @@ export const serviceController = {
       const server = await db.serverStore.getServerById(request.params.id);
       const service = await db.serviceStore.getServiceById(request.params.serviceid);
       const loggedInUser = request.auth.credentials;
-
       const viewData = {
         title: "Edit Service",
         server: server,
@@ -19,16 +18,17 @@ export const serviceController = {
   },
 
   update: {
-    // validate: {
-    //   payload: ServiceSpec,
-    //   options: { abortEarly: false },
-    //   failAction: function (request, h, error) {
-    //     return h.view("update-service-view", { title: "Edit service error", errors: error.details }).takeover().code(400);
-    //   },
-    // },
+    validate: {
+      payload: ServiceSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("update-service-view", { title: "Edit service error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
+      const service = await db.serviceStore.getServiceById(request.params.serviceid);
       const newService = {
-        title: request.payload.title,
+        serviceName: request.payload.serviceName,
         os: request.payload.os,
         desc: request.payload.desc,
         monitored: request.payload.monitored,
@@ -37,7 +37,7 @@ export const serviceController = {
         login: request.payload.login,
       };
       try {
-        await db.serviceStore.updateService(request.params.serviceid, newService);
+        await db.serviceStore.updateService(service, newService);
       } catch (error) {
         console.log(error);
       }

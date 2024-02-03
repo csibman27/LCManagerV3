@@ -735,6 +735,23 @@
       "maas": true,
       "date": "11/23/2023",
       "_id": "9b361092-5465-4340-9357-efb246fad3e2"
+    },
+    {
+      "userid": "707473da-a4e9-4cbe-a77d-5ce3add22dae",
+      "title": "1",
+      "cab": 1,
+      "os": "1",
+      "idrac": "1",
+      "desc": "1",
+      "backupTo": "asd",
+      "monitoredWith": "asd",
+      "support": "1",
+      "service": "1",
+      "bios": "23",
+      "firmware": "23",
+      "maas": "1",
+      "date": "2024-02-03T12:12:42.378Z",
+      "_id": "e53d2c80-f425-40cf-b664-6fabe1f4f5c2"
     }
   ]
 }

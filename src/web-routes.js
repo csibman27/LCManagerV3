@@ -21,6 +21,7 @@ export const webRoutes = [
   { method: "POST", path: "/server/{id}/addservice", config: serverController.addService },
   { method: "GET", path: "/server/{id}/deleteservice/{serviceid}", config: serverController.deleteService },
 
-  { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serviceController.index },
+  // { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serviceController.index },
   { method: "POST", path: "/server/{id}/updateservice/{serviceid}", config: serviceController.update },
+  { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serviceController.showServiceDetails },
 ];

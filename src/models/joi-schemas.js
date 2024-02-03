@@ -13,7 +13,7 @@ export const UserCredentialsSpec = {
 };
 
 export const ServiceSpec = {
-  name: Joi.string().required(),
+  serviceName: Joi.string().required(),
   os: Joi.string().allow("").optional(),
   desc: Joi.string().allow("").optional(),
   monitored: Joi.string().required(),
@@ -28,8 +28,8 @@ export const ServerSpec = {
   os: Joi.string().required(),
   idrac: Joi.string().allow("").optional(),
   desc: Joi.string().allow("").optional(),
-  backups: Joi.string().required(),
-  monitored: Joi.string().required(),
+  backupTo: Joi.string().required(),
+  monitoredWith: Joi.string().required(),
   support: Joi.string().allow("").optional(),
   service: Joi.string().required(),
   bios: Joi.string().required(),

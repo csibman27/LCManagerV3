@@ -27,7 +27,9 @@ export const serviceJsonStore = {
 
   async getServiceById(id) {
     await db.read();
-    return db.data.services.find((service) => service._id === id);
+    let s = db.data.services.find((service) => service._id === id);
+    if (s === undefined) s = null;
+    return s;
   },
 
   async deleteService(id) {
@@ -42,8 +44,8 @@ export const serviceJsonStore = {
     await db.write();
   },
 
-  async updateService(service, updatedService) {
-    service.name = updatedService.name;
+  updateService: async function (service, updatedService) {
+    service.serviceName = updatedService.serviceName;
     service.os = updatedService.os;
     service.desc = updatedService.desc;
     service.monitored = updatedService.monitored;

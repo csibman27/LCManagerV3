@@ -22,8 +22,12 @@ export const serverJsonStore = {
 
   async getServerById(id) {
     await db.read();
-    const list = db.data.servers.find((server) => server._id === id);
-    list.services = await serviceJsonStore.getServicesByServerId(list._id);
+    let list = db.data.servers.find((server) => server._id === id);
+    if (list) {
+      list.services = await serviceJsonStore.getServicesByServerId(list._id);
+    } else {
+      list = null;
+    }
     return list;
   },
 

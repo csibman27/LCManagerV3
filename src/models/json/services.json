@@ -1,81 +1,70 @@
 {
   "services": [
     {
-      "title": "Mamba",
-      "os": "Ubuntu 22.04 LTS",
-      "desc": "",
-      "monitored": "Checkmk",
-      "backups": "emerald",
-      "syslog": "",
-      "login": "sysadmin",
-      "_id": "84f84f40-da4a-43c1-a5b8-3b2d7a63a845",
-      "serverid": "658361ae-e9b9-4e1d-a992-696052bccb06"
-    },
-    {
-      "title": "a",
+      "serviceName": "a",
       "os": "a",
       "desc": "a",
       "monitored": "a",
       "backups": "a",
       "syslog": "a",
       "login": "a",
-      "_id": "850a320e-449a-40c0-85fa-c95b5b8eb676",
-      "serverid": "1a16b3d7-cb44-47ea-9c33-fa2c85f20b3a"
+      "_id": "7cc8a4ae-4a21-4202-b48f-f406988fb428",
+      "serverid": "e4ed5a7e-2beb-4f26-b201-ef1400780019"
     },
     {
-      "title": "b",
-      "os": "b",
-      "desc": "b",
-      "monitored": "b",
-      "backups": "b",
-      "syslog": "b",
-      "login": "b",
-      "_id": "08c2fc2f-2199-4460-a8c5-6f70cfaed29f",
-      "serverid": "1a16b3d7-cb44-47ea-9c33-fa2c85f20b3a"
+      "serviceName": "qwed",
+      "os": "qwe",
+      "desc": "qwe",
+      "monitored": "wqe",
+      "backups": "e",
+      "syslog": "e",
+      "login": "e",
+      "_id": "d75e10fc-43c3-43c7-bb37-d3eae504a974",
+      "serverid": "e53d2c80-f425-40cf-b664-6fabe1f4f5c2"
     },
     {
-      "title": "c",
-      "os": "c",
-      "desc": "c",
-      "monitored": "c",
-      "backups": "c",
-      "syslog": "c",
-      "login": "c",
-      "_id": "57af1f7b-51a7-4a78-8265-8e1e2b5cbb4a",
-      "serverid": "1a16b3d7-cb44-47ea-9c33-fa2c85f20b3a"
+      "serviceName": "22",
+      "os": "22",
+      "desc": "22",
+      "monitored": "22",
+      "backups": "22",
+      "syslog": "22",
+      "login": "22",
+      "_id": "c905fc40-5108-4522-af0f-cf4c29249b17",
+      "serverid": "e53d2c80-f425-40cf-b664-6fabe1f4f5c2"
     },
     {
-      "name": "a",
+      "serviceName": "a",
       "os": "",
       "desc": "",
       "monitored": "a",
       "backups": "a",
       "syslog": "",
       "login": "",
-      "_id": "7b46cede-b412-4c77-8c83-a0821e88eb80",
-      "serverid": "e4ed5a7e-2beb-4f26-b201-ef1400780019"
+      "_id": "f53b7138-4ea6-42bd-9336-285546442f0f",
+      "serverid": "a89ea3f2-166a-45b8-94bc-f66749775726"
     },
     {
-      "name": "as",
-      "os": "as",
-      "desc": "as",
-      "monitored": "as",
-      "backups": "as",
-      "syslog": "as",
-      "login": "as",
-      "_id": "16f4b174-d6ba-4894-b527-7a4108426895",
-      "serverid": "e4ed5a7e-2beb-4f26-b201-ef1400780019"
+      "serviceName": "a",
+      "os": "a",
+      "desc": "a",
+      "monitored": "a",
+      "backups": "a",
+      "syslog": "a",
+      "login": "a",
+      "_id": "ddeadb03-4426-45f7-a223-54ee3f21f3aa",
+      "serverid": "b5f64491-c493-430a-a6d4-5787e395f454"
     },
     {
-      "name": "b",
-      "os": "b",
-      "desc": "b",
-      "monitored": "b",
-      "backups": "b",
-      "syslog": "b",
-      "login": "b",
-      "_id": "c92e97c7-7882-4849-930d-414569205e48",
-      "serverid": "e4ed5a7e-2beb-4f26-b201-ef1400780019"
+      "serviceName": "a2",
+      "os": "a1",
+      "desc": "a",
+      "monitored": "a",
+      "backups": "a",
+      "syslog": "a",
+      "login": "a",
+      "_id": "298c7fb5-50ad-4a98-86d2-a4ce77c922d0",
+      "serverid": "e53d2c80-f425-40cf-b664-6fabe1f4f5c2"
     }
   ]
 }
