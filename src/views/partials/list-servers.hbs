@@ -11,11 +11,15 @@
         <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
     </div>
 </form>
+
+<!--Card View for each server-->
 {{#each servers}}
     <div class="box box-link-hover-shadow">
+<!--        Top Part of the card-->
         <h2 class="title" id="search">
-            {{title}} | Cab {{cab}} Service {{service}} | {{os}} | {{pdate}} graphical status show how long server is going
+            {{title}} | Cab {{cab}} Service {{service}} | {{os}} | {{pdate}} {{maas}} graphical status show how long server is going
         </h2>
+<!--        Bottom part of the card-->
         <div class="sticky">
         <a href="/server/{{_id}}" class="button">
             <i class="fa-solid fa-server fa-xl"></i>

@@ -37,17 +37,18 @@ export const dashboardController = {
         cab: Number(request.payload.cab),
         os: request.payload.os,
         idrac: request.payload.idrac,
-        desc: request.payload.desc,
+        nwcard: request.payload.nwcard,
         backupTo: request.payload.backupTo,
         monitoredWith: request.payload.monitoredWith,
         support: request.payload.support,
         service: request.payload.service,
         bios: request.payload.bios,
         firmware: request.payload.firmware,
-        maas: request.payload.maas,
+        maas: Boolean(request.payload.maas),
         cost: request.payload.cost,
         pdate: request.payload.pdate,
         model: request.payload.model,
+        desc: request.payload.desc,
         date: newDate.toISOString(), // date in ISO 8601 format.
       };
       await db.serverStore.addServer(newServer);
