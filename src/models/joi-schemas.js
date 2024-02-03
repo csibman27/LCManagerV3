@@ -35,4 +35,7 @@ export const ServerSpec = {
   bios: Joi.string().required(),
   firmware: Joi.string().required(),
   maas: Joi.string().allow("").optional(),
+  cost: Joi.string().example(11.11).allow("").optional(),
+  pdate: Joi.string().required(),
+  model: Joi.string().allow("").optional(),
 };
