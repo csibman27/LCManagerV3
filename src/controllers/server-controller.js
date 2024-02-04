@@ -1,15 +1,24 @@
 import { db } from "../models/db.js";
 import { ServiceSpec } from "../models/joi-schemas.js";
+import { analytics } from "../utils/analytics.js";
 
 export const serverController = {
   index: {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const company = "[Company name]";
+      // some analytics
+      const serverAge = await analytics.getAgeOfServer();
+      // let differenceInTime = today.getTime() - today.getTime();
+      // console.log("Server age: " + server.pdate);
+      const allServices = await analytics.getTotalServices();
+      // const allServices = 12;
       const viewData = {
         title: "Servers",
         server: server,
         company: company,
+        allServices,
+        serverAge,
       };
       return h.view("server-view", viewData);
     },

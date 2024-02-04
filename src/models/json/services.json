@@ -76,6 +76,17 @@
       "login": "1",
       "_id": "85c224ca-2ea1-4b31-8270-3de9c0851081",
       "serverid": "4acd926d-d5cb-45cb-8a77-1d83400561d2"
+    },
+    {
+      "serviceName": "1",
+      "os": "1",
+      "desc": "1",
+      "monitored": "1",
+      "backups": "1",
+      "syslog": "1",
+      "login": "1",
+      "_id": "1e2c800f-a67b-45a8-a376-473f2dff0600",
+      "serverid": "e23ec3ee-bc12-4275-ac0e-e8bace8e7043"
     }
   ]
 }
