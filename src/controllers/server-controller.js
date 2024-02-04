@@ -7,18 +7,19 @@ export const serverController = {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const company = "[Company name]";
+      const date = new Date().getFullYear();
       // some analytics
       const serverAge = await analytics.getAgeOfServer();
-      // let differenceInTime = today.getTime() - today.getTime();
-      // console.log("Server age: " + server.pdate);
       const allServices = await analytics.getTotalServices();
-      // const allServices = 12;
+      const pie = await analytics.pie();
       const viewData = {
         title: "Servers",
         server: server,
         company: company,
         allServices,
         serverAge,
+        pie,
+        date,
       };
       return h.view("server-view", viewData);
     },

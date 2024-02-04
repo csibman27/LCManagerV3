@@ -19,31 +19,28 @@ export const analytics = {
     let days = null;
     let year = null;
     const servers = await db.serverStore.getAllServers();
-    for (let i = 0; i < servers.length; i++) {
-      const pdate = servers[i].pdate;
-      console.log(`a: ${servers[i].pdate}`);
-      // convert the value to a date before calling the method
-      const purchaseDate = new Date(pdate);
-      const dateNow = new Date();
-      console.log(dateNow.toLocaleDateString());
-      // Calculating the time difference of two dates
-      const differenceInTime = dateNow.getTime() - purchaseDate.getTime();
-      console.log("Calculated time: " + differenceInTime);
-      // calculating the number of days between two dates
-      const diffInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
-      console.log("Result in days: " + diffInDays);
-      // Convert days to Year
-      const daysToYear = diffInDays / 365;
-      console.log("Years: " + daysToYear);
-      days = diffInDays;
-      year = daysToYear;
+    if (servers.length > 0) {
+      for (let i = 0; i < servers.length; i++) {
+        const s = servers[i].pdate;
+        // convert the value to a date before calling the method
+        const purchaseDate = new Date(s);
+        const dateNow = new Date();
+        // Calculating the time difference of two dates
+        const differenceInTime = dateNow.getTime() - purchaseDate.getTime();
+        // calculating the number of days between two dates
+        const diffInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
+        console.log("Result in days: " + diffInDays);
+        // Convert days to Year
+        const daysToYear = diffInDays / 365;
+        console.log("Years: " + daysToYear);
+        days = diffInDays;
+        year = daysToYear;
+      }
     }
-    if (days >= 0 && days < 365) {
-      return days;
-    }
-    if (days < 0) {
-      return null;
-    }
-    return year;
+    return days;
+  },
+  async pie() {
+    // Array containing the 5 different colors
+    const colors = ["red", "green", "blue", "yellow", "orange"];
   },
 };

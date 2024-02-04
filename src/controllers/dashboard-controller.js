@@ -10,12 +10,14 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
       servers.sort((a, b) => (a.title > b.title ? 1 : -1));
       const company = "[Company name]";
+      const date = new Date().getFullYear();
       // display data
       const viewData = {
         title: "LCManager Dashboard",
         user: loggedInUser,
         servers: servers,
         company: company,
+        date,
       };
       return h.view("dashboard-view", viewData);
     },
