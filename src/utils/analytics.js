@@ -15,9 +15,9 @@ export const analytics = {
     return totalServices;
   },
 
+  // used to create analytics to determine the least and most old server
   async getAgeOfServer() {
-    let days = null;
-    let year = null;
+    let days = [];
     const servers = await db.serverStore.getAllServers();
     if (servers.length > 0) {
       for (let i = 0; i < servers.length; i++) {
@@ -29,18 +29,29 @@ export const analytics = {
         const differenceInTime = dateNow.getTime() - purchaseDate.getTime();
         // calculating the number of days between two dates
         const diffInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
-        console.log("Result in days: " + diffInDays);
+        // console.log("Result in days: " + diffInDays);
         // Convert days to Year
         const daysToYear = diffInDays / 365;
-        console.log("Years: " + daysToYear);
-        days = diffInDays;
-        year = daysToYear;
+        // console.log("Years: " + daysToYear);
+        days.push(diffInDays);
+        // year = daysToYear;
       }
     }
     return days;
   },
-  async pie() {
-    // Array containing the 5 different colors
-    const colors = ["red", "green", "blue", "yellow", "orange"];
+  async getAgeOfServerById(pdate) {
+    // let days = null;
+    const purchaseDate = new Date(pdate);
+    const dateNow = new Date();
+    // Calculating the time difference of two dates
+    const differenceInTime = dateNow.getTime() - purchaseDate.getTime();
+    // calculating the number of days between two dates
+    const diffInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
+    // Convert days to Year
+    const daysToYear = diffInDays / 365;
+    if (diffInDays < 365) {
+      return diffInDays + " days";
+    }
+    return daysToYear.toFixed(1) + " years";
   },
 };

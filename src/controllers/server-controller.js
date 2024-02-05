@@ -5,21 +5,26 @@ import { analytics } from "../utils/analytics.js";
 export const serverController = {
   index: {
     handler: async function (request, h) {
+      // analytics about server age and other server information
       const server = await db.serverStore.getServerById(request.params.id);
+      const pdate = server.pdate;
+      const purchaseDate = new Date(pdate);
+      const serverAgeId = await analytics.getAgeOfServerById(purchaseDate);
       const company = "[Company name]";
       const date = new Date().getFullYear();
-      // some analytics
+      // serverAge can eventually check for least and most age servers
+      // at the moment it returns an array of server ages in days
       const serverAge = await analytics.getAgeOfServer();
       const allServices = await analytics.getTotalServices();
-      const pie = await analytics.pie();
+      // const pie = await analytics.pie();
       const viewData = {
         title: "Servers",
         server: server,
         company: company,
         allServices,
         serverAge,
-        pie,
         date,
+        serverAgeId,
       };
       return h.view("server-view", viewData);
     },
