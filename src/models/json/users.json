@@ -13,6 +13,13 @@
       "email": "k@k.com",
       "password": "1",
       "_id": "8b2ab226-f80c-4257-94fb-7232ec5620d1"
+    },
+    {
+      "firstName": "Tibor",
+      "lastName": "Molnar",
+      "email": "tibor.molnar@waltoninstitute.ie",
+      "password": "1",
+      "_id": "db28488c-3a0c-49c9-8b97-ab184e8885e3"
     }
   ]
 }

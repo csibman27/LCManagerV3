@@ -7,6 +7,7 @@ export const dashboardController = {
   index: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
+      const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
       servers.sort((a, b) => (a.title > b.title ? 1 : -1));
       const company = "[Company name]";
@@ -18,6 +19,7 @@ export const dashboardController = {
         servers: servers,
         company: company,
         date,
+        loggedInUserInitials,
       };
       return h.view("dashboard-view", viewData);
     },

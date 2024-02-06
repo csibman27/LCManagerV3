@@ -2,13 +2,16 @@
     <div class="navbar-brand">
         {{> server-brand}}
     </div>
-    <div class="navbar-menu" id="navMenu">
+    <div class="navbar-menu mt-3" id="navMenu">
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
                     <a id="about" class="button" href="/about"> Test Screen </a>
                     <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
                     <a id="logout" class="button" href="/logout"> Logout </a>
+                    <div class="relative inline-flex items-center justify-center w-12 h-12 mt-0 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                        <span class="font-medium text-gray-600 dark:text-gray-300">{{loggedInUserInitials}}</span>
+                    </div>
                 </div>
             </div>
         </div>
