@@ -1,7 +1,9 @@
 import { db } from "../models/db.js";
 import { ServerSpec } from "../models/joi-schemas.js";
+import { analytics } from "../utils/analytics.js";
 
 const newDate = new Date();
+// const searchInput = document.getElementById("searchInput");
 
 export const dashboardController = {
   index: {
@@ -9,17 +11,26 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
-      servers.sort((a, b) => (a.title > b.title ? 1 : -1));
+      // Filter
+      const filterCab = await analytics.filerByCab(servers);
+      const filterAlphabetic = await analytics.filterByAlphabetic(servers);
+      // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();
+      // search
+      const searchTerm = "1";
+      const search = await analytics.searchServerByTitle(searchTerm, servers);
+      console.log(search);
       // display data
       const viewData = {
         title: "LCManager Dashboard",
         user: loggedInUser,
-        servers: servers,
         company: company,
         date,
         loggedInUserInitials,
+        servers: servers,
+        filterCab,
+        filterAlphabetic,
       };
       return h.view("dashboard-view", viewData);
     },
@@ -73,9 +84,5 @@ export const dashboardController = {
       await db.serverStore.deleteServerById(server._id);
       return h.redirect("/dashboard");
     },
-  },
-
-  searchServer: {
-    handler: async function (request, h) {},
   },
 };

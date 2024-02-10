@@ -54,4 +54,26 @@ export const analytics = {
     }
     return daysToYear.toFixed(1) + " years";
   },
+
+  async searchServerByTitle(title, array) {
+    const result = [];
+
+    console.log("search Function called");
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].title.toLowerCase().includes(title.toLowerCase())) {
+        result.push(array[i]);
+      }
+    }
+    return result;
+  },
+
+  async filerByCab(array) {
+    array.sort((a, b) => (a.cab > b.cab ? 1 : -1));
+    console.log("Filtering by CAB function called!");
+  },
+
+  async filterByAlphabetic(array) {
+    array.sort((a, b) => (a.title > b.title ? 1 : -1));
+    console.log("Filtering by alphabetic order called!");
+  },
 };
