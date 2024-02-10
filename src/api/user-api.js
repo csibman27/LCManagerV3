@@ -1,6 +1,8 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 
+const saltRounds = 10;
+
 export const userApi = {
   create: {
     auth: false,

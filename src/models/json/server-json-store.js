@@ -20,6 +20,11 @@ export const serverJsonStore = {
     return server;
   },
 
+  async getServerByTitle(title) {
+    await db.read();
+    return db.data.servers.find((server) => server.title === title);
+  },
+
   async getServerById(id) {
     await db.read();
     let list = db.data.servers.find((server) => server._id === id);

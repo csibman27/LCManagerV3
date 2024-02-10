@@ -76,4 +76,14 @@ export const analytics = {
     array.sort((a, b) => (a.title > b.title ? 1 : -1));
     console.log("Filtering by alphabetic order called!");
   },
+
+  async filter(title, array) {
+    if (title === "Choose") {
+      console.log("Normal order");
+    } else if (title === "cab") {
+      array.sort((a, b) => (a.cab > b.cab ? 1 : -1));
+    } else if (true) {
+      array.array.sort((a, b) => (a.title > b.title ? 1 : -1));
+    }
+  },
 };

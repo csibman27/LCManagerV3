@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import bcrypt from "bcrypt"; // ADDED hashing & salting
 import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
@@ -48,7 +50,11 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
-      if (!user || user.password !== password) {
+      const passwordsMatch = await bcrypt.compare(password, user.password); // ADDED hashing & salting
+      // if (!user || user.password !== password) {
+      // OLD
+      if (!user || !passwordsMatch) {
+        // new statement for hashing
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id });

@@ -11,6 +11,8 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
+      // const userInput = h.view();
+      // const servers2 = await db.serverStore.getServerByTitle(userInput);
       // Filter
       const filterCab = await analytics.filerByCab(servers);
       const filterAlphabetic = await analytics.filterByAlphabetic(servers);
