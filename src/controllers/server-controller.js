@@ -64,4 +64,16 @@ export const serverController = {
       return h.redirect(`/server/${server._id}`);
     },
   },
+
+  searchService: {
+    handler: async function (request, h) {
+      const searchTerm = request.query.term2;
+      // const server = await db.serverStore.getServerById(request.params.id);
+      const service = await db.serviceStore.getServicesByServerId(request.params.id);
+      // console.log(service);
+      // const service = await db.serviceStore.getAllServices();
+      const searchResult = service.filter((item) => item.serviceName.toLowerCase().includes(searchTerm.toLowerCase()));
+      return h.view("server-view", { results: searchResult });
+    },
+  },
 };

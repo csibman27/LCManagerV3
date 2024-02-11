@@ -1,0 +1,55 @@
+<!--service results-->
+
+{{#if results.length}}
+<table class="table is-fullwidth">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>OS</th>
+        <th>Description</th>
+        <th>Monitored</th>
+        <th>Backups</th>
+        <th>Syslog</th>
+        <th>Login</th>
+        <th>Functions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each results}}
+        <tr>
+            <td>
+                {{serviceName}}
+            </td>
+            <td>
+                {{os}}
+            </td>
+            <td>
+                {{desc}}
+            </td>
+            <td>
+                {{monitored}}
+            </td>
+            <td>
+                {{backups}}
+            </td>
+            <td>
+                {{syslog}}
+            </td>
+            <td>
+                {{login}}
+            </td>
+            <td>
+                <a href="/server/{{../server._id}}/editservice/{{_id}}" class="ui icon button">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="/server/{{../server._id}}/deleteservice/{{_id}}" class="ui icon button"> <!--card-footer-item-->
+                    <i class="fa-regular fa-trash-can"></i>
+                </a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+{{else}}
+
+{{/if}}
