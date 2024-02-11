@@ -20,6 +20,13 @@
       "email": "tibor.molnar@waltoninstitute.ie",
       "password": "1",
       "_id": "db28488c-3a0c-49c9-8b97-ab184e8885e3"
+    },
+    {
+      "firstName": "2",
+      "lastName": "2",
+      "email": "2@2.com",
+      "password": "2",
+      "_id": "a8f10201-9742-4f63-b0a5-9ea3587c62d7"
     }
   ]
 }

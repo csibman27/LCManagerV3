@@ -87,4 +87,13 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+
+  searchServer: {
+    handler: async function (request, h) {
+      const searchTerm = request.query.term;
+      const servers = await db.serverStore.getAllServers();
+      const searchResult = servers.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      return h.view("dashboard-view", { results: searchResult });
+    },
+  },
 };

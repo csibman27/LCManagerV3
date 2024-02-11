@@ -1,0 +1,20 @@
+<!-- searchResults  -->
+
+{{#each results}}
+    <div class="box box-link-hover-shadow">
+        <!--        Top Part of the card-->
+        <h2 class="title" id="search">
+            <i class="fa-solid fa-staff-snake"></i>{{title}}, Cab {{cab}}, Purchased {{pdate}}
+        </h2>
+        <!--        Bottom part of the card-->
+        <div class="sticky">
+            <a href="/server/{{_id}}" class="button">
+                <i class="fa-solid fa-server fa-xl"></i>
+            </a>
+            <a href="/dashboard/deleteserver/{{_id}}" class="button">
+                <i class="fa-solid fa-trash-can fa-lg color blue"></i>
+            </a>
+            Bios {{bios}} Firmware {{firmware}}
+        </div>
+    </div>
+{{/each}}

@@ -50,10 +50,10 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
-      const passwordsMatch = await bcrypt.compare(password, user.password); // ADDED hashing & salting
-      // if (!user || user.password !== password) {
-      // OLD
-      if (!user || !passwordsMatch) {
+      // const passwordsMatch = await bcrypt.compare(password, user.password); // ADDED hashing & salting
+      if (!user || user.password !== password) {
+        // OLD
+        // if (!user || !passwordsMatch) {
         // new statement for hashing
         return h.redirect("/");
       }

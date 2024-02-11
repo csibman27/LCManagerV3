@@ -11,8 +11,7 @@
             List of Servers </h2>
     </div>
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">{{company}} Data Center Server list.</p>
-    <!--    search bar -->
-    {{>search-server}}
+
 <!--    part of list servers-->
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
@@ -28,6 +27,11 @@
     </div>
     </form>
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+    <!--    search bar -->
+    {{>search-server-form}}
+    {{>search-server-results}}
+<!--    search results end-->
     {{> list-servers}}
 </section>
 
