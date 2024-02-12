@@ -11,11 +11,6 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
-      // const userInput = h.view();
-      // const servers2 = await db.serverStore.getServerByTitle(userInput);
-      // Filter
-      const filterCab = await analytics.filerByCab(servers);
-      const filterAlphabetic = await analytics.filterByAlphabetic(servers);
       // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();
@@ -27,8 +22,6 @@ export const dashboardController = {
         date,
         loggedInUserInitials,
         servers: servers,
-        filterCab,
-        filterAlphabetic,
       };
       return h.view("dashboard-view", viewData);
     },
@@ -90,6 +83,39 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
       const searchResult = servers.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
       return h.view("dashboard-view", { results: searchResult });
+    },
+  },
+  filterServer: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
+      const servers = await db.serverStore.getAllServers();
+      // Other
+      const company = "[Company name]";
+      const date = new Date().getFullYear();
+      // display data
+      const viewData = {
+        title: "LCManager Dashboard",
+        user: loggedInUser,
+        company: company,
+        date,
+        loggedInUserInitials,
+        servers: servers,
+      };
+      let sortedData = [];
+      const { orderBy } = request.query;
+      if (orderBy === "asc") {
+        sortedData = servers.sort((a, b) => (a.title > b.title ? 1 : -1));
+      } else if (orderBy === "desc") {
+        sortedData = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
+      } else if (orderBy === "cabnum") {
+        sortedData = servers.sort((a, b) => (a.cab > b.cab ? 1 : -1));
+      } else if (orderBy === "normal") {
+        return h.view("dashboard-view", viewData);
+      } else {
+        sortedData = servers;
+      }
+      return h.view("dashboard-view", { resolution: sortedData });
     },
   },
 };

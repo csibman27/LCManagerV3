@@ -39,6 +39,8 @@ export const analytics = {
     }
     return days;
   },
+
+  // determine the age of server
   async getAgeOfServerById(pdate) {
     // let days = null;
     const purchaseDate = new Date(pdate);
@@ -55,13 +57,20 @@ export const analytics = {
     return daysToYear.toFixed(1) + " years";
   },
 
-  async filerByCab(array) {
-    array.sort((a, b) => (a.cab > b.cab ? 1 : -1));
-    console.log("Filtering by CAB function called!");
-  },
+  // sorted lists analytics
+  async filter(array, orderBy) {
+    // const orderBy = "cabnum";
+    let sortedData = [];
+    if (orderBy === "az") {
+      sortedData = array.sort((a, b) => (a.title > b.title ? 1 : -1));
+    } else if (orderBy === "za") {
+      sortedData = array.sort((a, b) => (a.title < b.title ? 1 : -1));
+    } else if (orderBy === "cabnum") {
+      sortedData = array.sort((a, b) => (a.cab > b.cab ? 1 : -1));
+    } else {
+      sortedData = array;
+    }
 
-  async filterByAlphabetic(array) {
-    array.sort((a, b) => (a.title > b.title ? 1 : -1));
-    console.log("Filtering by alphabetic order called!");
+    return sortedData;
   },
 };

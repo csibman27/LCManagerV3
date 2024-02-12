@@ -5,6 +5,8 @@ import { analytics } from "../utils/analytics.js";
 export const serverController = {
   index: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       // analytics about server age and other server information
       const server = await db.serverStore.getServerById(request.params.id);
       const pdate = server.pdate;
@@ -25,6 +27,7 @@ export const serverController = {
         serverAge,
         date,
         serverAgeId,
+        loggedInUserInitials,
       };
       return h.view("server-view", viewData);
     },
