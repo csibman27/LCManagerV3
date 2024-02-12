@@ -1,3 +1,6 @@
+<!--length added so when search results shows old table heading not displays twice-->
+
+{{#if server.services.length}}
 <table class="table is-fullwidth">
   <thead>
     <tr>
@@ -47,4 +50,8 @@
     {{/each}}
   </tbody>
 </table>
+<!--else show no table heading -->
+{{else}}
+
+{{/if}}
 

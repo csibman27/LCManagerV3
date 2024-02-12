@@ -19,10 +19,6 @@ export const dashboardController = {
       // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();
-      // search
-      const searchTerm = "1";
-      const search = await analytics.searchServerByTitle(searchTerm, servers);
-      console.log(search);
       // display data
       const viewData = {
         title: "LCManager Dashboard",
