@@ -131,6 +131,17 @@
       "login": "hhh",
       "_id": "1c877fd1-bee7-4d3e-8646-7d4f564f84b2",
       "serverid": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
+    },
+    {
+      "serviceName": "1",
+      "os": "1",
+      "desc": "",
+      "monitored": "11",
+      "backups": "1",
+      "syslog": "1",
+      "login": "",
+      "_id": "da250522-6dd6-49ac-9526-fc05a86ecdb2",
+      "serverid": "cc34ca99-458b-4450-bd5b-b4c431252106"
     }
   ]
 }

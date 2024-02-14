@@ -1,5 +1,5 @@
 import { db } from "../models/db.js";
-import { ServerSpec } from "../models/joi-schemas.js";
+import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
 
 const newDate = new Date();

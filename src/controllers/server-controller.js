@@ -79,4 +79,46 @@ export const serverController = {
       return h.view("server-view", { results: searchResult });
     },
   },
+
+  update: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const newServer = {
+        title: request.payload.title,
+        cab: Number(request.payload.cab),
+        os: request.payload.os,
+        // idrac: request.payload.idrac,
+        // nwcard: request.payload.nwcard,
+        // backupTo: request.payload.backupTo,
+        // monitoredWith: request.payload.monitoredWith,
+        // support: request.payload.support,
+        // service: request.payload.service,
+        // bios: request.payload.bios,
+        // firmware: request.payload.firmware,
+        // maas: Boolean(request.payload.maas),
+        // cost: request.payload.cost,
+        // pdate: request.payload.pdate,
+        // model: request.payload.model,
+        // desc: request.payload.desc,
+      };
+      try {
+        await db.serverStore.updateServer(server, newServer);
+      } catch (error) {
+        console.log(error);
+      }
+      return h.redirect("/dashboard");
+    },
+  },
+
+  showServerDetails: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const viewData = {
+        title: "Update Server",
+        server: server,
+      };
+      console.log(server);
+      return h.view("update-server-view", viewData);
+    },
+  },
 };

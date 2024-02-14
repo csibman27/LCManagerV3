@@ -52,4 +52,11 @@ export const serverJsonStore = {
     db.data.servers = [];
     await db.write();
   },
+
+  updateServer: async function (server, updatedServer) {
+    server.title = updatedServer.title;
+    server.cab = updatedServer.cab;
+    server.os = updatedServer.os;
+    await db.write();
+  },
 };
