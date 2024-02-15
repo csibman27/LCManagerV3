@@ -18,6 +18,7 @@ export const webRoutes = [
   { method: "GET", path: "/dashboard/deleteserver/{id}", config: dashboardController.deleteServer },
   { method: "GET", path: "/dashboard/searchserver", config: dashboardController.searchServer },
   { method: "GET", path: "/dashboard/filterserver", config: dashboardController.filterServer },
+  { method: "GET", path: "/dashboard/decommissionserver/{id}", config: dashboardController.decomissionServer },
 
   { method: "GET", path: "/server/{id}/editserver", config: serverController.showServerDetails },
   { method: "POST", path: "/server/{id}/updateserver", config: serverController.update },

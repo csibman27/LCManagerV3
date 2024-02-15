@@ -118,4 +118,22 @@ export const dashboardController = {
       return h.view("dashboard-view", { resolution: sortedData });
     },
   },
+  decomissionServer: {
+    handler: async function (request, h) {
+      const decommissioned = [];
+      const server = await db.serverStore.getServerById(request.params.id);
+
+      decommissioned.push(server);
+      console.log(server);
+      console.log(`decommissioned: ${decommissioned}`);
+      let serverServices = [];
+      serverServices = await db.serviceStore.getServicesByServerId(server._id);
+      for (let i = 0; i < serverServices.length; i += 1) {
+        // eslint-disable-next-line no-await-in-loop
+        // await db.serviceStore.deleteService(serverServices[i]);
+      }
+      // await db.serverStore.deleteServerById(server._id);
+      return h.redirect("/dashboard");
+    },
+  },
 };
