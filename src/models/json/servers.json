@@ -1,46 +1,6 @@
 {
   "servers": [
     {
-      "title": "Graceful Midsorus Fern",
-      "cab": 3,
-      "os": "Civitas Solutions, Inc.",
-      "idrac": "255.243.253.97",
-      "nwcard": "SERTRALINE HYDROCHLORIDE",
-      "backupTo": "Lind, Stoltenberg and Bergstrom",
-      "monitoredWith": "Kihn and Sons",
-      "support": "2022/06/28",
-      "service": "Durgan and Sons",
-      "bios": "0.73",
-      "firmware": "0.6.2",
-      "maas": false,
-      "cost": 8896,
-      "pdate": "5/17/2023",
-      "model": "Alcohol Prep",
-      "desc": "Bronchiectasis w ac exac",
-      "date": "7/22/2023",
-      "_id": "f6c4748e-6d3e-405a-95f1-1d1405e37e31"
-    },
-    {
-      "title": "Hooker's Inula",
-      "cab": 4,
-      "os": "Meritage Corporation",
-      "idrac": "121.97.134.230",
-      "nwcard": "Amlodipine Besylate",
-      "backupTo": "Goodwin-Brakus",
-      "monitoredWith": "Lindgren LLC",
-      "support": "2020/04/22",
-      "service": "Williamson Inc",
-      "bios": "5.0.4",
-      "firmware": "4.0",
-      "maas": true,
-      "cost": 3780,
-      "pdate": "6/29/2023",
-      "model": "Lornamead",
-      "desc": "Facial nerve dis NOS",
-      "date": "6/24/2023",
-      "_id": "17aadcb5-2a3b-497d-aafb-1166b400286c"
-    },
-    {
       "title": "Prairie Sandreed",
       "cab": 5,
       "os": "Voyager Therapeutics, Inc.",
@@ -222,6 +182,27 @@
       "desc": "asd",
       "date": "2024-02-05T16:59:05.492Z",
       "_id": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
+    },
+    {
+      "title": "Hooker's Inula1",
+      "cab": 4,
+      "os": "Meritage Corporation",
+      "idrac": "121.97.134.230",
+      "nwcard": "Amlodipine Besylate",
+      "backupTo": "Goodwin-Brakus",
+      "monitoredWith": "Lindgren LLC",
+      "support": "2020/04/22",
+      "service": "Williamson Inc",
+      "bios": "5.0.4",
+      "firmware": "4.0",
+      "maas": true,
+      "cost": 3780,
+      "pdate": "6/29/2023",
+      "model": "Lornamead",
+      "desc": "Facial nerve dis NOS",
+      "date": "6/24/2023",
+      "_id": "6b964862-340a-4a2f-992a-e662dc794536",
+      "services": []
     }
   ]
 }

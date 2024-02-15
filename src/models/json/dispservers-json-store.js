@@ -24,6 +24,11 @@ export const dispserverJsonStore = {
     return db.data.dispservers.find((dispserver) => dispserver.title === title);
   },
 
+  async getDispserverById(id) {
+    await db.read();
+    return db.data.dispservers.find((dispserver) => dispserver._id === id);
+  },
+
   async deleteDispserverById(id) {
     await db.read();
     const index = db.data.dispservers.findIndex((dispserver) => dispserver._id === id);
@@ -33,6 +38,13 @@ export const dispserverJsonStore = {
 
   async deleteAllDispservers() {
     db.data.dispservers = [];
+    await db.write();
+  },
+
+  updateServer: async function (server, updatedServer) {
+    server.title = updatedServer.title;
+    server.cab = updatedServer.cab;
+    server.os = updatedServer.os;
     await db.write();
   },
 };

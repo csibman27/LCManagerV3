@@ -3,7 +3,6 @@ import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
 
 const newDate = new Date();
-// const searchInput = document.getElementById("searchInput");
 
 export const dashboardController = {
   index: {
@@ -120,13 +119,8 @@ export const dashboardController = {
   },
   decomissionServer: {
     handler: async function (request, h) {
-      const decommissioned = [];
       const server = await db.serverStore.getServerById(request.params.id);
-
-      decommissioned.push(server);
-      console.log(server);
-      console.log(`decommissioned: ${decommissioned}`);
-      const newDispserver = decommissioned;
+      const newDispserver = server;
       let serverServices = [];
       serverServices = await db.serviceStore.getServicesByServerId(server._id);
       for (let i = 0; i < serverServices.length; i += 1) {

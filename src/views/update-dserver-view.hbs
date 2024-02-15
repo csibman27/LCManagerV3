@@ -1,0 +1,58 @@
+{{> menu}}
+
+<form class="box" action="/archive/{{dispserver._id}}/updateserver" method="POST">
+    <label>Update Server Details:</label>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <input class="input" type="text" pattern="[A-Za-z\\s]+{1,20}" name="title" placeholder="Server name" value="{{dispserver.title}}">
+            </div>
+            <div class="field">
+                <input class="input" type="text" name="cab" placeholder="Server Cab" value="{{dispserver.cab}}">
+            </div>
+            <div class="field">
+                <input class="input" type="text" name="os" placeholder="Operating System" value="{{dispserver.os}}">
+            </div>
+            <div class="field">
+                <input class="input" type="text" name="idrac" placeholder="Server Idrac" value="{{dispserver.idrac}}">
+            </div>
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="nwcard" placeholder="Number of network cards" value="{{dispserver.nwcard}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="backupTo" placeholder="Backup" value="{{dispserver.backupTo}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="monitoredWith" placeholder="Monitored" value="{{dispserver.monitoredWith}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="support" placeholder="Support" value="{{dispserver.support}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="service" placeholder="Service" value="{{dispserver.service}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="bios" placeholder="Bios version" value="{{dispserver.bios}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="firmware" placeholder="Firmware version" value="{{dispserver.firmware}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="maas" placeholder="In maas?" value="{{dispserver.maas}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="cost" placeholder="Initial cost" value="{{dispserver.cost}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="pdate" placeholder="Date purchased" value="{{dispserver.pdate}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="model" placeholder="Model" value="{{dispserver.model}}">-->
+            <!--            </div>-->
+            <!--            <div class="field">-->
+            <!--                <input class="input" type="text" name="desc" placeholder="Description" value="{{dispserver.desc}}">-->
+            <!--            </div>-->
+        </div>
+    </div>
+    <button class="button is-primary is-fullwidth">Update Server</button>
+</form>

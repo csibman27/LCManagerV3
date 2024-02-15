@@ -3,15 +3,23 @@ import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { serverController } from "./controllers/server-controller.js";
 import { serviceController } from "./controllers/service-controller.js";
+import { archiveController } from "./controllers/archive-controller.js";
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
   { method: "GET", path: "/login", config: accountsController.showLogin },
   { method: "GET", path: "/logout", config: accountsController.logout },
-  { method: "GET", path: "/about", config: aboutController.index },
   { method: "POST", path: "/register", config: accountsController.signup },
   { method: "POST", path: "/authenticate", config: accountsController.login },
+
+  { method: "GET", path: "/about", config: aboutController.index },
+
+  { method: "GET", path: "/archive", config: archiveController.index },
+  { method: "GET", path: "/archive/deleteserver/{id}", config: archiveController.deleteServer },
+  { method: "GET", path: "/archive/{id}/editserver", config: archiveController.showServerDetails },
+  { method: "POST", path: "/archive/{id}/updateserver", config: archiveController.update },
+  { method: "GET", path: "/archive/recommissionserver/{id}", config: archiveController.recomissionServer },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addserver", config: dashboardController.addServer },
