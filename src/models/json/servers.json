@@ -1,26 +1,6 @@
 {
   "servers": [
     {
-      "title": "Prairie Sandreed",
-      "cab": 5,
-      "os": "Voyager Therapeutics, Inc.",
-      "idrac": "6.27.217.28",
-      "nwcard": "HCG Cleanse",
-      "backupTo": "Kerluke, Goldner and Wisozk",
-      "monitoredWith": "McGlynn Group",
-      "support": "2022/12/30",
-      "service": "Bosco, Runolfsdottir and Schroeder",
-      "bios": "0.76",
-      "firmware": "2.3.5",
-      "maas": false,
-      "cost": 5443,
-      "pdate": "8/18/2023",
-      "model": "DICLEGIS",
-      "desc": "Dis of biliary tract NOS",
-      "date": "6/21/2023",
-      "_id": "a4f75e46-4bee-4bbc-a161-8f4440c9f6d2"
-    },
-    {
       "title": "Calico Aster",
       "cab": 6,
       "os": "Ability Inc.",
@@ -182,27 +162,6 @@
       "desc": "asd",
       "date": "2024-02-05T16:59:05.492Z",
       "_id": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
-    },
-    {
-      "title": "Hooker's Inula1",
-      "cab": 4,
-      "os": "Meritage Corporation",
-      "idrac": "121.97.134.230",
-      "nwcard": "Amlodipine Besylate",
-      "backupTo": "Goodwin-Brakus",
-      "monitoredWith": "Lindgren LLC",
-      "support": "2020/04/22",
-      "service": "Williamson Inc",
-      "bios": "5.0.4",
-      "firmware": "4.0",
-      "maas": true,
-      "cost": 3780,
-      "pdate": "6/29/2023",
-      "model": "Lornamead",
-      "desc": "Facial nerve dis NOS",
-      "date": "6/24/2023",
-      "_id": "6b964862-340a-4a2f-992a-e662dc794536",
-      "services": []
     }
   ]
 }

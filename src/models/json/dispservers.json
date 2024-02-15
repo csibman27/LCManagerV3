@@ -1,3 +1,25 @@
 {
-  "dispservers": []
+  "dispservers": [
+    {
+      "title": "Hooker's Inula1",
+      "cab": 4,
+      "os": "Meritage Corporation",
+      "idrac": "121.97.134.230",
+      "nwcard": "Amlodipine Besylate",
+      "backupTo": "Goodwin-Brakus",
+      "monitoredWith": "Lindgren LLC",
+      "support": "2020/04/22",
+      "service": "Williamson Inc",
+      "bios": "5.0.4",
+      "firmware": "4.0",
+      "maas": true,
+      "cost": 3780,
+      "pdate": "6/29/2023",
+      "model": "Lornamead",
+      "desc": "Facial nerve dis NOS",
+      "date": "6/24/2023",
+      "_id": "acf0beaa-564a-41b6-b3f3-ef6df4789980",
+      "services": []
+    }
+  ]
 }

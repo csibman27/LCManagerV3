@@ -61,6 +61,13 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+  confirmDelete: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const id = 1;
+      return h.view("confirm-delete", { server, id });
+    },
+  },
 
   deleteServer: {
     handler: async function (request, h) {
