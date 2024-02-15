@@ -126,13 +126,15 @@ export const dashboardController = {
       decommissioned.push(server);
       console.log(server);
       console.log(`decommissioned: ${decommissioned}`);
+      const newDispserver = decommissioned;
       let serverServices = [];
       serverServices = await db.serviceStore.getServicesByServerId(server._id);
       for (let i = 0; i < serverServices.length; i += 1) {
         // eslint-disable-next-line no-await-in-loop
-        // await db.serviceStore.deleteService(serverServices[i]);
+        await db.serviceStore.deleteService(serverServices[i]);
       }
-      // await db.serverStore.deleteServerById(server._id);
+      await db.serverStore.deleteServerById(server._id);
+      await db.dispserverStore.addDispserver(newDispserver);
       return h.redirect("/dashboard");
     },
   },

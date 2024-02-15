@@ -10,11 +10,13 @@
 import { userJsonStore } from "./json/user-json-store.js";
 import { serverJsonStore } from "./json/server-json-store.js";
 import { serviceJsonStore } from "./json/service-json-store.js";
+import { dispserverJsonStore } from "./json/dispservers-json-store.js";
 
 export const db = {
   userStore: null,
   serverStore: null,
   serviceStore: null,
+  dispserverStore: null,
 
   init() {
     // this.userStore = userMemStore;
@@ -24,5 +26,6 @@ export const db = {
     this.userStore = userJsonStore;
     this.serverStore = serverJsonStore;
     this.serviceStore = serviceJsonStore;
+    this.dispserverStore = dispserverJsonStore;
   },
 };

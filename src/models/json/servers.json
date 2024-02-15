@@ -1,27 +1,6 @@
 {
   "servers": [
     {
-      "title": "Arizona Pope",
-      "cab": 2,
-      "os": "",
-      "idrac": "32.76.166.41",
-      "nwcard": "Lorazepam",
-      "backupTo": "Gerlach-Hackett",
-      "monitoredWith": "Wolf-Bruen",
-      "support": "2020/06/27",
-      "service": "Lindgren, Ratke and Rempel",
-      "bios": "7.6.7",
-      "firmware": "4.7.8",
-      "maas": true,
-      "cost": 7622,
-      "pdate": "3/11/2023",
-      "model": "Miconazole 3",
-      "desc": "Loc 2nd osteoarth-unspec",
-      "date": "1/24/2024",
-      "_id": "cc34ca99-458b-4450-bd5b-b4c431252106",
-      "services": []
-    },
-    {
       "title": "Graceful Midsorus Fern",
       "cab": 3,
       "os": "Civitas Solutions, Inc.",
