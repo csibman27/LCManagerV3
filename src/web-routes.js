@@ -16,10 +16,12 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/archive", config: archiveController.index },
-  { method: "GET", path: "/archive/deleteserver/{id}", config: archiveController.deleteServer },
+  { method: "POST", path: "/archive/deleteserver/{id}", config: archiveController.deleteServer },
+  { method: "GET", path: "/archive/confirmdelete/{id}", config: archiveController.confirmDelete },
+  { method: "GET", path: "/archive/confirmdelete/recommissionserver/{id}", config: archiveController.recomissionServer },
+  { method: "GET", path: "/archive/recommissionserver/{id}", config: archiveController.confirmRestore },
   { method: "GET", path: "/archive/{id}/editserver", config: archiveController.showServerDetails },
   { method: "POST", path: "/archive/{id}/updateserver", config: archiveController.update },
-  { method: "GET", path: "/archive/recommissionserver/{id}", config: archiveController.recomissionServer },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addserver", config: dashboardController.addServer },

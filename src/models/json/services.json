@@ -98,28 +98,6 @@
       "login": "a",
       "_id": "80e0ce08-56f8-45f1-9b05-9dd8eeadf336",
       "serverid": "1012ebbc-b563-4234-bbc5-4b9c274bf479"
-    },
-    {
-      "serviceName": "1",
-      "os": "1",
-      "desc": "1",
-      "monitored": "1",
-      "backups": "1",
-      "syslog": "1",
-      "login": "1",
-      "_id": "bf4cf555-716f-4fc7-912c-82f31d5d7d6e",
-      "serverid": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
-    },
-    {
-      "serviceName": "2",
-      "os": "2",
-      "desc": "2",
-      "monitored": "2",
-      "backups": "2",
-      "syslog": "2",
-      "login": "2",
-      "_id": "4d79179a-c8de-4e46-ad19-4d2381fc44d1",
-      "serverid": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
     }
   ]
 }

@@ -5,29 +5,20 @@
 
 <article class="message is-info">
     <div class="message-header">
-        Please verify the deletion action or opt to store in an archive instead
-        <form action="/dashboard">
+        Please verify the deletion action or restore instead
+        <form action="/archive">
             <button class="delete"></button>
         </form>
     </div>
     <div class="message-body">
         Are you sure you want to delete the item with server {{id.title}} with ID {{id._id}}. The removal of this server will be irreversible, and it cannot be recovered or restored.
-        You have the option to move this server to the archive, which will take it out of the primary pool and transfer it to the archival collection.
+        You have the option to restore this server to the primary pool, which will take it out of the archival pool and transfer it to the primary collection.
     </div>
 </article>
 
 
 <div class="flex flex-row space-x-2.5">
-    <form action="/dashboard/confirmdelete/decommissionserver/{{id._id}}">
-        <button class="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-            </svg>
-
-            Archive
-        </button>
-    </form>
-    <form action="/dashboard/deleteserver/{{id._id}}" method="POST">
+    <form action="/archive/deleteserver/{{id._id}}" method="POST">
         <button class="field inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-md">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -37,7 +28,16 @@
         </button>
     </form>
 
-    <form action="/dashboard">
+    <form action="/archive/confirmdelete/recommissionserver/{{id._id}}">
+        <button class="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+            </svg>
+
+            Restore
+        </button>
+    </form>
+    <form action="/archive">
         <button class="inline-flex items-center px-4 py-2 bg-blue-700 hover:bg-indigo-300 text-white text-sm font-medium rounded-md">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />

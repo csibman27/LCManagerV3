@@ -22,6 +22,13 @@ export const archiveController = {
     },
   },
 
+  confirmDelete: {
+    handler: async function (request, h) {
+      const id = await db.dispserverStore.getDispserverById(request.params.id);
+      return h.view("confirm-delete-archive", { id });
+    },
+  },
+
   deleteServer: {
     handler: async function (request, h) {
       const dispserver = await db.dispserverStore.getDispserverById(request.params.id);
@@ -63,7 +70,7 @@ export const archiveController = {
   showServerDetails: {
     handler: async function (request, h) {
       const dispserver = await db.dispserverStore.getDispserverById(request.params.id);
-      console.log(dispserver);
+      // console.log(dispserver);
       const viewData = {
         title: "Update Disposed Server",
         dispserver: dispserver,
@@ -85,6 +92,13 @@ export const archiveController = {
       await db.dispserverStore.deleteDispserverById(dispserver._id);
       await db.serverStore.addServer(newServer);
       return h.redirect("/archive");
+    },
+  },
+
+  confirmRestore: {
+    handler: async function (request, h) {
+      const id = await db.dispserverStore.getDispserverById(request.params.id);
+      return h.view("confirm-restore-archive", { id });
     },
   },
 };
