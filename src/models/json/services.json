@@ -120,17 +120,6 @@
       "login": "2",
       "_id": "4d79179a-c8de-4e46-ad19-4d2381fc44d1",
       "serverid": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
-    },
-    {
-      "serviceName": "ember1",
-      "os": "em",
-      "desc": "emi",
-      "monitored": "eni",
-      "backups": "eli",
-      "syslog": "www",
-      "login": "hhh",
-      "_id": "1c877fd1-bee7-4d3e-8646-7d4f564f84b2",
-      "serverid": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
     }
   ]
 }

@@ -55,7 +55,7 @@ export const serverController = {
         login: request.payload.login,
       };
       await db.serviceStore.addService(server._id, newService);
-      console.log(newService);
+      // console.log(newService);
       return h.redirect(`/server/${server._id}`);
     },
   },
@@ -117,7 +117,7 @@ export const serverController = {
         title: "Update Server",
         server: server,
       };
-      console.log(server);
+      // console.log(server);
       return h.view("update-server-view", viewData);
     },
   },

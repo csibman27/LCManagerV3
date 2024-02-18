@@ -63,9 +63,8 @@ export const dashboardController = {
   },
   confirmDelete: {
     handler: async function (request, h) {
-      const server = await db.serverStore.getServerById(request.params.id);
-      const id = 1;
-      return h.view("confirm-delete", { server, id });
+      const id = await db.serverStore.getServerById(request.params.id);
+      return h.view("confirm-delete", { id });
     },
   },
 
@@ -91,6 +90,7 @@ export const dashboardController = {
       return h.view("dashboard-view", { results: searchResult });
     },
   },
+
   filterServer: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
