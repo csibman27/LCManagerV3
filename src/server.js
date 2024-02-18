@@ -64,6 +64,15 @@ async function init() {
   db.init();
   server.route(webRoutes);
   server.route(apiRoutes);
+  // server.route({
+  //   method: "GET",
+  //   path: "/public/{param*}",
+  //   handler: {
+  //     directory: {
+  //       path: path.join(__dirname, "public"),
+  //     },
+  //   },
+  // });
   await server.start();
   console.log("Server running on %s", server.info.uri);
 }

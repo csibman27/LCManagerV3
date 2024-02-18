@@ -2,17 +2,19 @@
     <div class="navbar-brand">
         {{> server-brand}}
     </div>
+    <div class="relative inline-flex items-center justify-center w-12 h-12 mt-2 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+        <span class="font-medium text-gray-600 dark:text-gray-300">{{loggedInUserInitials}}</span>
+    </div>
     <div class="navbar-menu mt-3" id="navMenu">
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a id="about" class="button" href="/about"> Test Screen </a>
-                    <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
-                    <a id="dashboard" class="button" href="/archive"> Archives </a>
-                    <a id="logout" class="button" href="/logout"> Logout </a>
-                    <div class="relative inline-flex items-center justify-center w-12 h-12 mt-0 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                        <span class="font-medium text-gray-600 dark:text-gray-300">{{loggedInUserInitials}}</span>
-                    </div>
+
+                    <a id="about" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" href="/about"> Test Screen </a>
+                    <a id="dashboard" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" href="/dashboard"> Dashboard </a>
+                    <a id="dashboard" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" href="/archive"> Archives </a>
+                    <a id="logout" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800" href="/logout"> Logout </a>
+
                 </div>
             </div>
         </div>

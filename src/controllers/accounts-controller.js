@@ -3,6 +3,9 @@ import bcrypt from "bcrypt"; // ADDED hashing & salting
 import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 export const accountsController = {
   index: {
     auth: false,
@@ -57,6 +60,7 @@ export const accountsController = {
         // new statement for hashing
         return h.redirect("/");
       }
+      await sleep(2000);
       request.cookieAuth.set({ id: user._id });
       // console.log(user._id);
       return h.redirect("/dashboard");
