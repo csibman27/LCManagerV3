@@ -1,5 +1,6 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
+import bcrypt from "bcrypt";
 
 const saltRounds = 10;
 

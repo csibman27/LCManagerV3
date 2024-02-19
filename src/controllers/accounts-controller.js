@@ -4,7 +4,9 @@ import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 }
 export const accountsController = {
   index: {
@@ -60,17 +62,21 @@ export const accountsController = {
         // new statement for hashing
         return h.redirect("/");
       }
-      await sleep(2000);
+      await sleep(1000);
       request.cookieAuth.set({ id: user._id });
       // console.log(user._id);
-      return h.redirect("/dashboard");
+      return h.redirect("/dashboard").unstate("data");
     },
   },
   // Clear cookie on logout
   logout: {
-    handler: function (request, h) {
+    handler: function (request, h, res) {
+      // request.header("Cache-Control', 'private, no-cache, no-store, must-revalidate");
+      // res.header("Expires", "-1");
+      // res.header("Pragma", "no-cache");
+      // res.set("Cache-Control", "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0");
       request.cookieAuth.clear();
-      return h.redirect("/");
+      return h.redirect("/").unstate("data");
     },
   },
 

@@ -86,6 +86,27 @@
           "serverid": "e86a62b8-c0f9-4a61-b4f7-470fdcfb4f56"
         }
       ]
+    },
+    {
+      "userid": "707473da-a4e9-4cbe-a77d-5ce3add22dae",
+      "title": "12",
+      "cab": 12,
+      "os": "12",
+      "idrac": "1",
+      "nwcard": "1",
+      "backupTo": "1",
+      "monitoredWith": "1",
+      "support": "2024-02-06",
+      "service": "12",
+      "bios": "12",
+      "firmware": "12",
+      "maas": false,
+      "cost": "12",
+      "pdate": "2024-02-08",
+      "model": "12",
+      "desc": "12",
+      "date": "2024-02-19T21:46:00.362Z",
+      "_id": "e77e3f7f-bfd9-4419-995e-aa6af47b0d69"
     }
   ]
 }

@@ -1,4 +1,6 @@
 import Vision from "@hapi/vision";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Inert from "@hapi/inert";
 import Hapi from "@hapi/hapi";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -7,11 +9,16 @@ import Cookie from "@hapi/cookie";
 import Joi from "joi";
 import dotenv from "dotenv";
 // eslint-disable-next-line import/no-extraneous-dependencies
+import jwt from "hapi-auth-jwt2";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import HapiSwagger from "hapi-swagger";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import pkg from "handlebars-paginate";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { apiRoutes } from "./api-routes.js";
+import { validate } from "./api/jwt-utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,6 +28,21 @@ const test = 1998;
 // pagination
 const { paginate } = pkg;
 Handlebars.registerHelper("paginate", paginate);
+
+const swaggerOptions = {
+  info: {
+    title: "Placemark API",
+    version: "1.0",
+  },
+  securityDefinitions: {
+    jwt: {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header",
+    },
+  },
+  security: [{ jwt: [] }],
+};
 
 async function init() {
   const server = Hapi.server({
@@ -36,6 +58,15 @@ async function init() {
 
   await server.register(Vision);
   await server.register(Cookie);
+  await server.register(jwt);
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
   server.validator(Joi);
 
   server.auth.strategy("session", "cookie", {
@@ -46,6 +77,11 @@ async function init() {
     },
     redirectTo: "/",
     validate: accountsController.validate,
+  });
+  server.auth.strategy("jwt", "jwt", {
+    key: process.env.cookie_password,
+    validate: validate,
+    verifyOptions: { algorithms: ["HS256"] },
   });
   server.auth.default("session");
 
@@ -64,15 +100,6 @@ async function init() {
   db.init();
   server.route(webRoutes);
   server.route(apiRoutes);
-  // server.route({
-  //   method: "GET",
-  //   path: "/public/{param*}",
-  //   handler: {
-  //     directory: {
-  //       path: path.join(__dirname, "public"),
-  //     },
-  //   },
-  // });
   await server.start();
   console.log("Server running on %s", server.info.uri);
 }
