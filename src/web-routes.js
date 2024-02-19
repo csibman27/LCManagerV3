@@ -15,6 +15,10 @@ export const webRoutes = [
 
   { method: "GET", path: "/about", config: aboutController.index },
 
+  { method: "GET", path: "/user-account", config: accountsController.loggedInUserDetails },
+  { method: "POST", path: "/updateUserDetails", config: accountsController.updateLoggedInUser },
+  { method: "GET", path: "/deleteUserAccount", config: accountsController.deleteUserAccount },
+
   { method: "GET", path: "/archive", config: archiveController.index },
   { method: "POST", path: "/archive/deleteserver/{id}", config: archiveController.deleteServer },
   { method: "GET", path: "/archive/confirmdelete/{id}", config: archiveController.confirmDelete },

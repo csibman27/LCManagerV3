@@ -1,0 +1,30 @@
+<table class="table is-fullwidth">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>SureName</th>
+        <th>Privilege</th>
+        <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each user}}
+        <tr>
+            <td>
+                {{firstName}}
+            </td>
+            <td>
+                {{lastName}}
+            </td>
+            <td>
+                {{privilege}}
+            </td>
+            <td>
+                <a href="/analytics/deleteuser/{{_id}}" class="button is-danger">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

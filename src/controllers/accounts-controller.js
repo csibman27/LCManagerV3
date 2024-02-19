@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import bcrypt from "bcrypt"; // ADDED hashing & salting
-import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
+import { UserSpec, UserCredentialsSpec, UserSpecPlus } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 function sleep(ms) {
@@ -12,7 +12,16 @@ export const accountsController = {
   index: {
     auth: false,
     handler: function (request, h) {
-      return h.view("main", { title: "Welcome to Lifecycle Manager" });
+      const loggedInUser = request.auth.credentials;
+      const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
+      const company = "[Company name]";
+      const date = new Date().getFullYear();
+      const viewData = {
+        title: "LCManager Dashboard",
+        loggedInUserInitials,
+        company,
+      };
+      return h.view("main", { title: "Welcome to Lifecycle Manager" }, viewData);
     },
   },
   showSignup: {
@@ -77,6 +86,69 @@ export const accountsController = {
       // res.set("Cache-Control", "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0");
       request.cookieAuth.clear();
       return h.redirect("/").unstate("data");
+    },
+  },
+
+  loggedInUserDetails: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const user = await db.userStore.getUserById(loggedInUser._id);
+      const viewData = {
+        title: "User Account",
+        user: user,
+      };
+      return h.view("user-view", viewData);
+    },
+  },
+
+  updateLoggedInUser: {
+    validate: {
+      payload: UserSpecPlus,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("user-view", { title: "Error", errors: error.details }).takeover.code(400);
+      },
+    },
+    handler: async function (request, h) {
+      // const loggedInUser = request.auth.credentials;
+      const user = await db.userStore.getUserById(request.params.userid);
+      const updatedUser = {
+        firstName: request.payload.firstName,
+        lastName: request.payload.lastName,
+        email: request.payload.email,
+        password: request.payload.password,
+      };
+      try {
+        // await db.userStore.updateUser(loggedInUser._id, updatedUser);
+        await db.userStore.updateUser(user, updatedUser);
+      } catch (error) {
+        console.log(error);
+      }
+      return h.view("login-view");
+    },
+  },
+
+  deleteUserAccount: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+
+      // delete user created servers and services
+      // let userStations = [];
+      // userStations = await db.serviceStore.getUserServices(loggedInUser._id);
+      // for (let i = 0; i < userStations.length; i += 1) {
+      //   let userServers = [];
+      //
+      //   // eslint-disable-next-line no-await-in-loop
+      //   userServers = await db.serverStore.getServersByServiceId(userServices[i]._id);
+      //   for (let k = 0; k < userServers.length; k += 1) {
+      //     // eslint-disable-next-line no-await-in-loop
+      //     await db.serverStore.deleteServerById(userServers[k]._id);
+      //   }
+      //   // eslint-disable-next-line no-await-in-loop
+      //   await db.serviceStore.deleteService(userServices[i]._id);
+      // }
+      await db.userStore.deleteUserById(loggedInUser._id);
+      return h.redirect("/");
     },
   },
 
