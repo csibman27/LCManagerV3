@@ -12,16 +12,16 @@ export const accountsController = {
   index: {
     auth: false,
     handler: function (request, h) {
-      const loggedInUser = request.auth.credentials;
-      const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
-      const company = "[Company name]";
-      const date = new Date().getFullYear();
-      const viewData = {
-        title: "LCManager Dashboard",
-        loggedInUserInitials,
-        company,
-      };
-      return h.view("main", { title: "Welcome to Lifecycle Manager" }, viewData);
+      // const loggedInUser = request.auth.credentials;
+      // const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
+      // const company = "[Company name]";
+      // const date = new Date().getFullYear();
+      // const viewData = {
+      //   title: "LCManager Dashboard",
+      //   loggedInUserInitials,
+      //   company,
+      // };
+      return h.view("main", { title: "Welcome to Lifecycle Manager" });
     },
   },
   showSignup: {
