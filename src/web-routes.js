@@ -6,6 +6,10 @@ import { serviceController } from "./controllers/service-controller.js";
 import { archiveController } from "./controllers/archive-controller.js";
 
 export const webRoutes = [
+  // serve static files in public folder
+  { method: "GET", path: "/public/{param*}", handler: { directory: { path: "public" } } },
+
+  // routes
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
   { method: "GET", path: "/login", config: accountsController.showLogin },

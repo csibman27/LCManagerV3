@@ -1,4 +1,4 @@
-.loader {
+.loader1 {
     margin: auto;
     border: 20px solid #EAF0F6;
     border-radius: 50%;
@@ -12,3 +12,56 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.pie {
+    position: relative;
+    float: right;
+    height: 70px;
+    width: 70px;
+    border-radius: 60%;
+    background: conic-gradient(
+            lawngreen 0% 20%,
+            /*deepskyblue 0% 45%,*/
+            /*orangered 25% 85%,*/
+            #FFFFFF 85%
+    );
+}
+
+.pie.hollow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    float: right;
+}
+
+.pie.hollow::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.pie.hollow span {
+    font-size: 24pt;
+    z-index: 2;
+    font-weight: bold;
+    font-family: "JetBrains Mono", sans-serif ;
+}
+
+/*emt11 {*/
+/*    font-family: "Bauhaus 93";*/
+/*    color: chartreuse;*/
+/*}*/
+
+/*body {*/
+/*    background-color: powderblue;*/
+/*}*/
+/*h1 {*/
+/*    color: blue;*/
+/*}*/
+/*p {*/
+/*    color: red;*/
+/*}*/

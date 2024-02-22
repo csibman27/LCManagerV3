@@ -22,6 +22,7 @@ import { validate } from "./api/jwt-utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+// const publicPath = path.join(__dirname, "./public");
 
 const test = 1998;
 
