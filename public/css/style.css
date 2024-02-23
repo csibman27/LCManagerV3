@@ -14,16 +14,16 @@
 }
 
 .pie {
-    position: relative;
+
     float: right;
     height: 70px;
     width: 70px;
-    border-radius: 60%;
+    border-radius: 70%;
+    justify-content: center;
     background: conic-gradient(
-            lawngreen 0% 20%,
-            /*deepskyblue 0% 45%,*/
-            /*orangered 25% 85%,*/
-            #FFFFFF 85%
+            #2C5F2DFF 10% 20%,
+            #1C1C1BFF 0 20%,
+            #FFFFFF 100%
     );
 }
 
@@ -32,13 +32,13 @@
     float: right;
     height: 70px;
     width: 70px;
-    border-radius: 60%;
+    border-radius: 70%;
     background: conic-gradient(
-            lawngreen 0% 20%,
-            yellow 20% 40%,
+            #2C5F2DFF 0% 40%,
+            #1C1C1BFF 20% 40%,
                 /*deepskyblue 0% 45%,*/
                 /*orangered 25% 85%,*/
-            #FFFFFF 85%
+            #FFFFFF 100%
     );
 }
 
@@ -49,11 +49,11 @@
     width: 70px;
     border-radius: 60%;
     background: conic-gradient(
-            /*lawngreen 0% 20%,*/
-            purple 20% 50%,
+            darkgreen 0% 60%,
+            #1C1C1BFF 20% 60%,
                 /*deepskyblue 0% 45%,*/
                 /*orangered 25% 85%,*/
-            #FFFFFF 99%
+            #FFFFFF 100%
     );
 }
 
@@ -64,11 +64,27 @@
     width: 70px;
     border-radius: 60%;
     background: conic-gradient(
-            /*lawngreen 0% 20%,*/
+            darkorange 0% 80%,
             /*yellow 20% 40%,*/
                 /*deepskyblue 0% 45%,*/
-            orangered 0% 45%,
+            #1C1C1BFF 0% 80%,
             #FFFFFF 99%
+    );
+}
+
+.pie-5 {
+    position: relative;
+    float: right;
+    height: 70px;
+    width: 70px;
+    border-radius: 60%;
+    background: conic-gradient(
+        /*lawngreen 0% 20%,*/
+        /*yellow 20% 40%,*/
+        /*deepskyblue 0% 45%,*/
+            red 10% 99%,
+            #4B878BFF 10% 99%,
+            #FFFFFF 100%
     );
 }
 
@@ -76,15 +92,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    float: right;
 }
 
 .pie.hollow::after {
     content: '';
     position: absolute;
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     background-color: #FFFFFF;
 }
@@ -109,4 +123,20 @@
 /*}*/
 /*p {*/
 /*    color: red;*/
+/*}*/
+
+
+/*.pie-3 {*/
+/*    position: relative;*/
+/*    float: right;*/
+/*    height: 70px;*/
+/*    width: 70px;*/
+/*    border-radius: 60%;*/
+/*    background: conic-gradient(*/
+/*        !*lawngreen 0% 20%,*!*/
+/*            purple 20% 50%,*/
+/*                !*deepskyblue 0% 45%,*!*/
+/*                !*orangered 25% 85%,*!*/
+/*            #FFFFFF 99%*/
+/*    );*/
 /*}*/

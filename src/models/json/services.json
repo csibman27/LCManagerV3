@@ -109,17 +109,6 @@
       "login": "2",
       "_id": "1fd054cb-e4b9-435d-bc29-9d8b2c590188",
       "serverid": "9442f561-50b6-40eb-99e5-e2f56085df96"
-    },
-    {
-      "serviceName": "12",
-      "os": "12",
-      "desc": "12",
-      "monitored": "12",
-      "backups": "12",
-      "syslog": "12",
-      "login": "12",
-      "_id": "80648072-4a71-4cd9-93bb-c165e6eba2db",
-      "serverid": "e77e3f7f-bfd9-4419-995e-aa6af47b0d69"
     }
   ]
 }
