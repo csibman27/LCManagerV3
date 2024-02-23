@@ -8,16 +8,17 @@
       "nwcard": "Firebush/Burning Bush",
       "backupTo": "Fadel, Wehner and West",
       "monitoredWith": "Mohr-Little",
-      "support": "2021/04/06",
+      "support": "2024/04/10",
       "service": "Maggio and Sons",
       "bios": "6.3",
       "firmware": "4.45",
       "maas": true,
       "cost": 9241,
-      "pdate": "4/2/2023",
+      "pdate": "1/2/2024",
       "model": "Topcare Cold and Cough",
       "desc": "Retinal telangiectasia",
       "date": "10/26/2023",
+      "pieStatus": "pie",
       "_id": "9442f561-50b6-40eb-99e5-e2f56085df96",
       "services": []
     },
@@ -39,6 +40,7 @@
       "model": "Amoxicillin",
       "desc": "Opn wound of eyeball NOS",
       "date": "5/6/2023",
+      "pieStatus": "pie",
       "_id": "53dcfe19-3333-4865-a5ba-25b02fe265d9",
       "services": []
     },
@@ -61,6 +63,7 @@
       "model": "Dell R720 Poweredge",
       "desc": "asd",
       "date": "2024-02-05T16:59:05.492Z",
+      "pieStatus": "pie-5",
       "_id": "10bef983-1e25-48c3-a7bb-f4d6de82aa79",
       "services": [
         {

@@ -12,6 +12,10 @@ export const serverController = {
       const pdate = server.pdate;
       const purchaseDate = new Date(pdate);
       const serverAgeId = await analytics.getAgeOfServerById(purchaseDate);
+      // support check
+      const sdate = server.support;
+      const supportExpireDate = new Date(sdate);
+      const eSupport = await analytics.supportCheck(supportExpireDate);
       const company = "[Company name]";
       const date = new Date().getFullYear();
       // serverAge can eventually check for least and most aged server
@@ -21,7 +25,6 @@ export const serverController = {
 
       const serverAge = await analytics.getAgeOfServer();
       const allServices = await analytics.getTotalServices();
-      // const pie = await analytics.pie();
       const viewData = {
         title: "Servers",
         server: server,
@@ -32,6 +35,7 @@ export const serverController = {
         serverAgeId,
         loggedInUserInitials,
         pie,
+        eSupport,
       };
       return h.view("server-view", viewData);
     },

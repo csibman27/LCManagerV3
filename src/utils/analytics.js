@@ -94,4 +94,23 @@ export const analytics = {
       return "pie-5"; // Date is more than 10 years old
     }
   },
+
+  // support expiration tracker
+  async supportCheck(supportDate) {
+    const currentDate = new Date();
+    const supportEndDate = new Date(supportDate);
+
+    if (currentDate > supportEndDate) {
+      return "Warning: Support has already expired.";
+    } else {
+      const timeDiff = supportEndDate.getTime() - currentDate.getTime();
+      const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+      if (daysDiff <= 90) {
+        return `Warning: Support will expire in ${daysDiff} days.`;
+      } else {
+        return "Support status: Active";
+      }
+    }
+  },
 };
