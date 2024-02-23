@@ -73,4 +73,36 @@ export const analytics = {
 
     return sortedData;
   },
+
+  // get progress bar
+  async progressPie(pdate) {
+
+    const currentDate = new Date();
+    const providedDate = new Date(pdate);
+
+    const timeDiff = currentDate.getTime() - providedDate.getTime();
+    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysDiff <= 365) {
+      return "pie"; // Date is within a year
+    } else if (daysDiff > 365 && daysDiff <= 730) {
+      return "pie-2"; // Date is older than a year but within 2 years
+    } else if (daysDiff > 730 && daysDiff <= 1095) {
+      return "pie-3"; // Date is older than 2 years but within 3 years
+    } else {
+      return "pie-4"; // Date is more than 3 years old
+    }
+
+// Example Usage
+//     eslint-disable-next-line no-unreachable
+    const userProvidedDate1 = "2021-09-15"; // User-provided date within a year
+    const userProvidedDate2 = "2019-01-20"; // User-provided date older than a year
+    const userProvidedDate3 = "2017-07-10"; // User-provided date older than 2 years
+    const userProvidedDate4 = "2015-03-05"; // User-provided date older than 3 years
+
+    console.log(progressPie(userProvidedDate1)); // Output: Green
+    console.log(progressPie(userProvidedDate2)); // Output: Yellow
+    console.log(progressPie(userProvidedDate3)); // Output: Orange
+    console.log(progressPie(userProvidedDate4)); // Output: Red
+  },
 };

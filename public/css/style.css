@@ -27,6 +27,51 @@
     );
 }
 
+.pie-2 {
+    position: relative;
+    float: right;
+    height: 70px;
+    width: 70px;
+    border-radius: 60%;
+    background: conic-gradient(
+            lawngreen 0% 20%,
+            yellow 20% 40%,
+                /*deepskyblue 0% 45%,*/
+                /*orangered 25% 85%,*/
+            #FFFFFF 85%
+    );
+}
+
+.pie-3 {
+    position: relative;
+    float: right;
+    height: 70px;
+    width: 70px;
+    border-radius: 60%;
+    background: conic-gradient(
+            /*lawngreen 0% 20%,*/
+            purple 20% 50%,
+                /*deepskyblue 0% 45%,*/
+                /*orangered 25% 85%,*/
+            #FFFFFF 99%
+    );
+}
+
+.pie-4 {
+    position: relative;
+    float: right;
+    height: 70px;
+    width: 70px;
+    border-radius: 60%;
+    background: conic-gradient(
+            /*lawngreen 0% 20%,*/
+            /*yellow 20% 40%,*/
+                /*deepskyblue 0% 45%,*/
+            orangered 0% 45%,
+            #FFFFFF 99%
+    );
+}
+
 .pie.hollow {
     display: flex;
     justify-content: center;

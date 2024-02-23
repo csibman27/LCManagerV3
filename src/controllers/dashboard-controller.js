@@ -10,6 +10,13 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
+      // test
+      const em = Promise.resolve(analytics.progressPie("2023-01-01"))
+
+      console.log(em)
+      em.then((value) =>{
+        console.log(value)
+      });
       // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();
@@ -56,8 +63,14 @@ export const dashboardController = {
         model: request.payload.model,
         desc: request.payload.desc,
         date: newDate.toISOString(), // date in ISO 8601 format.
+        pieStatus: Promise.resolve(analytics.progressPie(request.payload.pdate)),
+        // pieStatus: "",
       };
       await db.serverStore.addServer(newServer);
+      console.log(newServer)
+      const p =newServer.pieStatus.then((value) => {
+        db.serverStore.addServer(newServer.pieStatus)
+      });
       return h.redirect("/dashboard");
     },
   },
