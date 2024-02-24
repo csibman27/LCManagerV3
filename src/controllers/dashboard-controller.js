@@ -10,6 +10,8 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
+      // servers.sort();
+      // console.log(servers);
       // after pdate
 
       // Other
@@ -92,6 +94,20 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
       const searchResult = servers.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
       return h.view("dashboard-view", { results: searchResult });
+    },
+  },
+
+  easySortServer: {
+    // it works over console but view not popping
+    handler: async function (request, h) {
+      const servers = await db.serverStore.getAllServers();
+      const so = analytics.filter(servers, "az");
+      const viewData = {
+        title: "LCManager Dashboard",
+        so,
+      };
+      console.log(so);
+      return h.view("dashboard-view", viewData);
     },
   },
 
