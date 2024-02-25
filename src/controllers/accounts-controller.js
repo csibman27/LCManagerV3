@@ -12,15 +12,6 @@ export const accountsController = {
   index: {
     auth: false,
     handler: function (request, h) {
-      // const loggedInUser = request.auth.credentials;
-      // const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
-      // const company = "[Company name]";
-      // const date = new Date().getFullYear();
-      // const viewData = {
-      //   title: "LCManager Dashboard",
-      //   loggedInUserInitials,
-      //   company,
-      // };
       return h.view("main", { title: "Welcome to Lifecycle Manager" });
     },
   },
@@ -125,6 +116,13 @@ export const accountsController = {
         console.log(error);
       }
       return h.view("login-view");
+    },
+  },
+
+  confirmDelete: {
+    handler: async function (request, h) {
+      const id = await db.userStore.getUserById(request.params.id);
+      return h.view("confirm-delete-user", { id });
     },
   },
 
