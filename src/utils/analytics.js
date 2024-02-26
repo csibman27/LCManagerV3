@@ -113,4 +113,12 @@ export const analytics = {
       }
     }
   },
+
+  async sum(maintenancecost, y) {
+    return maintenancecost + y;
+  },
+
+  async sub(maintenancecost, y) {
+    return maintenancecost - y;
+  },
 };

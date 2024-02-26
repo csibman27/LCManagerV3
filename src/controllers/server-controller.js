@@ -10,6 +10,7 @@ export const serverController = {
       // analytics about server age and other server information
       const server = await db.serverStore.getServerById(request.params.id);
       const pdate = server.pdate;
+      console.log(pdate);
       const purchaseDate = new Date(pdate);
       const serverAgeId = await analytics.getAgeOfServerById(purchaseDate);
       // support check
@@ -85,6 +86,32 @@ export const serverController = {
       // const service = await db.serviceStore.getAllServices();
       const searchResult = service.filter((item) => item.serviceName.toLowerCase().includes(searchTerm.toLowerCase()));
       return h.view("server-view", { results: searchResult });
+    },
+  },
+  updateCost: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const newServer = {
+        maintenancecost: Number(request.payload.maintenancecost),
+      };
+      try {
+        await db.serverStore.updateServer(server, newServer);
+      } catch (error) {
+        console.log(error);
+      }
+      return h.redirect("/server/{id}");
+    },
+  },
+
+  showMaintenanceCostDetails: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const viewData = {
+        title: "Update Server",
+        server: server,
+      };
+      // console.log(server);
+      return h.view("update-maintenance-cost-view", viewData);
     },
   },
 

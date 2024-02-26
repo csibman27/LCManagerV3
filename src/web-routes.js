@@ -47,6 +47,9 @@ export const webRoutes = [
   { method: "GET", path: "/server/{id}/editserver", config: serverController.showServerDetails },
   { method: "POST", path: "/server/{id}/updateserver", config: serverController.update },
 
+  { method: "GET", path: "/server/{id}/editservercost", config: serverController.showMaintenanceCostDetails },
+  { method: "POST", path: "/server/{id}/updateservercost", config: serverController.updateCost },
+
   { method: "GET", path: "/server/{id}", config: serverController.index },
   { method: "POST", path: "/server/{id}/addservice", config: serverController.addService },
   { method: "GET", path: "/server/{id}/deleteservice/{serviceid}", config: serverController.deleteService },

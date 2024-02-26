@@ -61,6 +61,7 @@ export const dashboardController = {
         desc: request.payload.desc,
         date: newDate.toISOString(), // date in ISO 8601 format.
         pieStatus: await analytics.progressPie(request.payload.pdate),
+        maintenancecost: Number(request.payload.maintenancecost),
       };
       await db.serverStore.addServer(newServer);
       console.log(newServer);

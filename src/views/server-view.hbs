@@ -56,11 +56,17 @@
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{serverAgeId}}</dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900"> Total cost of maintenance </dt>
+                    <dd class="animate-pulse mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">€ {{server.maintenancecost}} <a href="/server/{{server._id}}/editservercost">
+                        <span style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-plus"></i></span>
+                    </a></dd>
+                </div>
+                <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"><i class="fa-solid fa-arrow-rotate-left"></i> Lifecycle Visualization </dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><div class="{{pie}}"></div></dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900"> Track costs associated with server lifecycle activities including procurement, maintenance, upgrades, and retirement</dt>
+                    <dt class="text-sm font-medium leading-6 text-gray-900"> Track costs associated with server lifecycle activities including procurement, maintenance, upgrades, and retirement </dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{server.title}}</dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
