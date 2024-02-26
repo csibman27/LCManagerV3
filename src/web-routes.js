@@ -4,6 +4,7 @@ import { aboutController } from "./controllers/about-controller.js";
 import { serverController } from "./controllers/server-controller.js";
 import { serviceController } from "./controllers/service-controller.js";
 import { archiveController } from "./controllers/archive-controller.js";
+import { dependencyController } from "./controllers/dependency-controller.js";
 
 export const webRoutes = [
   // serve static files in public folder
@@ -16,6 +17,8 @@ export const webRoutes = [
   { method: "GET", path: "/logout", config: accountsController.logout },
   { method: "POST", path: "/register", config: accountsController.signup },
   { method: "POST", path: "/authenticate", config: accountsController.login },
+
+  { method: "GET", path: "/dependency", config: dependencyController.index },
 
   { method: "GET", path: "/about", config: aboutController.index },
 
