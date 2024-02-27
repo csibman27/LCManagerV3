@@ -57,7 +57,11 @@ export const serverJsonStore = {
     server.title = updatedServer.title;
     server.cab = updatedServer.cab;
     server.os = updatedServer.os;
-    server.maintenancecost = updatedServer.maintenancecost;
     await db.write();
   },
+
+  updateServerMaintenanceCost: async function (server, updatedServer) {
+    server.maintenancecost = updatedServer.maintenancecost;
+    await db.write();
+  }
 };

@@ -1,6 +1,9 @@
 {
   "servers": [
     {
+      "title": "Magyar nep",
+      "cab": 2,
+      "os": "Hub Gp, Inc.",
       "idrac": "154.87.44.223",
       "nwcard": "Firebush/Burning Bush",
       "backupTo": "Fadel, Wehner and West",
@@ -16,7 +19,7 @@
       "desc": "Retinal telangiectasia",
       "date": "10/26/2023",
       "pieStatus": "pie",
-      "maintenancecost": null,
+      "maintenancecost": 0,
       "_id": "9442f561-50b6-40eb-99e5-e2f56085df96",
       "services": [
         {
@@ -33,6 +36,9 @@
       ]
     },
     {
+      "title": "Mexican Woollywhite",
+      "cab": 9,
+      "os": "Hub Group, Inc.",
       "idrac": "152.199.190.201",
       "nwcard": "Sertraline hydrochloride",
       "backupTo": "Murazik-Baumbach",
@@ -48,12 +54,15 @@
       "desc": "Opn wound of eyeball NOS",
       "date": "5/6/2023",
       "pieStatus": "pie",
-      "maintenancecost": null,
+      "maintenancecost": 0,
       "_id": "53dcfe19-3333-4865-a5ba-25b02fe265d9",
       "services": []
     },
     {
       "userid": "707473da-a4e9-4cbe-a77d-5ce3add22dae",
+      "title": "tmolnar",
+      "cab": 1,
+      "os": "Ubuntu 22.04 LTS",
       "idrac": "192.168.1.1",
       "nwcard": "3x 1gig and 3x 10 gig cards",
       "backupTo": "Quobyte",
@@ -69,12 +78,15 @@
       "desc": "asd",
       "date": "2024-02-05T16:59:05.492Z",
       "pieStatus": "pie-5",
-      "maintenancecost": null,
+      "maintenancecost": 0,
       "_id": "10bef983-1e25-48c3-a7bb-f4d6de82aa79",
       "services": []
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
+      "title": "fresh ",
+      "cab": 1,
+      "os": "1",
       "idrac": "1",
       "nwcard": "1",
       "backupTo": "1",
@@ -90,9 +102,8 @@
       "desc": "1",
       "date": "2024-02-23T20:38:47.317Z",
       "pieStatus": "pie",
-      "maintenancecost": null,
-      "_id": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397",
-      "services": []
+      "maintenancecost": 0,
+      "_id": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",

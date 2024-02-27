@@ -10,13 +10,13 @@ export const serverController = {
       // analytics about server age and other server information
       const server = await db.serverStore.getServerById(request.params.id);
       const pdate = server.pdate;
-      console.log(pdate);
       const purchaseDate = new Date(pdate);
       const serverAgeId = await analytics.getAgeOfServerById(purchaseDate);
       // support check
       const sdate = server.support;
       const supportExpireDate = new Date(sdate);
       const eSupport = await analytics.supportCheck(supportExpireDate);
+      // others
       const company = "[Company name]";
       const date = new Date().getFullYear();
       // serverAge can eventually check for least and most aged server
@@ -24,14 +24,10 @@ export const serverController = {
       // pie data
       const pie = await analytics.progressPie(purchaseDate);
 
-      const serverAge = await analytics.getAgeOfServer();
-      const allServices = await analytics.getTotalServices();
       const viewData = {
         title: "Servers",
         server: server,
         company: company,
-        allServices,
-        serverAge,
         date,
         serverAgeId,
         loggedInUserInitials,
@@ -92,14 +88,15 @@ export const serverController = {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const newServer = {
-        maintenancecost: Number(request.payload.maintenancecost),
+        maintenancecost: request.payload.maintenancecost,
       };
       try {
-        await db.serverStore.updateServer(server, newServer);
+        await db.serverStore.updateServerMaintenanceCost(server, newServer);
       } catch (error) {
         console.log(error);
       }
-      return h.redirect("/server/{id}");
+      return h.redirect(`/server/${server._id}`);
+      // return h.redirect("/dashboard");
     },
   },
 
