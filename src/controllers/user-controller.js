@@ -3,19 +3,19 @@ import { UserSpec } from "../models/joi-schemas.js";
 
 export const userController = {
   index: {
-    handler: async function(request, h) {
+    handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const users = await db.userStore.getAllUsers();
-      console.log(users)
+      console.log(users);
       const date = new Date().getFullYear();
       const company = "[Company name]";
       const viewData = {
-        title: "Users",
+        title: "Project users",
         date,
         company,
         loggedInUserInitials,
-        users
+        users,
       };
       return h.view("users-view", viewData);
     },

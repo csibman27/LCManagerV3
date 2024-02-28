@@ -19,6 +19,34 @@
 </div>
 
 
+<div class="container">
+    <canvas id="myChart"></canvas>
+</div>
+<div class="container">
+    <canvas id="chart"></canvas>
+</div>
+
+<script>
+    // let myChart = document.getElementById("myChart").getContext("2d");
+
+    let massPopChart = new Chart(myChart, {
+        type: "bar", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:[{{server.length}}, "R720-2", "Server2222", "SAN"],
+            datasets:[{
+                label: "Services",
+                data:[123213, 123213,1234124,4213342],
+                // backgroundColor:"green"
+                backgroundColor:[
+                    "green",
+                    "red",
+                    "yellow",
+                ]
+            }]
+        },
+        options:{}
+    })
+</script>
 
 
 

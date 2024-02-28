@@ -11,7 +11,7 @@ export const archiveController = {
       const date = new Date().getFullYear();
       // display data
       const viewData = {
-        title: "LCManager Archives",
+        title: "Archives",
         user: loggedInUser,
         company: company,
         date,

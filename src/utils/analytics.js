@@ -1,6 +1,10 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Chart from "chart.js/auto";
 import { db } from "../models/db.js";
+// eslint-disable-next-line import/no-extraneous-dependencies
 
 const today = new Date();
+let id = "chart";
 
 export const analytics = {
   async getAllServers() {
@@ -17,7 +21,7 @@ export const analytics = {
 
   // used to create analytics to determine the least and most old server
   async getAgeOfServer() {
-    let days = [];
+    const days = [];
     const servers = await db.serverStore.getAllServers();
     if (servers.length > 0) {
       for (let i = 0; i < servers.length; i++) {
@@ -52,9 +56,9 @@ export const analytics = {
     // Convert days to Year
     const daysToYear = diffInDays / 365;
     if (diffInDays < 365) {
-      return diffInDays + " days";
+      return `${diffInDays} days`;
     }
-    return daysToYear.toFixed(1) + " years";
+    return `${daysToYear.toFixed(1)} years`;
   },
 
   // sorted lists analytics
@@ -84,15 +88,17 @@ export const analytics = {
 
     if (daysDiff <= 1095) {
       return "pie"; // Date is within the first 3 years
-    } else if (daysDiff > 1095 && daysDiff <= 1825) {
-      return "pie-2"; // Date is between 3-5 years
-    } else if (daysDiff > 1825 && daysDiff <= 2555) {
-      return "pie-3"; // Date is between 5-7 years
-    } else if (daysDiff > 2555 && daysDiff <= 3650) {
-      return "pie-4"; // Date is between 7-10 years
-    } else {
-      return "pie-5"; // Date is more than 10 years old
     }
+    if (daysDiff > 1095 && daysDiff <= 1825) {
+      return "pie-2"; // Date is between 3-5 years
+    }
+    if (daysDiff > 1825 && daysDiff <= 2555) {
+      return "pie-3"; // Date is between 5-7 years
+    }
+    if (daysDiff > 2555 && daysDiff <= 3650) {
+      return "pie-4"; // Date is between 7-10 years
+    }
+    return "pie-5"; // Date is more than 10 years old
   },
 
   // support expiration tracker
@@ -102,16 +108,14 @@ export const analytics = {
 
     if (currentDate > supportEndDate) {
       return "Warning: Support has already expired.";
-    } else {
-      const timeDiff = supportEndDate.getTime() - currentDate.getTime();
-      const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-      if (daysDiff <= 90) {
-        return `Warning: Support will expire in ${daysDiff} days.`;
-      } else {
-        return "Support status: Active";
-      }
     }
+    const timeDiff = supportEndDate.getTime() - currentDate.getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysDiff <= 90) {
+      return `Warning: Support will expire in ${daysDiff} days.`;
+    }
+    return "Support status: Active";
   },
 
   async sum(maintenancecost, y) {
@@ -120,5 +124,23 @@ export const analytics = {
 
   async sub(maintenancecost, y) {
     return maintenancecost - y;
+  },
+
+  async pieChartA() {
+    return new Chart(id, {
+      type: "bar",
+      data: {
+        labels: ["R720-1", "R720-2", "Server2222", "SAN"],
+        datasets: [
+          {
+            label: "Services",
+            data: [123213, 123213, 1234124, 4213342],
+            // backgroundColor:"green"
+            backgroundColor: ["green", "red", "yellow"],
+          },
+        ],
+      },
+      options: {},
+    });
   },
 };
