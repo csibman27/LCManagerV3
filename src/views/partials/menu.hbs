@@ -2,9 +2,11 @@
     <div class="navbar-brand">
         {{> server-brand}}
     </div>
+  {{#if loggedInUserInitials}}
     <div class="relative inline-flex items-center justify-center w-12 h-12 mt-2 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
         <span class="font-medium text-gray-600 dark:text-gray-300">{{loggedInUserInitials}}</span>
     </div>
+  {{/if}}
     <div class="navbar-menu mt-3" id="navMenu">
         <div class="navbar-end">
             <div class="navbar-item">

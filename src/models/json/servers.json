@@ -194,6 +194,29 @@
       "pieStatus": "pie-5",
       "maintenancecost": 0,
       "_id": "0e31a87b-b746-4b5d-84ec-3b5c9f91ca84"
+    },
+    {
+      "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
+      "title": "R330-1",
+      "cab": 4,
+      "os": "CentOS",
+      "idrac": "9.10.23.98",
+      "nwcard": "3x 10Gbps",
+      "backupTo": "WSB",
+      "monitoredWith": "Cacti",
+      "support": "2026-02-14",
+      "service": "CRMv2",
+      "bios": "3.1",
+      "firmware": "14.11",
+      "maas": true,
+      "cost": "4000",
+      "pdate": "2024-01-28",
+      "model": "Dell",
+      "desc": "This server is purchased as part of ELLWI project",
+      "date": "2024-02-28T10:45:29.474Z",
+      "pieStatus": "pie",
+      "maintenancecost": 0,
+      "_id": "ea4d4218-36f3-4cfc-80db-fedb328a9df7"
     }
   ]
 }
