@@ -5,6 +5,7 @@ import { serverController } from "./controllers/server-controller.js";
 import { serviceController } from "./controllers/service-controller.js";
 import { archiveController } from "./controllers/archive-controller.js";
 import { dependencyController } from "./controllers/dependency-controller.js";
+import { userController } from "./controllers/user-controller.js";
 
 export const webRoutes = [
   // serve static files in public folder
@@ -23,6 +24,7 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/user-account", config: accountsController.loggedInUserDetails },
+  { method: "GET", path: "/users", config: userController.index },
   { method: "POST", path: "/updateUserDetails", config: accountsController.updateLoggedInUser },
   { method: "GET", path: "/user-account/confirmDeleteUserAccount", config: accountsController.confirmDelete },
   { method: "POST", path: "/user-account/deleteUserAccount", config: accountsController.deleteUserAccount },
