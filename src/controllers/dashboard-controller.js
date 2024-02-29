@@ -1,6 +1,7 @@
 import { db } from "../models/db.js";
 import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
+import { server } from "@hapi/hapi";
 
 const newDate = new Date();
 
@@ -44,6 +45,7 @@ export const dashboardController = {
       const newServer = {
         userid: loggedInUser._id,
         title: request.payload.title,
+        tag: request.payload.tag,
         cab: Number(request.payload.cab),
         os: request.payload.os,
         idrac: request.payload.idrac,
@@ -63,11 +65,23 @@ export const dashboardController = {
         pieStatus: await analytics.progressPie(request.payload.pdate),
         maintenancecost: Number(0),
       };
-      await db.serverStore.addServer(newServer);
-      console.log(newServer);
-      return h.redirect("/dashboard");
+      try {
+        const servers = await db.serverStore.getAllServers();
+        for (let i = 0; i < servers.length; i++) {
+          const server = servers[i].title;
+          if (request.payload.title.localeCompare(server.title)) {
+            return h.view("error-title");
+          } else {
+            await db.serverStore.addServer(newServer);
+            return h.redirect("/dashboard");
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
+
   confirmDelete: {
     handler: async function (request, h) {
       const id = await db.serverStore.getServerById(request.params.id);

@@ -162,6 +162,29 @@
       "maintenancecost": 0,
       "_id": "b481a866-fae3-426e-9803-0dca770be2bc",
       "services": []
+    },
+    {
+      "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
+      "title": "1",
+      "cab": 1,
+      "os": "1",
+      "idrac": "1",
+      "nwcard": "1",
+      "backupTo": "1",
+      "monitoredWith": "1",
+      "support": "2024-02-16",
+      "service": "1",
+      "bios": "1",
+      "firmware": "1",
+      "maas": true,
+      "cost": "1",
+      "pdate": "2024-01-31",
+      "model": "1",
+      "desc": "1",
+      "date": "2024-02-29T19:44:00.708Z",
+      "pieStatus": "pie",
+      "maintenancecost": 0,
+      "_id": "3165b509-c700-454f-b67d-0d7eab1898f3"
     }
   ]
 }
