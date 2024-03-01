@@ -28,6 +28,7 @@ export const UserCredentialsSpec = {
 export const ServiceSpec = Joi.object()
   .keys({
     serviceName: Joi.string().required(),
+    servicetag: Joi.string().required(),
     os: Joi.string().allow("").optional(),
     desc: Joi.string().allow("").optional(),
     monitored: Joi.string().required(),

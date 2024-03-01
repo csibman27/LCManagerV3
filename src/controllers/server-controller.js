@@ -1,6 +1,9 @@
 import { db } from "../models/db.js";
 import { ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
+import fs from "fs";
+
+const newDate = new Date();
 
 export const serverController = {
   index: {
@@ -49,10 +52,13 @@ export const serverController = {
       },
     },
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const userFullName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
       const services = await db.serviceStore.getServicesByServerId(request.params.id);
       const server = await db.serverStore.getServerById(request.params.id);
       const newService = {
         serviceName: request.payload.serviceName,
+        servicetag: request.payload.servicetag, // {local service}, {proxmox service}, {vmware service}, {openstack service}, {aws service}
         os: request.payload.os,
         desc: request.payload.desc,
         monitored: request.payload.monitored,
@@ -66,11 +72,12 @@ export const serverController = {
         serviceTitles.push(service);
       }
       if (serviceTitles.includes(request.payload.serviceName)) {
-        console.log(`titles ${serviceTitles}`);
-        console.log(`value: ${request.payload.serviceName} already exist in array`);
         return h.view("error-servicename");
       } else {
-        console.log(`value: ${request.payload.serviceName} is not exist in array!`);
+        console.log(`new service added at ${newDate} with tag: ${request.payload.serviceName}`);
+        fs.appendFile("./logs.txt", `\nService created at Date: ${newDate} title: ${request.payload.serviceName} tag: ${request.payload.servicetag} ID: ${userFullName}`, () => {
+          console.log("Successfully saved");
+        });
         await db.serviceStore.addService(server._id, newService);
         return h.redirect(`/server/${server._id}`);
       }
@@ -79,8 +86,14 @@ export const serverController = {
 
   deleteService: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const userFullName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
       const server = await db.serverStore.getServerById(request.params.id);
+      const readService = JSON.stringify(server.services);
       await db.serviceStore.deleteService(request.params.serviceid);
+      fs.appendFile("./logs.txt", `\nService deleted at date: ${newDate} server host: ${server.title} service: ${readService} ID: ${userFullName}`, () => {
+        console.log("Successfully saved");
+      });
       return h.redirect(`/server/${server._id}`);
     },
   },
@@ -108,7 +121,6 @@ export const serverController = {
         console.log(error);
       }
       return h.redirect(`/server/${server._id}`);
-      // return h.redirect("/dashboard");
     },
   },
 
@@ -126,9 +138,12 @@ export const serverController = {
 
   update: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const userFullName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
       const server = await db.serverStore.getServerById(request.params.id);
       const newServer = {
         title: request.payload.title,
+        tag: request.payload.tag,
         cab: Number(request.payload.cab),
         os: request.payload.os,
         // idrac: request.payload.idrac,
@@ -146,6 +161,9 @@ export const serverController = {
         // desc: request.payload.desc,
       };
       try {
+        fs.appendFile("./logs.txt", `\nServer updated at date: ${newDate} new title: ${newServer.title} ID: ${userFullName}`, () => {
+          console.log("Successfully saved");
+        });
         await db.serverStore.updateServer(server, newServer);
       } catch (error) {
         console.log(error);

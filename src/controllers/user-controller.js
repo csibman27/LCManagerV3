@@ -7,7 +7,6 @@ export const userController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const users = await db.userStore.getAllUsers();
-      console.log(users);
       const date = new Date().getFullYear();
       const company = "[Company name]";
       const viewData = {

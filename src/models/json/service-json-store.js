@@ -46,6 +46,7 @@ export const serviceJsonStore = {
 
   updateService: async function (service, updatedService) {
     service.serviceName = updatedService.serviceName;
+    service.servicetag = updatedService.servicetag;
     service.os = updatedService.os;
     service.desc = updatedService.desc;
     service.monitored = updatedService.monitored;

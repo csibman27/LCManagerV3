@@ -1,6 +1,7 @@
 import { db } from "../models/db.js";
 import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
+import fs from "fs";
 
 const newDate = new Date();
 
@@ -37,6 +38,7 @@ export const dashboardController = {
     },
     handler: async function (request, h, res) {
       const loggedInUser = request.auth.credentials;
+      const userFullName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
       const servers = await db.serverStore.getAllServers();
       const newServer = {
         userid: loggedInUser._id,
@@ -67,11 +69,11 @@ export const dashboardController = {
         serverTitles.push(server);
       }
       if (serverTitles.includes(request.payload.title)) {
-        console.log(`titles ${serverTitles}`);
-        console.log(`value: ${request.payload.title} already exist in array`);
         return h.view("error-title");
       } else {
-        console.log(`${request.payload.title} does not exist in the array`);
+        fs.appendFile("./logs.txt", `\nServer created at Date: ${newDate} title: ${request.payload.title} tag: ${request.payload.tag} ID: ${userFullName}`, () => {
+          console.log("Successfully saved");
+        });
         await db.serverStore.addServer(newServer);
         return h.redirect("/dashboard");
       }
@@ -87,13 +89,17 @@ export const dashboardController = {
 
   deleteServer: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const userFullName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
       const server = await db.serverStore.getServerById(request.params.id);
       let serverServices = [];
       serverServices = await db.serviceStore.getServicesByServerId(server._id);
       for (let i = 0; i < serverServices.length; i += 1) {
-        // eslint-disable-next-line no-await-in-loop
         await db.serviceStore.deleteService(serverServices[i]);
       }
+      fs.appendFile("./logs.txt", `\nServer deleted at Date: ${newDate} title: ${server.title} tag: ${server.tag} ID: ${userFullName}`, () => {
+        console.log("Successfully saved");
+      });
       await db.serverStore.deleteServerById(server._id);
       return h.redirect("/dashboard");
     },
@@ -157,6 +163,8 @@ export const dashboardController = {
   },
   decomissionServer: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const userFullName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
       const server = await db.serverStore.getServerById(request.params.id);
       const newDispserver = server;
       let serverServices = [];
@@ -165,6 +173,9 @@ export const dashboardController = {
         // eslint-disable-next-line no-await-in-loop
         await db.serviceStore.deleteService(serverServices[i]);
       }
+      fs.appendFile("./logs.txt", `\nServer archived at Date: ${newDate} title: ${server.title} tag: ${server.tag} ID: ${userFullName}`, () => {
+        console.log("Successfully saved");
+      });
       await db.serverStore.deleteServerById(server._id);
       await db.dispserverStore.addDispserver(newDispserver);
       return h.redirect("/dashboard");

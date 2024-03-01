@@ -1,0 +1,40 @@
+
+Service deleted at date: Fri Mar 01 2024 17:35:44 GMT+0000 (Greenwich Mean Time) title: undefined tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:35:55 GMT+0000 (Greenwich Mean Time) title: undefined tag: undefined ID: Tibor Molnar
+Server created at Date: Fri Mar 01 2024 17:36:00 GMT+0000 (Greenwich Mean Time) title: asd2e3123 tag: asdasd2 ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:38:52 GMT+0000 (Greenwich Mean Time) title: 213 tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:39:01 GMT+0000 (Greenwich Mean Time) title: undefined tag: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:43:07 GMT+0000 (Greenwich Mean Time) title: 213 tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:44:59 GMT+0000 (Greenwich Mean Time) title: null ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:47:11 GMT+0000 (Greenwich Mean Time) title: 123 tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:47:36 GMT+0000 (Greenwich Mean Time) serviceId: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:48:40 GMT+0000 (Greenwich Mean Time) title: 123 tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:48:47 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:50:01 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:50:13 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:50:18 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:50:22 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:50:59 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:53:12 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:57:48 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:58:04 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 17:59:26 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 17:59:30 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:06:41 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 18:06:47 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: [object Object] ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:10:02 GMT+0000 (Greenwich Mean Time) title: as tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 18:10:10 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:11:17 GMT+0000 (Greenwich Mean Time) title: 123 tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 18:11:22 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: [{"serviceName":"123","os":"12","desc":"321","monitored":"3213","backups":"213","syslog":"123","login":"213","_id":"c749f145-fc08-47f4-ae58-80cb26cba655","serverid":"3e36b75b-ef31-47e8-bfdd-e8bdf8b95757"}] ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:12:37 GMT+0000 (Greenwich Mean Time) title: sda tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 18:12:42 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: [{"serviceName":"sda","os":"asd","desc":"asd","monitored":"as","backups":"das","syslog":"das","login":"d","_id":"2a132d0f-a3a1-42cc-82c6-758b3e2f3efd","serverid":"3e36b75b-ef31-47e8-bfdd-e8bdf8b95757"}] ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:13:37 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 18:13:45 GMT+0000 (Greenwich Mean Time) server host: asd2e3123 service: [{"serviceName":"asd","os":"asd","desc":"asd","monitored":"asd","backups":"sdasa","syslog":"da","login":"sd","_id":"68e4714a-a5dd-4928-904e-0e721ebbf90d","serverid":"3e36b75b-ef31-47e8-bfdd-e8bdf8b95757"}] ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:13:48 GMT+0000 (Greenwich Mean Time) title: as tag: undefined ID: Tibor Molnar
+Server updated at date: Fri Mar 01 2024 18:24:24 GMT+0000 (Greenwich Mean Time) title: 1AR2 tag: undefined ID: Tibor Molnar
+Server updated at date: Fri Mar 01 2024 18:25:51 GMT+0000 (Greenwich Mean Time) title: 1AR22 tag: undefined ID: Tibor Molnar
+Server updated at date: Fri Mar 01 2024 18:26:04 GMT+0000 (Greenwich Mean Time) title: 1AR22 tag: undefined ID: Tibor Molnar
+Server updated at date: Fri Mar 01 2024 18:27:13 GMT+0000 (Greenwich Mean Time) new title: Fantasy-011 tag: undefined ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 18:28:11 GMT+0000 (Greenwich Mean Time) title: asd tag: undefined ID: Tibor Molnar
+Service deleted at date: Fri Mar 01 2024 18:59:03 GMT+0000 (Greenwich Mean Time) server host: 1AR221 service: [{"serviceName":"asd1","os":"asd","desc":"sad","monitored":"ads","backups":"asd","syslog":"asd","login":"asd","_id":"0063caca-3221-4502-be80-576ebb85d05d","serverid":"e423b8e9-e96b-4e77-934c-739185255ee7","servicetag":"123"}] ID: Tibor Molnar
+Service created at Date: Fri Mar 01 2024 19:00:05 GMT+0000 (Greenwich Mean Time) title: asd tag: 1asd ID: Tibor Molnar

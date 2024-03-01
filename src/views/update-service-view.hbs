@@ -1,11 +1,14 @@
 {{> menu}}
 
-<form class="box" action="/server/{{service._id}}/updateservice" method="POST">
+<form class="box" action="/service/{{server._id}}/updateservice/{{service._id}}" method="POST">
     <label>Update Server Details:</label>
     <div class="field is-horizontal">
         <div class="field-body">
             <div class="field">
                 <input class="input" type="text" pattern="[A-Za-z\\s]+{1,20}" name="serviceName" , placeholder="Name" value="{{service.serviceName}}">
+            </div>
+            <div class="field">
+                <input class="input" type="text" name="servicetag" placeholder="Service Tag" value="{{service.servicetag}}">
             </div>
             <div class="field">
                 <input class="input" type="text" name="os" placeholder="Operating System" value="{{service.os}}">

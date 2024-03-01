@@ -2,7 +2,7 @@
   "servers": [
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "Fantasy-01",
+      "title": "Fantasy-011",
       "cab": 3,
       "os": "Ubuntu 22.04 LTS",
       "idrac": "1",
@@ -26,8 +26,8 @@
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "1AR2",
-      "cab": 1,
+      "title": "1AR221",
+      "cab": 11,
       "os": "1",
       "idrac": "1",
       "nwcard": "1",
@@ -141,27 +141,27 @@
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "Tokyio13",
-      "cab": 12,
+      "title": "asd2e3123",
+      "tag": "asdasd2",
+      "cab": 1,
       "os": "1",
       "idrac": "1",
       "nwcard": "1",
       "backupTo": "1",
       "monitoredWith": "1",
-      "support": "2024-02-07",
+      "support": "2024-03-23",
       "service": "1",
       "bios": "1",
       "firmware": "1",
-      "maas": true,
+      "maas": false,
       "cost": "1",
-      "pdate": "2000-02-14",
+      "pdate": "2024-03-14",
       "model": "1",
       "desc": "1",
-      "date": "2024-02-28T21:30:16.957Z",
-      "pieStatus": "pie-2",
+      "date": "2024-03-01T17:36:00.342Z",
+      "pieStatus": "pie",
       "maintenancecost": 0,
-      "_id": "b481a866-fae3-426e-9803-0dca770be2bc",
-      "services": []
+      "_id": "3e36b75b-ef31-47e8-bfdd-e8bdf8b95757"
     }
   ]
 }

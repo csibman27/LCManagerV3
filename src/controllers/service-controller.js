@@ -29,6 +29,7 @@ export const serviceController = {
       const service = await db.serviceStore.getServiceById(request.params.serviceid);
       const newService = {
         serviceName: request.payload.serviceName,
+        servicetag: request.payload.servicetag,
         os: request.payload.os,
         desc: request.payload.desc,
         monitored: request.payload.monitored,
