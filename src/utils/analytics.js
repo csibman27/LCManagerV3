@@ -126,6 +126,7 @@ export const analytics = {
     return maintenancecost - y;
   },
 
+  // chart analysis
   async pieChartA() {
     return new Chart(id, {
       type: "bar",

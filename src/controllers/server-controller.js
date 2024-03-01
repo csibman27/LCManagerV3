@@ -49,6 +49,7 @@ export const serverController = {
       },
     },
     handler: async function (request, h) {
+      const services = await db.serviceStore.getServicesByServerId(request.params.id);
       const server = await db.serverStore.getServerById(request.params.id);
       const newService = {
         serviceName: request.payload.serviceName,
@@ -59,9 +60,20 @@ export const serverController = {
         syslog: request.payload.syslog,
         login: request.payload.login,
       };
-      await db.serviceStore.addService(server._id, newService);
-      // console.log(newService);
-      return h.redirect(`/server/${server._id}`);
+      const serviceTitles = [];
+      for (let a = 0; a < services.length; a += 1) {
+        const service = services[a].serviceName;
+        serviceTitles.push(service);
+      }
+      if (serviceTitles.includes(request.payload.serviceName)) {
+        console.log(`titles ${serviceTitles}`);
+        console.log(`value: ${request.payload.serviceName} already exist in array`);
+        return h.view("error-servicename");
+      } else {
+        console.log(`value: ${request.payload.serviceName} is not exist in array!`);
+        await db.serviceStore.addService(server._id, newService);
+        return h.redirect(`/server/${server._id}`);
+      }
     },
   },
 

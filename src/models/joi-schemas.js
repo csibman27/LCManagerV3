@@ -48,6 +48,7 @@ export const ServiceArraySpec = Joi.array().items(ServiceSpecPlus).label("Servic
 export const ServerSpec = Joi.object()
   .keys({
     title: Joi.string().required(),
+    tag: Joi.string().required(),
     cab: Joi.string().allow("").optional(),
     os: Joi.string().required(),
     idrac: Joi.string().allow("").optional(),

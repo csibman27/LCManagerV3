@@ -32,7 +32,7 @@ Handlebars.registerHelper("paginate", paginate);
 
 const swaggerOptions = {
   info: {
-    title: "Placemark API",
+    title: "LCManager API",
     version: "1.0",
   },
   securityDefinitions: {

@@ -1,7 +1,6 @@
 import { db } from "../models/db.js";
 import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
-import { server } from "@hapi/hapi";
 
 const newDate = new Date();
 
@@ -11,10 +10,6 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
-      // servers.sort();
-      // console.log(servers);
-      // after pdate
-
       // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();
@@ -42,6 +37,7 @@ export const dashboardController = {
     },
     handler: async function (request, h, res) {
       const loggedInUser = request.auth.credentials;
+      const servers = await db.serverStore.getAllServers();
       const newServer = {
         userid: loggedInUser._id,
         title: request.payload.title,
@@ -65,19 +61,19 @@ export const dashboardController = {
         pieStatus: await analytics.progressPie(request.payload.pdate),
         maintenancecost: Number(0),
       };
-      try {
-        const servers = await db.serverStore.getAllServers();
-        for (let i = 0; i < servers.length; i++) {
-          const server = servers[i].title;
-          if (request.payload.title.localeCompare(server.title)) {
-            return h.view("error-title");
-          } else {
-            await db.serverStore.addServer(newServer);
-            return h.redirect("/dashboard");
-          }
-        }
-      } catch (error) {
-        console.log(error);
+      const serverTitles = [];
+      for (let a = 0; a < servers.length; a += 1) {
+        const server = servers[a].title;
+        serverTitles.push(server);
+      }
+      if (serverTitles.includes(request.payload.title)) {
+        console.log(`titles ${serverTitles}`);
+        console.log(`value: ${request.payload.title} already exist in array`);
+        return h.view("error-title");
+      } else {
+        console.log(`${request.payload.title} does not exist in the array`);
+        await db.serverStore.addServer(newServer);
+        return h.redirect("/dashboard");
       }
     },
   },

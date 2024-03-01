@@ -80,7 +80,7 @@ export const serverApi = {
       }
     },
     tags: ["api"],
-    description: "Create a Placemark",
+    description: "Create a Server",
     notes: "Returns the newly created server",
     validate: { payload: ServerSpec, failAction: validationError },
     response: { schema: ServerSpecPlus, failAction: validationError },
