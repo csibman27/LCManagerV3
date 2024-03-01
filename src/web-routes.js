@@ -10,6 +10,7 @@ import { userController } from "./controllers/user-controller.js";
 export const webRoutes = [
   // serve static files in public folder
   { method: "GET", path: "/public/{param*}", handler: { directory: { path: "public" } } },
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 
   // routes
   { method: "GET", path: "/", config: accountsController.index },
@@ -58,5 +59,5 @@ export const webRoutes = [
   { method: "GET", path: "/server/{id}/searchservice", config: serverController.searchService },
 
   { method: "POST", path: "/server/{id}/updateservice/{serviceid}", config: serviceController.update },
-  { method: "GET", path: "/server/{id}/editservice/{serviceid}", config: serviceController.showServiceDetails },
+  { method: "GET", path: "/service/{id}/editservice/{serviceid}", config: serviceController.showServiceDetails },
 ];
