@@ -1,7 +1,7 @@
+import fs from "fs";
 import { db } from "../models/db.js";
 import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
-import fs from "fs";
 
 const newDate = new Date();
 
@@ -11,6 +11,8 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
+      const services = await db.serviceStore.getAllServices();
+      const users = await db.userStore.getAllUsers();
       // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();
@@ -22,6 +24,8 @@ export const dashboardController = {
         date,
         loggedInUserInitials,
         servers: servers,
+        services,
+        users,
       };
       return h.view("dashboard-view", viewData);
     },
