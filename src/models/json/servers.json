@@ -2,7 +2,7 @@
   "servers": [
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "Fantasy-011",
+      "title": "Fantasy-01122",
       "cab": 3,
       "os": "Ubuntu 22.04 LTS",
       "idrac": "1",
@@ -20,7 +20,7 @@
       "desc": "This server has been enhanced with additional RAM and NVMe storage to bolster its capabilities for high-speed animation and rendering tasks.",
       "date": "2024-02-23T20:38:47.317Z",
       "pieStatus": "pie",
-      "maintenancecost": 0,
+      "maintenancecost": 44,
       "_id": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397",
       "services": [
         {
