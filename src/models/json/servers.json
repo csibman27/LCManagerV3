@@ -22,7 +22,20 @@
       "pieStatus": "pie",
       "maintenancecost": 0,
       "_id": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397",
-      "services": []
+      "services": [
+        {
+          "serviceName": "asd",
+          "servicetag": "asd",
+          "os": "asd",
+          "desc": "as",
+          "monitored": "d",
+          "backups": "asd",
+          "syslog": "asd",
+          "login": "asd",
+          "_id": "6496cb9c-bd05-4a68-b6ae-830bd42cfa48",
+          "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
+        }
+      ]
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
@@ -44,6 +57,7 @@
       "desc": "1",
       "date": "2024-02-23T21:01:37.513Z",
       "pieStatus": "pie-2",
+      "maintenancecost": 0,
       "_id": "e423b8e9-e96b-4e77-934c-739185255ee7",
       "services": []
     },
@@ -67,6 +81,7 @@
       "desc": "1",
       "date": "2024-02-23T21:34:13.846Z",
       "pieStatus": "pie-3",
+      "maintenancecost": 0,
       "_id": "ca033a65-3021-42bd-942b-e9c3a5b93001",
       "services": []
     },
@@ -162,6 +177,30 @@
       "pieStatus": "pie",
       "maintenancecost": 0,
       "_id": "3e36b75b-ef31-47e8-bfdd-e8bdf8b95757"
+    },
+    {
+      "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
+      "title": "asd11111",
+      "tag": "1",
+      "cab": 1,
+      "os": "1",
+      "idrac": "1",
+      "nwcard": "1",
+      "backupTo": "1",
+      "monitoredWith": "1",
+      "support": "2024-03-06",
+      "service": "1",
+      "bios": "1",
+      "firmware": "1",
+      "maas": true,
+      "cost": "1",
+      "pdate": "2024-02-28",
+      "model": "1",
+      "desc": "1",
+      "date": "2024-03-06T18:46:39.275Z",
+      "pieStatus": "pie",
+      "maintenancecost": 0,
+      "_id": "af059fd1-8323-4e2c-b5f9-3f3a01d15a5b"
     }
   ]
 }

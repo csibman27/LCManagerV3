@@ -41,3 +41,4 @@ Service created at Date: Fri Mar 01 2024 19:00:05 GMT+0000 (Greenwich Mean Time)
 Service created at Date: Fri Mar 01 2024 19:19:00 GMT+0000 (Greenwich Mean Time) title: 12 tag: 3123 ID: Tibor Molnar
 Service deleted at date: Fri Mar 01 2024 19:26:42 GMT+0000 (Greenwich Mean Time) server host: Fantasy-011 service: [{"serviceName":"12q","servicetag":"3123","os":"21","desc":"321","monitored":"3213","backups":"2112","syslog":"31231","login":"23123123","_id":"4a9cb2bc-5de1-4fce-ab44-0529b1e94ba4","serverid":"66c87f4f-97e7-49ee-b1d4-cfe81bfff397"}] ID: Tibor Molnar
 Service created at Date: Fri Mar 01 2024 19:28:17 GMT+0000 (Greenwich Mean Time) title: asd tag: asd ID: Tibor Molnar
+Server created at Date: Wed Mar 06 2024 18:46:39 GMT+0000 (Greenwich Mean Time) title: asd11111 tag: 1 ID: Tibor Molnar
