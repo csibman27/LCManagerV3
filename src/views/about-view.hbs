@@ -19,33 +19,45 @@
 </div>
 
 
-<div class="container">
-    <canvas id="myChart"></canvas>
-</div>
-<div class="container">
-    <canvas id="chart"></canvas>
-</div>
 
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // let myChart = document.getElementById("myChart").getContext("2d");
+    import { db } from "../models/db.js";
+    async function getData() {
+    const response = await fetch('/src/models/json/servers.json');
+    console.log(response);
 
-    let massPopChart = new Chart(myChart, {
-        type: "bar", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-        data:{
-            labels:[{{server.length}}, "R720-2", "Server2222", "SAN"],
-            datasets:[{
-                label: "Services",
-                data:[123213, 123213,1234124,4213342],
-                // backgroundColor:"green"
+    }
+</script>
+<script>
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['0-3 years', '3-5 years', '5-7 years', '10 years ++'],
+            datasets: [{
+                label: 'Lifecycle stages',
+                data: [4, 4, 4, 5 ],
                 backgroundColor:[
-                    "green",
-                    "red",
-                    "yellow",
-                ]
+                    'rgba(58, 245, 39, 0.84)',
+                    'rgba(10, 34, 8, 0.84)',
+                    'rgba(212, 238, 15, 0.92)',
+                    'rgba(238, 15, 27, 0.93)',
+                ],
+                borderWidth: 1
             }]
         },
-        options:{}
-    })
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 </script>
 
 

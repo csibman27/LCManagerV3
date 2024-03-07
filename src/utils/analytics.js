@@ -4,7 +4,6 @@ import { db } from "../models/db.js";
 // eslint-disable-next-line import/no-extraneous-dependencies
 
 const today = new Date();
-let id = "chart";
 
 export const analytics = {
   async getAllServers() {
@@ -128,7 +127,7 @@ export const analytics = {
 
   // chart analysis
   async pieChartA() {
-    return new Chart(id, {
+    return new Chart("myChart", {
       type: "bar",
       data: {
         labels: ["R720-1", "R720-2", "Server2222", "SAN"],

@@ -116,8 +116,6 @@ export const serverController = {
         maintenancecost: Number(request.payload.maintenancecost),
       };
       // console.log(JSON.stringify(obj));
-      console.log("server: " + JSON.stringify(server));
-      console.log("NewServer: " + JSON.stringify(newServer.maintenancecost));
       try {
         await db.serverStore.updateServerMaintenanceCost(server, newServer);
       } catch (error) {
@@ -167,8 +165,6 @@ export const serverController = {
         fs.appendFile("./logs.txt", `\nServer updated at date: ${newDate} new title: ${newServer.title} ID: ${userFullName}`, () => {
           console.log("Successfully saved");
         });
-        console.log("server Dash : " + JSON.stringify(server));
-        console.log("NewServer Dash : " + JSON.stringify(newServer.maintenancecost));
         await db.serverStore.updateServer(server, newServer);
       } catch (error) {
         console.log(error);
