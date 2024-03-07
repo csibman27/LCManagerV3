@@ -61,6 +61,6 @@ export const webRoutes = [
   { method: "GET", path: "/server/{id}/deleteservice/{serviceid}", config: serverController.deleteService },
   { method: "GET", path: "/server/{id}/searchservice", config: serverController.searchService },
 
-  { method: "POST", path: "/server/{id}/updateservice/{serviceid}", config: serviceController.update },
-  { method: "GET", path: "/service/{id}/editservice/{serviceid}", config: serviceController.showServiceDetails },
+  { method: "POST", path: "/service/{id}/updateservice/{serviceid}", config: serviceController.update },
+  { method: "GET", path: "/service/{id}/editservice/{serviceid}", config: serviceController.index },
 ];

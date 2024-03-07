@@ -180,7 +180,7 @@ export const serverController = {
         // backupTo: request.payload.backupTo,
         // monitoredWith: request.payload.monitoredWith,
         // support: request.payload.support,
-        // service: request.payload.service,
+        service: request.payload.service,
         // bios: request.payload.bios,
         // firmware: request.payload.firmware,
         // maas: Boolean(request.payload.maas),

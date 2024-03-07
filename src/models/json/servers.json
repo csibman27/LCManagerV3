@@ -2,7 +2,7 @@
   "servers": [
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "Fantasy-011224",
+      "title": "Fantasy-01",
       "tag": "5gghy6",
       "cab": 3,
       "os": "Ubuntu 22.04 LTS",
@@ -34,13 +34,25 @@
           "login": "asd",
           "_id": "6496cb9c-bd05-4a68-b6ae-830bd42cfa48",
           "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
+        },
+        {
+          "serviceName": "qed",
+          "servicetag": "qwq",
+          "os": "weqw",
+          "desc": "eqwe",
+          "monitored": "qwe",
+          "backups": "qweq",
+          "syslog": "weqwe",
+          "login": "qwe",
+          "_id": "c6b03901-b7e0-4b6d-8ea6-e6639b1e9cfc",
+          "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
         }
       ],
       "maintenancecost": 123
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "1AR221",
+      "title": "Poweredge R430",
       "tag": "XJhys6",
       "cab": 11,
       "os": "1",
@@ -49,7 +61,7 @@
       "backupTo": "1",
       "monitoredWith": "1",
       "support": "2024-02-15",
-      "service": "1",
+      "service": "Proxmox 11",
       "bios": "1",
       "firmware": "1",
       "maas": true,
@@ -61,7 +73,20 @@
       "pieStatus": "pie-2",
       "maintenancecost": 0,
       "_id": "e423b8e9-e96b-4e77-934c-739185255ee7",
-      "services": []
+      "services": [
+        {
+          "serviceName": "asd",
+          "servicetag": "1asd",
+          "os": "asd",
+          "desc": "asdasd",
+          "monitored": "asd",
+          "backups": "asdasd",
+          "syslog": "asdads",
+          "login": "ads",
+          "_id": "d7fa7afc-0fb6-4868-997d-ca5f0c7adbef",
+          "serverid": "e423b8e9-e96b-4e77-934c-739185255ee7"
+        }
+      ]
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
@@ -163,7 +188,6 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "asd2e3123",
-      "tag": "99JF543",
       "tag": "asdasd2",
       "cab": 1,
       "os": "1",
@@ -188,7 +212,6 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "asd11111",
-      "tag": "NBVY65",
       "tag": "1",
       "cab": 1,
       "os": "1",

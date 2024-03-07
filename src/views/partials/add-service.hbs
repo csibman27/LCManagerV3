@@ -1,40 +1,42 @@
 <form class="box" action="/server/{{server._id}}/addservice" method="POST">
-    <label>Enter Service Details:</label>
+    <label for="base-input" class="block mb-2 text-base mb-4 font-medium text-gray-900 dark:text-white">Enter Service Details</label>
     <div class="field is-horizontal">
         <div class="field-body">
             <div class="field">
-                <label class="label">Service</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                 <input class="input" type="text" placeholder="Name of Service" name="serviceName">
             </div>
             <div class="field">
-                <label class="label">Service Tag</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tag</label>
                 <input class="input" type="text" placeholder="Service Tag" name="servicetag">
             </div>
             <div class="field">
-                <label class="label">Operating System</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operating system</label>
                 <input class="input" type="text" placeholder="OS Name" name="os">
             </div>
             <div class="field">
-                <label class="label">Description</label>
-                <input class="input" type="text" placeholder="Description" name="desc">
-            </div>
-            <div class="field">
-                <label class="label">Monitoring</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monitoring</label>
                 <input class="input" type="text" placeholder="Name of Monitoring" name="monitored">
             </div>
             <div class="field">
-                <label class="label">Backup</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Backup</label>
                 <input class="input" type="text" placeholder="Name of Backup technology" name="backups">
             </div>
             <div class="field">
-                <label class="label">Syslog</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Syslog</label>
                 <input class="input" type="text" placeholder="Syslog Server" name="syslog">
             </div>
             <div class="field">
-                <label class="label">Login</label>
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login</label>
                 <input class="input" type="text" placeholder="Login with" name="login">
+            </div>
+            <div class="field">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                <input class="input" type="text" placeholder="Description" name="desc">
             </div>
         </div>
     </div>
-    <button class="button is-primary">Add Service</button>
+    <button class="bg-transparent hover:bg-orange-600 text-orange-700 font-semibold hover:text-white py-2 px-4 border border-orange-700 hover:border-transparent rounded">
+        Update Server
+    </button>
 </form>

@@ -47,3 +47,14 @@ Server updated at date: Wed Mar 06 2024 19:50:12 GMT+0000 (Greenwich Mean Time) 
 Server updated at date: Wed Mar 06 2024 19:51:23 GMT+0000 (Greenwich Mean Time) new title: Fantasy-011 ID: Tibor Molnar
 Server updated at date: Wed Mar 06 2024 20:12:09 GMT+0000 (Greenwich Mean Time) new title: undefined ID: Tibor Molnar
 Server updated at date: Thu Mar 07 2024 20:40:22 GMT+0000 (Greenwich Mean Time) new title: Fantasy-011224 ID: Tibor Molnar
+Service created at Date: Thu Mar 07 2024 21:05:58 GMT+0000 (Greenwich Mean Time) title: qed tag: qwq ID: Tibor Molnar
+Server updated at date: Thu Mar 07 2024 22:07:32 GMT+0000 (Greenwich Mean Time) new title: Proxmox 11 ID: Tibor Molnar
+Server updated at date: Thu Mar 07 2024 22:10:06 GMT+0000 (Greenwich Mean Time) new title: Poweredge R430 ID: Tibor Molnar
+Server updated at date: Thu Mar 07 2024 22:11:14 GMT+0000 (Greenwich Mean Time) new title: Poweredge R430 ID: Tibor Molnar
+Server updated at date: Thu Mar 07 2024 22:13:41 GMT+0000 (Greenwich Mean Time) new title: Poweredge R430 ID: Tibor Molnar
+Server updated at date: Thu Mar 07 2024 22:18:01 GMT+0000 (Greenwich Mean Time) new title: Fantasy-01 ID: Tibor Molnar
+Service created at Date: Thu Mar 07 2024 22:19:04 GMT+0000 (Greenwich Mean Time) title: 234 tag: 234 ID: Tibor Molnar
+Service created at Date: Thu Mar 07 2024 22:35:45 GMT+0000 (Greenwich Mean Time) title: 123 tag: 12 ID: Tibor Molnar
+Service created at Date: Thu Mar 07 2024 22:54:49 GMT+0000 (Greenwich Mean Time) title: asd123 tag: 123 ID: Tibor Molnar
+Service created at Date: Thu Mar 07 2024 22:55:25 GMT+0000 (Greenwich Mean Time) title: 1aaa tag: 123 ID: Tibor Molnar
+Service deleted at date: Thu Mar 07 2024 23:13:36 GMT+0000 (Greenwich Mean Time) server host: Fantasy-01 service: [{"serviceName":"asd","servicetag":"asd","os":"asd","desc":"as","monitored":"d","backups":"asd","syslog":"asd","login":"asd","_id":"6496cb9c-bd05-4a68-b6ae-830bd42cfa48","serverid":"66c87f4f-97e7-49ee-b1d4-cfe81bfff397"},{"serviceName":"qed","servicetag":"qwq","os":"weqw","desc":"eqwe","monitored":"qwe","backups":"qweq","syslog":"weqwe","login":"qwe","_id":"c6b03901-b7e0-4b6d-8ea6-e6639b1e9cfc","serverid":"66c87f4f-97e7-49ee-b1d4-cfe81bfff397"},{"serviceName":"123","servicetag":"12","os":"312","desc":"123","monitored":"312","backups":"312","syslog":"3123","login":"123","_id":"d7288578-1047-4fc1-9bc8-48e85c37f5ab","serverid":"66c87f4f-97e7-49ee-b1d4-cfe81bfff397"},{"serviceName":"asd123","servicetag":"123","os":"12","desc":"312","monitored":"312","backups":"32","syslog":"131","login":"32","_id":"f7acf419-82bc-4c54-93ab-58c2c09945f9","serverid":"66c87f4f-97e7-49ee-b1d4-cfe81bfff397"},{"serviceName":"1aaa","servicetag":"123","os":"123","desc":"desc","monitored":"123","backups":"123","syslog":"213","login":"123","_id":"a3ea340d-f9cb-418f-8dda-80873b6e02ee","serverid":"66c87f4f-97e7-49ee-b1d4-cfe81bfff397"}] ID: Tibor Molnar

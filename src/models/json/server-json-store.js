@@ -57,6 +57,7 @@ export const serverJsonStore = {
     server.title = updatedServer.title;
     server.cab = updatedServer.cab;
     server.os = updatedServer.os;
+    server.service = updatedServer.service;
     await db.write();
   },
 

@@ -3,7 +3,7 @@
 <section class="section">
 
     <div class="title">
-        <h2 class="text-teal-600">
+        <h2 class="text-orange-600">
         <i class="fa-solid fa-server"></i>
          Server Details </h2>
     </div>
@@ -47,10 +47,13 @@
                     <h2 class="px-4 pb-4 text-xl font-semibold leading-7 text-gray-800">Server properties subject to change</h2>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Server in Maas</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{server.maas}} <a href="/server/{{server._id}}/editservermaas">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Server in Maas</dt> {{server.maas}} <a href="/server/{{server._id}}/editservermaas">
                         <span class="hover:animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-edit"></i></span>
                     </a></dd>
+
+<!--                    <dt class="text-sm font-medium leading-6 text-gray-900"> Uptime </dt> Value <a href="/server/{{server._id}}/editservercost">-->
+<!--                    <span class="hover:animate-ping" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-rotate"></i></span>-->
+<!--                    </a></dd>-->
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"><i class="fa-solid fa-phone"></i> Support Active Until </dt>
@@ -69,7 +72,7 @@
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"><i class="fa-solid fa-arrow-rotate-left"></i> Lifecycle Visualization </dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><div class="{{pie}}"></div></dd>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><div class="{{pie}} hover:animate-pulse"></div></dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"> Track costs associated with server lifecycle activities including procurement, maintenance, upgrades, and retirement </dt>
@@ -122,7 +125,8 @@
 <!--    Add Services Section-->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <div class="title">
-        <h2 class="text-teal-600">
+<!--        <h2 class="text-teal-600">-->
+        <h2 class="text-orange-600">
             <i class="fa-solid fa-file-waveform"></i>
             Add a Service </h2>
     </div>
@@ -132,7 +136,7 @@
 
 <!--    List of Services section-->
     <div class="title">
-        <h2 class="text-teal-600">
+        <h2 class="text-orange-600">
             <i class="fa-solid fa-file-lines"></i>
             List of Services </h2>
     </div>

@@ -1,53 +1,54 @@
 <!--length added so when search results shows old table heading not displays twice-->
 
 {{#if server.services.length}}
-<table class="table is-fullwidth">
-  <thead>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
-        <th>Name</th>
-        <th>Tag</th>
-        <th>OS</th>
-        <th>Description</th>
-        <th>Monitored</th>
-        <th>Backups</th>
-        <th>Syslog</th>
-        <th>Login</th>
-        <th>Functions</th>
+        <th scope="col" class="px-5 py-3">Name</th>
+        <th scope="col" class="px-5 py-3">Tag</th>
+        <th scope="col" class="px-5 py-3">OS</th>
+        <th scope="col" class="px-5 py-3">Monitored</th>
+        <th scope="col" class="px-5 py-3">Backups</th>
+        <th scope="col" class="px-5 py-3">Syslog</th>
+        <th scope="col" class="px-5 py-3">Login</th>
+        <th scope="col" class="px-5 py-3">Description</th>
+        <th scope="col" class="px-5 py-3">Functions</th>
     </tr>
   </thead>
   <tbody>
     {{#each server.services}}
-      <tr>
-          <td>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <td class="px-5 py-3">
               {{serviceName}}
           </td>
-          <td>
+            <td class="px-5 py-3">
               {{servicetag}}
           </td>
-          <td>
+            <td class="px-5 py-3">
               {{os}}
           </td>
-          <td>
-              {{desc}}
-          </td>
-          <td>
+            <td class="px-5 py-3">
               {{monitored}}
           </td>
-          <td>
+            <td class="px-5 py-3">
               {{backups}}
           </td>
-          <td>
+            <td class="px-5 py-3">
               {{syslog}}
           </td>
-          <td>
+            <td class="px-5 py-3">
               {{login}}
           </td>
-          <td>
+            <td class="px-5 py-3">
+              {{desc}}
+          </td>
+            <td class="px-2 py-3">
               <a href="/service/{{../server._id}}/editservice/{{_id}}" class="ui icon button">
-                  <i class="fas fa-edit"></i>
+                  <span class="hover:animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fas fa-edit"></i></span>
               </a>
               <a href="/server/{{../server._id}}/deleteservice/{{_id}}" class="ui icon button"> <!--card-footer-item-->
-                  <i class="fa-regular fa-trash-can"></i>
+                  <span class="hover:animate-pulse" style="font-size: 17px; color: Red;"><i class="fa-regular fa-trash-can"></i></span>
               </a>
           </td>
       </tr>
