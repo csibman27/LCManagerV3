@@ -137,6 +137,34 @@ export const serverController = {
     },
   },
 
+  updateMaas: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const newServer = {
+        maas: Boolean(request.payload.maas),
+      };
+      // console.log(JSON.stringify(obj));
+      try {
+        await db.serverStore.updateServerMaas(server, newServer);
+      } catch (error) {
+        console.log(error);
+      }
+      return h.redirect(`/server/${server._id}`);
+    },
+  },
+
+  showMaas: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const viewData = {
+        title: "Update Server",
+        server: server,
+      };
+      // console.log(server);
+      return h.view("update-maas-view", viewData);
+    },
+  },
+
   update: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;

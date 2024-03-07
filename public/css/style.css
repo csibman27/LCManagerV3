@@ -110,6 +110,11 @@
     font-family: "JetBrains Mono", sans-serif ;
 }
 
+.temporary-bounce {
+    -webkit-animation-iteration-count: 10;
+    animation-iteration-count: 10;
+}
+
 /*emt11 {*/
 /*    font-family: "Bauhaus 93";*/
 /*    color: chartreuse;*/

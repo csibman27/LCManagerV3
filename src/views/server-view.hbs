@@ -29,7 +29,7 @@
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Anticipated expenses up to server decommissioning</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">€20,000</dd>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{server.cost}} + ({{server.cost}} * 0.06) /year </dd>
                 </div>
                 <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"><i class="fa-regular fa-address-card"></i> Description </dt>
@@ -48,7 +48,9 @@
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Server in Maas</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{server.maas}} </dd>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{server.maas}} <a href="/server/{{server._id}}/editservermaas">
+                        <span class="hover:animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-edit"></i></span>
+                    </a></dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"><i class="fa-solid fa-phone"></i> Support Active Until </dt>
@@ -62,7 +64,7 @@
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"> Total cost of maintenance </dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">€ {{server.maintenancecost}} <a href="/server/{{server._id}}/editservercost">
-                        <span class="animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-plus"></i></span>
+                        <span class="hover:animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-plus"></i></span>
                     </a></dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -72,6 +74,11 @@
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900"> Track costs associated with server lifecycle activities including procurement, maintenance, upgrades, and retirement </dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{server.title}}</dd>
+                </div>
+                <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900"> Uptime </dt> Value <a href="/server/{{server._id}}/editservercost">
+                    <span class="hover:animate-ping" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-rotate"></i></span>
+                </a></dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>

@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css",
     "start": "node src/server.js",
     "lint": "eslint . --ext .js",
     "dev": "nodemon src/server.js"

@@ -2,7 +2,8 @@
   "servers": [
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
-      "title": "Fantasy-01122",
+      "title": "Fantasy-011224",
+      "tag": "5gghy6",
       "cab": 3,
       "os": "Ubuntu 22.04 LTS",
       "idrac": "1",
@@ -20,7 +21,6 @@
       "desc": "This server has been enhanced with additional RAM and NVMe storage to bolster its capabilities for high-speed animation and rendering tasks.",
       "date": "2024-02-23T20:38:47.317Z",
       "pieStatus": "pie",
-      "maintenancecost": 44,
       "_id": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397",
       "services": [
         {
@@ -35,11 +35,13 @@
           "_id": "6496cb9c-bd05-4a68-b6ae-830bd42cfa48",
           "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
         }
-      ]
+      ],
+      "maintenancecost": 123
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "1AR221",
+      "tag": "XJhys6",
       "cab": 11,
       "os": "1",
       "idrac": "1",
@@ -64,6 +66,7 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "Alpha1",
+      "tag": "1KK223F",
       "cab": 1,
       "os": "1",
       "idrac": "1",
@@ -88,6 +91,7 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "12EEEEE",
+      "tag": "IUH55R",
       "cab": 1,
       "os": "1",
       "idrac": "1",
@@ -111,6 +115,7 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "1QQQQ",
+      "tag": "MNF66GF",
       "cab": 1,
       "os": "1",
       "idrac": "1",
@@ -134,6 +139,7 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "R330-1",
+      "tag": "LHF5SD",
       "cab": 4,
       "os": "CentOS",
       "idrac": "9.10.23.98",
@@ -157,6 +163,7 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "asd2e3123",
+      "tag": "99JF543",
       "tag": "asdasd2",
       "cab": 1,
       "os": "1",
@@ -181,6 +188,7 @@
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",
       "title": "asd11111",
+      "tag": "NBVY65",
       "tag": "1",
       "cab": 1,
       "os": "1",

@@ -1,9 +1,28 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
+  animation: {
+    vote: "vote 1s ease-in-out",
+  },
+  keyframes: {
+    vote: {
+      "0%, 100%": {
+        transform: "rotate(-30deg)",
+      },
+      "50%": {
+        transform: "rotate(30deg)",
+      },
+    },
+  },
   darkMode: "class",
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
+    },
   },
-  plugins: [require("tailwindcss/forms"), require("autoprefixer")],
+  // eslint-disable-next-line global-require
+  plugins: [require("tailwindcss"), require("autoprefixer")],
 };
