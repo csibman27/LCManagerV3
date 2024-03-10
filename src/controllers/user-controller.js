@@ -42,6 +42,13 @@ export const userController = {
     },
   },
 
+  confirmDelete: {
+    handler: async function (request, h) {
+      const id = await db.userStore.getUserById(request.params.id);
+      return h.view("confirm-delete-users", { id });
+    },
+  },
+
   deleteUserAccount: {
     handler: async function (request, h) {
       const user = await db.userStore.getUserById(request.params.id);

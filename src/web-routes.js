@@ -25,7 +25,8 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/users", config: userController.index },
-  { method: "GET", path: "/users/deleteuser/{id}", config: userController.deleteUserAccount },
+  { method: "GET", path: "/users/confirmdeleteuser/{id}", config: userController.confirmDelete },
+  { method: "POST", path: "/users/deleteuser/{id}", config: userController.deleteUserAccount },
   { method: "POST", path: "/users/adduser", config: userController.addUser },
   { method: "GET", path: "/users/adduserview", config: userController.addUserView },
 
