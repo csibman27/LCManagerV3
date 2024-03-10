@@ -38,7 +38,25 @@ export const userController = {
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
-      return h.redirect("/");
+      return h.redirect("/users");
+    },
+  },
+
+  deleteUserAccount: {
+    handler: async function (request, h) {
+      const user = await db.userStore.getUserById(request.params.id);
+      await db.userStore.deleteUserById(user._id);
+      return h.redirect("/users");
+    },
+  },
+
+  addUserView: {
+    handler: async function (request, h) {
+      const id = await db.userStore.getUserById(request.params.id);
+      const viewData = {
+        title: "User View",
+      };
+      return h.view("add-user-view", viewData);
     },
   },
 };

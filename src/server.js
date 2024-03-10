@@ -47,8 +47,8 @@ const swaggerOptions = {
 
 async function init() {
   const server = Hapi.server({
-    port: process.env.PORT || 4000,
-    host: process.env.HOST,
+    port: process.env.PORT || 8080,
+    // host: process.env.HOST,
   });
 
   const result = dotenv.config({ silent: true }); // change to silent: true can help to deploy it to heroku it is failing otherwise
@@ -83,6 +83,7 @@ async function init() {
     key: process.env.cookie_password,
     validate: validate,
     verifyOptions: { algorithms: ["HS256"] },
+    // expiresIn: "1h",
   });
   server.auth.default("session");
 

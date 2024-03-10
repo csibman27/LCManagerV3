@@ -24,8 +24,12 @@ export const webRoutes = [
 
   { method: "GET", path: "/about", config: aboutController.index },
 
-  { method: "GET", path: "/user-account", config: accountsController.loggedInUserDetails },
   { method: "GET", path: "/users", config: userController.index },
+  { method: "GET", path: "/users/deleteuser/{id}", config: userController.deleteUserAccount },
+  { method: "POST", path: "/users/adduser", config: userController.addUser },
+  { method: "GET", path: "/users/adduserview", config: userController.addUserView },
+
+  { method: "GET", path: "/user-account", config: accountsController.loggedInUserDetails },
   { method: "POST", path: "/updateUserDetails", config: accountsController.updateLoggedInUser },
   { method: "GET", path: "/user-account/confirmDeleteUserAccount", config: accountsController.confirmDelete },
   { method: "POST", path: "/user-account/deleteUserAccount", config: accountsController.deleteUserAccount },
