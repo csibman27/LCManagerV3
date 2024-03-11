@@ -5,15 +5,15 @@
 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
-        <th scope="col" class="px-5 py-3">Name</th>
-        <th scope="col" class="px-5 py-3">Tag</th>
-        <th scope="col" class="px-5 py-3">OS</th>
-        <th scope="col" class="px-5 py-3">Monitored</th>
-        <th scope="col" class="px-5 py-3">Backups</th>
-        <th scope="col" class="px-5 py-3">Syslog</th>
-        <th scope="col" class="px-5 py-3">Login</th>
-        <th scope="col" class="px-5 py-3">Description</th>
-        <th scope="col" class="px-5 py-3">Functions</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Name</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Tag</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">OS</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Monitored</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Backups</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Syslog</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Login</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Description</th>
+        <th scope="col" class="px-5 py-3 dark:text-gray-200">Functions</th>
     </tr>
   </thead>
   <tbody>
@@ -44,10 +44,10 @@
               {{desc}}
           </td>
             <td class="px-2 py-3">
-              <a href="/service/{{../server._id}}/editservice/{{_id}}" class="ui icon button">
+              <a href="/service/{{../server._id}}/editservice/{{_id}}" class="ui icon button dark:bg-gray-800 dark:border-gray-800">
                   <span class="hover:animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fas fa-edit"></i></span>
               </a>
-              <a href="/server/{{../server._id}}/deleteservice/{{_id}}" class="ui icon button"> <!--card-footer-item-->
+              <a href="/server/{{../server._id}}/deleteservice/{{_id}}" class="ui icon button dark:bg-gray-800 dark:border-gray-800"> <!--card-footer-item-->
                   <span class="hover:animate-pulse" style="font-size: 17px; color: Red;"><i class="fa-regular fa-trash-can"></i></span>
               </a>
           </td>

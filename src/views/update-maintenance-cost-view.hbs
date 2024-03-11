@@ -1,13 +1,15 @@
 {{> menu}}
 
-<form class="box" action="/server/{{server._id}}/updateservercost" method="POST">
-    <label>Update server {{server.title}} maintenance cost:</label>
+<form class="box dark:text-gray-300 dark:bg-gray-900" action="/server/{{server._id}}/updateservercost" method="POST">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Update server {{server.title}} maintenance cost:</label>
     <div class="field is-horizontal">
         <div class="field-body">
             <div class="field">
-                <input class="input" type="number" name="maintenancecost" placeholder="Server cost" value="{{server.maintenancecost}}">
+                <input class="input w-96 dark:text-gray-300 dark:bg-gray-500" type="number" name="maintenancecost" placeholder="Server cost" value="{{server.maintenancecost}}">
             </div>
         </div>
     </div>
-    <button class="button is-primary is-fullwidth">Update Maintenance Cost</button>
+    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        Update maintenance cost
+    </button>
 </form>

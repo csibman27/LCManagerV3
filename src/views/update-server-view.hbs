@@ -1,28 +1,28 @@
 {{> menu}}
 
-<form class="box" action="/server/{{server._id}}/updateserver" method="POST">
+<form class="box dark:text-gray-300 dark:bg-gray-900" action="/server/{{server._id}}/updateserver" method="POST">
     <label>Update Server Details:</label>
     <div class="field is-horizontal">
         <div class="field-body">
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                <input class="input" type="text" pattern="[A-Za-z\\s]+{1,20}" name="title" placeholder="Server name" value="{{server.title}}">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Title</label>
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" pattern="[A-Za-z\\s]+{1,20}" name="title" placeholder="Server name" value="{{server.title}}">
             </div>
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Service</label>
-                <input class="input" type="text" name="service" placeholder="Service" value="{{server.service}}">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Service</label>
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="service" placeholder="Service" value="{{server.service}}">
             </div>
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cab</label>
-                <input class="input" type="text" name="cab" placeholder="Server Cab" value="{{server.cab}}">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Cab</label>
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="cab" placeholder="Server Cab" value="{{server.cab}}">
             </div>
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operating System</label>
-                <input class="input" type="text" name="os" placeholder="Operating System" value="{{server.os}}">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Operating System</label>
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="os" placeholder="Operating System" value="{{server.os}}">
             </div>
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Idrac IP</label>
-                <input class="input" type="text" name="idrac" placeholder="Server Idrac" value="{{server.idrac}}">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Idrac IP</label>
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="idrac" placeholder="Server Idrac" value="{{server.idrac}}">
             </div>
 <!--            <div class="field">-->
 <!--                <input class="input" type="text" name="nwcard" placeholder="Number of network cards" value="{{server.nwcard}}">-->

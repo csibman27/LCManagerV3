@@ -1,42 +1,42 @@
 <form class="box bg-gray-50 dark:bg-gray-900" action="/server/{{server._id}}/addservice" method="POST">
-    <label for="base-input" class="block mb-2 text-base mb-4 font-medium text-gray-900 dark:text-orange">Enter Service Details</label>
+    <label for="base-input" class="block mb-2 text-base mb-4 font-medium text-gray-900 dark:text-amber-600">Enter Service Details</label>
     <div class="field is-horizontal bg-gray-50 dark:bg-gray-900">
         <div class="field-body">
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Name of Service" name="serviceName">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Title</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Name of Service" name="serviceName">
             </div>
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tag</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Service Tag" name="servicetag">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tag</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Service Tag" name="servicetag">
             </div>
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operating system</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="OS Name" name="os">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Operating system</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="OS Name" name="os">
             </div>
             <div class="field">
-                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monitoring</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Name of Monitoring" name="monitored">
+                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Monitoring</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Name of Monitoring" name="monitored">
             </div>
             <div class="field">
-                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Backup</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Name of Backup technology" name="backups">
+                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Backup</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Name of Backup technology" name="backups">
             </div>
             <div class="field">
-                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Syslog</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Syslog Server" name="syslog">
+                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Syslog</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Syslog Server" name="syslog">
             </div>
             <div class="field">
-                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Login with" name="login">
+                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Login</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Login with" name="login">
             </div>
             <div class="field">
-                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                <input class="input dark:bg-slate-700" type="text" placeholder="Description" name="desc">
+                <label for="base-input dark:bg-slate-700" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Description</label>
+                <input class="input dark:bg-slate-700 dark:text-gray-400" type="text" placeholder="Description" name="desc">
             </div>
         </div>
     </div>
     <button class="bg-transparent hover:bg-orange-600 text-orange-700 font-semibold hover:text-white py-2 px-4 border border-orange-700 hover:border-transparent rounded">
-        Update Server
+        Add Service
     </button>
 </form>

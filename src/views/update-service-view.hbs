@@ -1,41 +1,41 @@
 {{> menu}}
 
-<form class="box" action="/service/{{server._id}}/updateservice/{{service._id}}" method="POST">
+<form class="box dark:bg-gray-900" action="/service/{{server._id}}/updateservice/{{service._id}}" method="POST">
 <!--    /service/{{service._id}}/updateservice/{{server._id}} -->
-    <label for="base-input" class="block mb-2 text-me font-medium text-gray-900 dark:text-white">Update Server Details</label>
-    <div class="field is-horizontal">
+    <label for="base-input" class="block mb-2 text-me font-medium text-gray-900 dark:text-gray-100 dark:bg-gray-900">Update Server Details</label>
+    <div class="field is-horizonta">
         <div class="field-body">
             <div class="field">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                <input class="input" type="text" pattern="[A-Za-z\\s]+{1,20}" name="serviceName" placeholder="Name" value="{{service.serviceName}}">
+                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Title</label>
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" pattern="[A-Za-z\\s]+{1,20}" name="serviceName" placeholder="Name" value="{{service.serviceName}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tag</label>
-                <input class="input" type="text" name="servicetag" placeholder="Service Tag" value="{{service.servicetag}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="servicetag" placeholder="Service Tag" value="{{service.servicetag}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operating system</label>
-                <input class="input" type="text" name="os" placeholder="Operating System" value="{{service.os}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="os" placeholder="Operating System" value="{{service.os}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                <input class="input" type="text" name="desc" placeholder="Description" value="{{service.desc}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="desc" placeholder="Description" value="{{service.desc}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monitoring</label>
-                <input class="input" type="text" name="monitored" placeholder="Monitoring" value="{{service.monitored}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="monitored" placeholder="Monitoring" value="{{service.monitored}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Backup</label>
-                <input class="input" type="text" name="backups" placeholder="Backup" value="{{service.backups}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="backups" placeholder="Backup" value="{{service.backups}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Syslog</label>
-                <input class="input" type="text" name="syslog" placeholder="Syslog server" value="{{service.syslog}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="syslog" placeholder="Syslog server" value="{{service.syslog}}">
             </div>
             <div class="field">
                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login</label>
-                <input class="input" type="text" name="login" placeholder="Login details" value="{{service.login}}">
+                <input class="input dark:text-gray-300 dark:bg-gray-500" type="text" name="login" placeholder="Login details" value="{{service.login}}">
             </div>
         </div>
     </div>

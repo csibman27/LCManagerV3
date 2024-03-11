@@ -89,18 +89,6 @@
       "serverid": "3e36b75b-ef31-47e8-bfdd-e8bdf8b95757"
     },
     {
-      "serviceName": "asd",
-      "servicetag": "1asd",
-      "os": "asd",
-      "desc": "asdasd",
-      "monitored": "asd",
-      "backups": "asdasd",
-      "syslog": "asdads",
-      "login": "ads",
-      "_id": "d7fa7afc-0fb6-4868-997d-ca5f0c7adbef",
-      "serverid": "e423b8e9-e96b-4e77-934c-739185255ee7"
-    },
-    {
       "serviceName": "qed1",
       "servicetag": "qwq1",
       "os": "weqw1",
@@ -158,6 +146,30 @@
       "syslog": "213",
       "login": "123",
       "_id": "a3ea340d-f9cb-418f-8dda-80873b6e02ee",
+      "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
+    },
+    {
+      "serviceName": "1",
+      "servicetag": "1",
+      "os": "1",
+      "desc": "1",
+      "monitored": "1",
+      "backups": "1",
+      "syslog": "1",
+      "login": "1",
+      "_id": "c24aa7e2-935c-45a9-97aa-1b6b0f2329f7",
+      "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
+    },
+    {
+      "serviceName": "asd",
+      "servicetag": "asd",
+      "os": "asd",
+      "desc": "dasd",
+      "monitored": "asdasd",
+      "backups": "asd",
+      "syslog": "asd",
+      "login": "asdas",
+      "_id": "8497057b-7ea5-4291-91f6-c1d952635acc",
       "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
     }
   ]
