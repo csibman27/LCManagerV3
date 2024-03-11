@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   animation: {
     vote: "vote 1s ease-in-out",
@@ -15,7 +14,13 @@ module.exports = {
     },
   },
   darkMode: "media",
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.{html,js}",
+    "./src/views/**/*.{html,js}",
+    "./src/views/*.{html,js}",
+    "./src/views/partials/*.{html,js}",
+    "./src/views/partials/*.{html,js}"
+  ],
   theme: {
     extend: {
       animation: {
