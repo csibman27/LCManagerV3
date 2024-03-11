@@ -2,34 +2,34 @@
 <form action="/dashboard/addserver" method="POST">
 
 <!--   new server form  using tailwind css -->
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-3 gap-4 dark:bg-gray-900">
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Server Name</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="servername"><i class="fas fa-server text-gray-500"></i></label>
                 <input
                         type="text"
                         id="title"
                         name="title"
                         placeholder="Server Name"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Server Tag</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="servername"><i class="fa-solid fa-tag text-gray-500"></i></label>
                 <input
                         type="text"
                         id="tag"
                         name="tag"
                         placeholder="Server Tag"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cab Number</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-brands fa-codepen text gray-500"></i></label>
 
                 <input
@@ -37,130 +37,130 @@
                         id="cab"
                         name="cab"
                         placeholder="Cab Number"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Operating System</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fas fa-desktop text-gray-500"></i></label>
                 <input
                         type="text"
                         id="os"
                         name="os"
                         placeholder="Operating System"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Idrac IP</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-globe text-gray-500"></i></label>
                 <input
                         type="text"
                         id="idrac"
                         name="idrac"
                         placeholder="Idrac Ipv4 Address"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Network Cards</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-network-wired text-gray-500"></i></label>
                 <input
                         type="text"
                         id="nwcard"
                         name="nwcard"
                         placeholder="Network Cards"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Backup</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fas fa-server text-gray-500"></i></label>
                 <input
                         type="text"
                         id="backupTo"
                         name="backupTo"
                         placeholder="Backup"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Monitoring</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fas fa-desktop text-gray-500"></i></label>
                 <input
                         type="text"
                         id="monitoredWith"
                         name="monitoredWith"
                         placeholder="Monitoring"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Support Until</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-phone text-gray-500"></i></label>
                 <input
                         type="date"
                         id="support"
                         name="support"
                         placeholder="Support"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Service</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-brands fa-servicestack text-gray-500"></i></label>
                 <input
                         type="text"
                         id="service"
                         name="service"
                         placeholder="Service"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Bios Version</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-microchip text-gray-500"></i></label>
                 <input
                         type="text"
                         id="bios"
                         name="bios"
                         placeholder="Bios Version"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Firmware Version</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-microchip text-gray-500"></i></label>
                 <input
                         type="text"
                         id="firmware"
                         name="firmware"
                         placeholder="Firmware version"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Infrastructure as a Service</label>
-            <select id="maas" name="maas" class="pl-2 border border-slate-300 rounded-md text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <select id="maas" name="maas" class="pl-2 border border-slate-300 focus:outline-0 rounded-md text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:text-white">
                 <option selected>IaaS Used?</option>
                 <option value="true">True</option>
                 <option value="false">False</option>
@@ -169,40 +169,40 @@
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Cost in €</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-euro-sign text-gray-500"></i></label>
                 <input
                         type="number"
                         id="cost"
                         name="cost"
                         placeholder="Cost in Euro"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Purchase Date</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-cart-shopping text-gray-500"></i></label>
                 <input
                         type="date"
                         id="pdate"
                         name="pdate"
                         placeholder="Purchase Date"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Model</label>
-            <div class="pl-2 border border-slate-300 rounded-md">
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
                 <label for="ip"><i class="fa-solid fa-copyright text-gray-500"></i></label>
                 <input
                         type="text"
                         id="model"
                         name="model"
                         placeholder="Model"
-                        class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
             </div>
         </div>
 
@@ -210,14 +210,14 @@
     <div>
         <label for="desc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >Description</label>
-        <div class="pl-2 border border-slate-300 rounded-md">
+        <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
             <label for="ip"><i class="fa-solid fa-info text-gray-500"></i></label>
             <input
                     type="text"
                     id="desc"
                     name="desc"
                     placeholder="Description"
-                    class="px-2 py-2 w-98 border-0 focus:outline-0"/>
+                    class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
         </div>
     </div>
     <br>
