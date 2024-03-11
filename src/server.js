@@ -1,7 +1,7 @@
 import Vision from "@hapi/vision";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Inert from "@hapi/inert";
-import Hapi from "@hapi/hapi";
+import Hapi, { server } from "@hapi/hapi";
 import path from "path";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
@@ -98,6 +98,12 @@ async function init() {
     layout: true,
     isCached: false,
   });
+  // server.get("/", (req, res) => {
+  //   const darkModeQuery = req.query.darkmode;
+  //   const darkModeClass = darkModeQuery === "true" ? "dark" : "";
+  // });
+  // Handle requests
+
 
   db.init();
   server.route(webRoutes);

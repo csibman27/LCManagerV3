@@ -5,6 +5,7 @@ import { analytics } from "../utils/analytics.js";
 
 const newDate = new Date();
 
+
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
@@ -13,6 +14,8 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
       const services = await db.serviceStore.getAllServices();
       const users = await db.userStore.getAllUsers();
+      // const darkMode = request.query.darkmode === "true";
+      // const theme = darkMode ? "dark" : "light";
       // Other
       const company = "[Company name]";
       const date = new Date().getFullYear();

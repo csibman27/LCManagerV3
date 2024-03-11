@@ -13,7 +13,7 @@ module.exports = {
       },
     },
   },
-  darkMode: "media",
+  darkMode: ["class"],
   content: [
     "./src/**/*.{html,js}",
     "./src/views/**/*.{html,js}",
