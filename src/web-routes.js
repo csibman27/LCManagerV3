@@ -68,4 +68,6 @@ export const webRoutes = [
 
   { method: "POST", path: "/service/{id}/updateservice/{serviceid}", config: serviceController.update },
   { method: "GET", path: "/service/{id}/editservice/{serviceid}", config: serviceController.index },
+
+  { method: "GET", path: "/dependency/{id}", config: dependencyController.index },
 ];

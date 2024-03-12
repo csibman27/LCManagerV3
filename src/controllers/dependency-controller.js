@@ -8,7 +8,7 @@ export const dependencyController = {
       const date = new Date().getFullYear();
       const servers = await db.serverStore.getAllServers();
       const server = await db.serverStore.getServerById(request.params.id);
-      console.log(server);
+      const string = "Tibor"
       const company = "[Company name]";
       const viewData = {
         title: "Dependency Tree",
@@ -16,7 +16,8 @@ export const dependencyController = {
         company,
         loggedInUserInitials,
         servers: servers,
-        server: server,
+        server,
+        string,
       };
       return h.view("dependency-view", viewData);
     },
