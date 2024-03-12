@@ -1,7 +1,7 @@
 {{> menu active="dependency"}}
 
 
-<div class="grid-cols-8 text-center space-x-5">
+<div class="grid-cols-8 text-center space-x-5 mb-5">
     <span class="bg-blue-100 text-blue-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Openstack</span>
     <span class="bg-gray-100 text-gray-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Proxmox</span>
     <span class="bg-red-100 text-red-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Vmware ESXI</span>
@@ -11,9 +11,23 @@
     <span class="bg-purple-100 text-purple-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">Solaris R720-21</span>
     <span class="bg-pink-100 text-pink-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400">Solaris R720-20</span>
 </div>
-<div class="grid-cols-8 text-center space-x-5">
+<div class="h-screen">
+    <div class="grid grid-cols-3 grid-rows-3 gap-4 h-5/6 w-4/5 mx-auto">
+        {{#each servers }}
+        <div class="bg-green-100 row-span-1  col-span-1">
+            <span class="bg-blue-100 text-blue-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+                {{service}}
+            </span>
+
+        </div>
+        {{/each}}
+    </div>
 
 </div>
+<h2>Services</h2>
+{{> list-services}}
+
+
 
 
 {{> footer }}
