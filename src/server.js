@@ -49,6 +49,9 @@ async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 8080,
     // host: process.env.HOST,
+    routes: {
+      cors: true,
+    },
   });
 
   const result = dotenv.config({ silent: true }); // change to silent: true can help to deploy it to heroku it is failing otherwise
@@ -103,7 +106,6 @@ async function init() {
   //   const darkModeClass = darkModeQuery === "true" ? "dark" : "";
   // });
   // Handle requests
-
 
   db.init();
   server.route(webRoutes);
