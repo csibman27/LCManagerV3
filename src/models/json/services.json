@@ -171,6 +171,18 @@
       "login": "asdas",
       "_id": "8497057b-7ea5-4291-91f6-c1d952635acc",
       "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
+    },
+    {
+      "serviceName": "asaaa",
+      "servicetag": "da",
+      "os": "a",
+      "desc": "a",
+      "monitored": "a",
+      "backups": "a",
+      "syslog": "a",
+      "login": "",
+      "_id": "dc853925-a27a-42e9-b780-d94480dccf31",
+      "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
     }
   ]
 }

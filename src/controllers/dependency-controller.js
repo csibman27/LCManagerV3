@@ -8,6 +8,7 @@ export const dependencyController = {
       const date = new Date().getFullYear();
       const servers = await db.serverStore.getAllServers();
       const server = await db.serverStore.getServerById(request.params.id);
+      console.log(server);
       const company = "[Company name]";
       const viewData = {
         title: "Dependency Tree",
