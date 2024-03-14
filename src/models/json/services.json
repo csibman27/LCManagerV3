@@ -219,6 +219,18 @@
       "login": "1",
       "_id": "e8b99dcf-9d18-41fe-9bc0-18a487623358",
       "serverid": "66c87f4f-97e7-49ee-b1d4-cfe81bfff397"
+    },
+    {
+      "serviceName": "Apache2",
+      "servicetag": "apache",
+      "os": "",
+      "desc": "important",
+      "monitored": "Checkmk",
+      "backups": "Quobyte",
+      "syslog": "Dublin",
+      "login": "Maria",
+      "_id": "33e9b7c4-957e-49f4-a56b-7c1d84ce8021",
+      "serverid": "39137424-b671-4950-b38c-6d28ceb29975"
     }
   ]
 }

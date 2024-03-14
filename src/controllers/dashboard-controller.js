@@ -5,7 +5,6 @@ import { analytics } from "../utils/analytics.js";
 
 const newDate = new Date();
 
-
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
@@ -58,10 +57,11 @@ export const dashboardController = {
         backupTo: request.payload.backupTo,
         monitoredWith: request.payload.monitoredWith,
         support: request.payload.support,
+        virtualization: request.payload.virtualization,
         service: request.payload.service,
         bios: request.payload.bios,
         firmware: request.payload.firmware,
-        maas: Boolean(request.payload.maas),
+        iaas: Boolean(request.payload.iaas),
         cost: request.payload.cost,
         pdate: request.payload.pdate,
         model: request.payload.model,
@@ -69,6 +69,7 @@ export const dashboardController = {
         date: newDate.toISOString(), // date in ISO 8601 format.
         pieStatus: await analytics.progressPie(request.payload.pdate),
         maintenancecost: Number(0),
+        hdd: request.payload.hdd,
       };
       const serverTitles = [];
       for (let a = 0; a < servers.length; a += 1) {

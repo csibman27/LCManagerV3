@@ -18,7 +18,7 @@
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Server Tag</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="servername"><i class="fa-solid fa-tag text-gray-500"></i></label>
+                <label for="tag"><i class="fa-solid fa-tag text-gray-500"></i></label>
                 <input
                         type="text"
                         id="tag"
@@ -30,7 +30,7 @@
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cab Number</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-brands fa-codepen text gray-500"></i></label>
+                <label for="cab"><i class="fa-brands fa-codepen text gray-500"></i></label>
 
                 <input
                         type="number"
@@ -44,7 +44,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Operating System</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fas fa-desktop text-gray-500"></i></label>
+                <label for="os"><i class="fas fa-desktop text-gray-500"></i></label>
                 <input
                         type="text"
                         id="os"
@@ -57,7 +57,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Idrac IP</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-globe text-gray-500"></i></label>
+                <label for="idrac"><i class="fa-solid fa-globe text-gray-500"></i></label>
                 <input
                         type="text"
                         id="idrac"
@@ -70,7 +70,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Network Cards</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-network-wired text-gray-500"></i></label>
+                <label for="nwcard"><i class="fa-solid fa-network-wired text-gray-500"></i></label>
                 <input
                         type="text"
                         id="nwcard"
@@ -83,7 +83,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Backup</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fas fa-server text-gray-500"></i></label>
+                <label for="backupTo"><i class="fas fa-server text-gray-500"></i></label>
                 <input
                         type="text"
                         id="backupTo"
@@ -96,7 +96,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Monitoring</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fas fa-desktop text-gray-500"></i></label>
+                <label for="monitoredWith"><i class="fas fa-desktop text-gray-500"></i></label>
                 <input
                         type="text"
                         id="monitoredWith"
@@ -109,7 +109,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Support Until</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-phone text-gray-500"></i></label>
+                <label for="support"><i class="fa-solid fa-phone text-gray-500"></i></label>
                 <input
                         type="date"
                         id="support"
@@ -120,9 +120,22 @@
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Virtualization Technology</label>
+            <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
+                <label for="virtualization"><i class="fa-solid fa-v text-gray-500"></i></label>
+                <input
+                        type="text"
+                        id="virtualization"
+                        name="virtualization"
+                        placeholder="Virtualization"
+                        class="px-2 py-2 w-11/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white"/>
+            </div>
+        </div>
+        <div>
+            <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Service</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-brands fa-servicestack text-gray-500"></i></label>
+                <label for="service"><i class="fa-brands fa-servicestack text-gray-500"></i></label>
                 <input
                         type="text"
                         id="service"
@@ -135,7 +148,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Bios Version</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-microchip text-gray-500"></i></label>
+                <label for="bios"><i class="fa-solid fa-microchip text-gray-500"></i></label>
                 <input
                         type="text"
                         id="bios"
@@ -148,7 +161,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Firmware Version</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-microchip text-gray-500"></i></label>
+                <label for="firmware"><i class="fa-solid fa-microchip text-gray-500"></i></label>
                 <input
                         type="text"
                         id="firmware"
@@ -160,7 +173,7 @@
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Infrastructure as a Service</label>
-            <select id="maas" name="maas" class="pl-2 border border-slate-300 focus:outline-0 rounded-md text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:text-white">
+            <select id="iaas" name="iaas" class="pl-2 border border-slate-300 focus:outline-0 rounded-md text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:text-white">
                 <option selected>IaaS Used?</option>
                 <option value="true">True</option>
                 <option value="false">False</option>
@@ -170,7 +183,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Cost in €</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-euro-sign text-gray-500"></i></label>
+                <label for="cost"><i class="fa-solid fa-euro-sign text-gray-500"></i></label>
                 <input
                         type="number"
                         id="cost"
@@ -183,7 +196,7 @@
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Purchase Date</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-cart-shopping text-gray-500"></i></label>
+                <label for="pdate"><i class="fa-solid fa-cart-shopping text-gray-500"></i></label>
                 <input
                         type="date"
                         id="pdate"
@@ -194,9 +207,9 @@
         </div>
         <div>
             <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Model</label>
+            >Server Model</label>
             <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-                <label for="ip"><i class="fa-solid fa-copyright text-gray-500"></i></label>
+                <label for="model"><i class="fa-solid fa-copyright text-gray-500"></i></label>
                 <input
                         type="text"
                         id="model"
@@ -211,7 +224,7 @@
         <label for="desc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >Description</label>
         <div class="pl-2 border border-slate-300 rounded-md dark:bg-slate-700">
-            <label for="ip"><i class="fa-solid fa-info text-gray-500"></i></label>
+            <label for="desc"><i class="fa-solid fa-info text-gray-500"></i></label>
             <input
                     type="text"
                     id="desc"

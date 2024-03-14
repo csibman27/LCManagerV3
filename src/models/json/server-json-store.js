@@ -67,7 +67,7 @@ export const serverJsonStore = {
   },
 
   updateServerMaas: async function (server, updatedServer) {
-    server.maas = updatedServer.maas;
+    server.iaas = updatedServer.iaas;
     await db.write();
   },
 };
