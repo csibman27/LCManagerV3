@@ -1,10 +1,10 @@
 export const serviceUrl = "http://localhost:4000";
 
-export const maggie = {
-  firstName: "Maggie",
-  lastName: "Simpson",
-  email: "maggie@simpson.com",
-  password: "secret",
+export const tibor = {
+  firstName: "Tibor",
+  lastName: "Molnar",
+  email: "tibor.molnar@waltoninstitute.ie",
+  password: "1",
 };
 
 export const al = {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { serviceUrl } from "../fixtures.js";
+import { serviceUrl } from "../../fixtures.js";
 
 export const apiService = {
   apiUrl: serviceUrl,

@@ -7,7 +7,11 @@
   "scripts": {
     "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css",
     "start": "node src/server.js",
-    "lint": "eslint . --ext .js",
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "test": "mocha --ui tdd test/**/*.js -exit",
+    "testmodels": "./node_modules/mocha/bin/_mocha --ui tdd test/models/**/*.js -exit",
+    "testapi": "mocha --ui tdd test/api/**/*.js -exit",
+    "testarray": "mocha --ui tdd test/general/arrays-test.js -exit",
     "dev": "nodemon src/server.js"
   },
   "author": "Tibor Molnar",
