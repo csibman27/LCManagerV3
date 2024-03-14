@@ -30,11 +30,12 @@
                 <a href="/dashboard/confirmdelete/{{_id}}" class="button">
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
+<!--                after the buttons-->
 
                 <p class="medium">Bios {{bios}}</p>
                 <p>Firmware {{firmware}}</p>
                 {{#if support }}
-                <h2 class="text-rose-400>Support"> Active until {{support}}</h2>
+                <p> Active until {{support}}</p>
                 {{! if cannot find any support date will jump to the else statement }}
                 {{else}}
                     <h3>No support found or expired.</h3>
@@ -55,7 +56,7 @@
             </h2>
             <!--        Bottom part of the card-->
 
-            <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-50 rounded-lg hover:bg-blue-600 focus:outline-none flex flex-row space-x-2.5">
+            <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-950 bg-sky-50 rounded-lg hover:bg-blue-600 focus:outline-none flex flex-row space-x-2.5">
                 <a href="/server/{{_id}}" class="button">
                     <i class="fa-solid fa-server fa-xl"></i>
                 </a>
@@ -65,6 +66,7 @@
                 <a href="/dashboard/confirmdelete/{{_id}}" class="button">
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
+                <!--                after the buttons-->
 
                 <p>Bios {{bios}}</p>
                 <p>Firmware {{firmware}}</p>
