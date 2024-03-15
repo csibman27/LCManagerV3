@@ -9,13 +9,13 @@ export const aboutController = {
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const date = new Date().getFullYear();
       const company = "[Company name]";
-      const data = await analytics.pieChartA();
+      // const data = await analytics.pieChartA();
       const viewData = {
         title: "Data Analysis",
         date,
         company,
         loggedInUserInitials,
-        data,
+        // data,
       };
       return h.view("about-view", viewData);
     },

@@ -19,46 +19,80 @@
 </div>
 
 
+<!--Barchart-->
 
-<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+<table id="q-graph">
+  <caption>Quarterly Results</caption>
+  <thead>
+  <tr>
+    <th></th>
+    <th class="sent">Invoiced</th>
+    <th class="paid">Collected</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="qtr" id="q1">
+    <th scope="row">Q1</th>
+    <td class="sent bar" style="height: 111px;"><p>$18,450.00</p></td>
+    <td class="paid bar" style="height: 99px;"><p>$16,500.00</p></td>
+  </tr>
+  <tr class="qtr" id="q2">
+    <th scope="row">Q2</th>
+    <td class="sent bar" style="height: 206px;"><p>$34,340.72</p></td>
+    <td class="paid bar" style="height: 194px;"><p>$32,340.72</p></td>
+  </tr>
+  <tr class="qtr" id="q3">
+    <th scope="row">Q3</th>
+    <td class="sent bar" style="height: 259px;"><p>$43,145.52</p></td>
+    <td class="paid bar" style="height: 193px;"><p>$32,225.52</p></td>
+  </tr>
+  <tr class="qtr" id="q4">
+    <th scope="row">Q4</th>
+    <td class="sent bar" style="height: 110px;"><p>$18,415.96</p></td>
+    <td class="paid bar" style="height: 195px;"><p>$32,425.00</p></td>
+  </tr>
+  </tbody>
+</table>
+
+<div id="ticks">
+  <div class="tick" style="height: 59px;"><p>$50,000</p></div>
+  <div class="tick" style="height: 59px;"><p>$40,000</p></div>
+  <div class="tick" style="height: 59px;"><p>$30,000</p></div>
+  <div class="tick" style="height: 59px;"><p>$20,000</p></div>
+  <div class="tick" style="height: 59px;"><p>$10,000</p></div>
+</div>
+
+<!--PieChart-->
 
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    import { db } from "../models/db.js";
-    async function getData() {
-    const response = await fetch('/src/models/json/servers.json');
-    console.log(response);
+<!--<div class="chart"></div>-->
 
-    }
-</script>
-<script>
-    const ctx = document.getElementById('myChart');
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['0-3 years', '3-5 years', '5-7 years', '10 years ++'],
-            datasets: [{
-                label: 'Lifecycle stages',
-                data: [4, 4, 4, 5 ],
-                backgroundColor:[
-                    'rgba(58, 245, 39, 0.84)',
-                    'rgba(10, 34, 8, 0.84)',
-                    'rgba(212, 238, 15, 0.92)',
-                    'rgba(238, 15, 27, 0.93)',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
+<!--<ul class="key">-->
+<!--  <li>-->
+<!--    <strong class="percent red">4%</strong>-->
+<!--    <span class="choice">Jump right in, startupfille here I come.</span>-->
+<!--  </li>-->
+<!--  <li>-->
+<!--    <strong class="percent gray">4%</strong>-->
+<!--    <span class="choice">Email back to discuss, flattered and positive.</span>-->
+<!--  </li>-->
+<!--  <li>-->
+<!--    <strong class="percent purple">6%</strong>-->
+<!--    <span class="choice">Respond and say "Thanks but no thanks."</span>-->
+<!--  </li>-->
+<!--  <li>-->
+<!--    <strong class="percent blue">9%</strong>-->
+<!--    <span class="choice">Email back to discuss, all business.</span>-->
+<!--  </li>-->
+<!--  <li>-->
+<!--    <strong class="percent yellow">31%</strong>-->
+<!--    <span class="choice">Email back to discuss, but skeptically.</span>-->
+<!--  </li>-->
+<!--  <li>-->
+<!--    <strong class="percent orange">46%</strong>-->
+<!--    <span class="choice">Delete the email.</span>-->
+<!--  </li>-->
+<!--</ul>-->
 
 
 
