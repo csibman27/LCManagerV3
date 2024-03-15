@@ -15,6 +15,7 @@ module.exports = {
   },
   darkMode: ["class"],
   content: [
+    "./node_modules/flowbite/**/*.js",
     "./src/**/*.{html,js}",
     "./src/views/**/*.{html,js}",
     "./src/views/*.{html,js}",
@@ -29,5 +30,9 @@ module.exports = {
     },
   },
   // eslint-disable-next-line global-require
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: [
+    require("tailwindcss"), require("autoprefixer"),
+    require("flowbite/plugin")
+  ],
+
 };

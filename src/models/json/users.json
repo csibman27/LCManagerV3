@@ -5,7 +5,13 @@
       "lastName": "Molnar",
       "email": "1@1.com",
       "password": "1"
+    },
+    {
+      "firstName": "Krisztina",
+      "lastName": "Dravucz",
+      "email": "k@k.com",
+      "password": "1",
+      "_id": "6576ebf8-ca15-4ba8-8c67-6971c0c9a790"
     }
-
   ]
 }
