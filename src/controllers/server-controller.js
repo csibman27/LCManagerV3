@@ -137,11 +137,12 @@ export const serverController = {
     },
   },
 
-  updateMaas: {
+  // Need to be changed to Iaas
+  updateIaas: {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const newServer = {
-        maas: Boolean(request.payload.maas),
+        iaas: Boolean(request.payload.iaas),
       };
       // console.log(JSON.stringify(obj));
       try {
@@ -153,7 +154,8 @@ export const serverController = {
     },
   },
 
-  showMaas: {
+  // Need to be changed to Iaas
+  showIaas: {
     handler: async function (request, h) {
       const server = await db.serverStore.getServerById(request.params.id);
       const viewData = {
@@ -161,7 +163,7 @@ export const serverController = {
         server: server,
       };
       // console.log(server);
-      return h.view("update-maas-view", viewData);
+      return h.view("update-iaas-view", viewData);
     },
   },
 

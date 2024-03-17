@@ -47,7 +47,7 @@
                     <h2 class="px-4 pb-4 text-xl font-semibold leading-7 text-gray-800 dark:text-gray-100">Server properties subject to change</h2>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Server in Maas</dt> {{server.maas}} <a href="/server/{{server._id}}/editservermaas">
+                    <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Iaas utilized</dt> {{server.iaas}} <a href="/server/{{server._id}}/editservermaas">
                         <span class="hover:animate-pulse" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-edit"></i></span>
                     </a></dd>
 
@@ -61,7 +61,7 @@
                         <p class="text-rose-400 text-sm font-medium"> {{eSupport}} </p></dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Age of server</dt>
+                    <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Server age</dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-gray-400">{{serverAgeId}}</dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -79,7 +79,7 @@
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-gray-400">{{server.title}}</dd>
                 </div>
                 <div class="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                   <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400"> Uptime </dt> Value <a href="#"> <!-- API connection to source-->
+                   <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400"> RAM  </dt> Value <a href="#"> <!-- API connection to source-->
                     <span class="hover:animate-ping" style="font-size: 17px; color: Dodgerblue;"><i class="fa-solid fa-rotate"></i></span>
                 </a></dd>
                 </div>
@@ -131,7 +131,12 @@
             Add a Service </h2>
     </div>
 
-    {{> add-service}}
+    {{#if errors}}
+        {{> error }}
+    {{else}}
+        {{> add-service}}
+    {{/if}}
+
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
 <!--    List of Services section-->
