@@ -15,7 +15,7 @@
       "service": "Vmware ESXi 7",
       "bios": "2.9",
       "firmware": "14.29",
-      "iaas": true,
+      "iaas": tr_ue,
       "cost": "5300",
       "pdate": "2024-01-01",
       "model": "1",

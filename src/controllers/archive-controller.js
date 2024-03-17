@@ -52,7 +52,7 @@ export const archiveController = {
         // service: request.payload.service,
         // bios: request.payload.bios,
         // firmware: request.payload.firmware,
-        // maas: Boolean(request.payload.maas),
+        // iaas: Boolean(request.payload.iaas),
         // cost: request.payload.cost,
         // pdate: request.payload.pdate,
         // model: request.payload.model,
