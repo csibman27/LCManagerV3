@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { db } from "../models/db.js";
 // eslint-disable-next-line import/no-extraneous-dependencies
 
-const today = new Date();
+const currentDate = new Date();
 
 export const analytics = {
   async getAllServers() {
@@ -142,5 +142,41 @@ export const analytics = {
       },
       options: {},
     });
+  },
+
+  async filterDatesByThisYear(dateArray) {
+    const currentYear = currentDate.getFullYear();
+    const filteredDates = dateArray.filter((date) => {
+      const inputDate = new Date(date);
+      return inputDate.getFullYear() === currentYear;
+    });
+    return filteredDates.length;
+  },
+
+  async filterDatesByLastYear(dateArray) {
+    const currentYear = currentDate.getFullYear() - 1;
+    const filteredDates = dateArray.filter((date) => {
+      const inputDate = new Date(date);
+      return inputDate.getFullYear() === currentYear;
+    });
+    return filteredDates.length;
+  },
+
+  async filterDatesByYearMinusTwo(dateArray) {
+    const currentYear = currentDate.getFullYear() - 2;
+    const filteredDates = dateArray.filter((date) => {
+      const inputDate = new Date(date);
+      return inputDate.getFullYear() === currentYear;
+    });
+    return filteredDates.length;
+  },
+
+  async filterDatesByYearMinusThree(dateArray) {
+    const currentYear = currentDate.getFullYear() - 3;
+    const filteredDates = dateArray.filter((date) => {
+      const inputDate = new Date(date);
+      return inputDate.getFullYear() === currentYear;
+    });
+    return filteredDates.length;
   },
 };

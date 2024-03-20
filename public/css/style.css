@@ -158,7 +158,7 @@
     transition: all .3s ease;
 
     &:hover {
-        background-color: darkgray;
+        background-color: #ff7a00;
         opacity: .9;
         color: white;
     }
@@ -212,12 +212,12 @@
 }
 #q-graph .sent {
     left: 13px;
-    background-color: #39cccc;
+    background-color: #35ca9b;
     border-color: transparent;
 }
 #q-graph .paid {
     left: 77px;
-    background-color: #7fdbff;
+    background-color: #006aff;
     border-color: transparent;
 }
 
