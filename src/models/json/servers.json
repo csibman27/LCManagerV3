@@ -15,7 +15,7 @@
       "service": "Vmware ESXi 7",
       "bios": "2.9",
       "firmware": "14.29",
-      "iaas": tr_ue,
+      "iaas": true,
       "cost": "5300",
       "pdate": "2024-01-01",
       "model": "1",
@@ -182,9 +182,22 @@
       "desc": "1",
       "date": "2024-02-23T21:34:13.846Z",
       "pieStatus": "pie-3",
-      "maintenancecost": 0,
+      "maintenancecost": 1200,
       "_id": "ca033a65-3021-42bd-942b-e9c3a5b93001",
-      "services": []
+      "services": [
+        {
+          "serviceName": "one",
+          "servicetag": "oen",
+          "os": "111",
+          "desc": "1",
+          "monitored": "11",
+          "backups": "1",
+          "syslog": "1",
+          "login": "1",
+          "_id": "18786da2-4466-4bd0-87dd-a030a64828d2",
+          "serverid": "ca033a65-3021-42bd-942b-e9c3a5b93001"
+        }
+      ]
     },
     {
       "userid": "db28488c-3a0c-49c9-8b97-ab184e8885e3",

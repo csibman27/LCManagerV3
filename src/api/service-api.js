@@ -2,7 +2,6 @@ import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 import { IdSpec, ServiceSpec, ServiceSpecPlus, ServiceArraySpec } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
-import { imageStore } from "../models/image-store.js";
 
 export const serviceApi = {
   find: {
