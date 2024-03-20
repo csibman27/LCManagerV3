@@ -1,5 +1,4 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Chart from "chart.js/auto";
 import { db } from "../models/db.js";
 // eslint-disable-next-line import/no-extraneous-dependencies
 
@@ -79,7 +78,6 @@ export const analytics = {
 
   // get progress chart function
   async progressPie(pdate) {
-    const currentDate = new Date();
     const providedDate = new Date(pdate);
 
     const timeDiff = currentDate.getTime() - providedDate.getTime();
@@ -100,9 +98,19 @@ export const analytics = {
     return "pie-5"; // Date is more than 10 years old
   },
 
+  // support check for servers
+  async supportCheckServer(supportDate) {
+    const inputDate = new Date(supportDate);
+
+    if (currentDate.getTime() > inputDate.getTime()) {
+      return "Support date has expired. Please renew or update the support.";
+    } else {
+      return "Support date is still valid. No action needed.";
+    }
+  },
+
   // support expiration tracker
   async supportCheck(supportDate) {
-    const currentDate = new Date();
     const supportEndDate = new Date(supportDate);
 
     if (currentDate > supportEndDate) {

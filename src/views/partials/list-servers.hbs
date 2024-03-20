@@ -34,11 +34,11 @@
 
                 <p class="medium">Bios {{bios}}</p>
                 <p>Firmware {{firmware}}</p>
-                {{#if support }}
-                <p> Active until {{support}}</p>
+                {{#if supportStatus}}
+                <p class="text-green-600">{{supportStatus}}</p>
                 {{! if cannot find any support date will jump to the else statement }}
                 {{else}}
-                    <h3>No support found or expired.</h3>
+                    <h3 class="text-pink-600">No support data found!</h3>
                 {{/if}}
             </div>
         </div>
@@ -70,8 +70,8 @@
 
                 <p>Bios {{bios}}</p>
                 <p>Firmware {{firmware}}</p>
-                {{#if support }}
-                    <h2 class="text-rose-400>Support"> Active until {{support}}</h2>
+                {{#if supportStatus }}
+                    <h2 class="text-rose-400>Support"> Active until {{supportStatus}}</h2>
                 {{! if cannot find any support date will jump to the else statement }}
                 {{else}}
                     <h3>No support found or expired.</h3>

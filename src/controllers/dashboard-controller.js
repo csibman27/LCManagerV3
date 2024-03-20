@@ -67,6 +67,7 @@ export const dashboardController = {
         model: request.payload.model,
         desc: request.payload.desc,
         date: newDate.toISOString(), // date in ISO 8601 format.
+        supportStatus: await analytics.supportCheck(request.payload.support),
         pieStatus: await analytics.progressPie(request.payload.pdate),
         maintenancecost: Number(0),
         hdd: request.payload.hdd,
