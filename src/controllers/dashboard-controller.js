@@ -1,6 +1,6 @@
 import fs from "fs";
 import { db } from "../models/db.js";
-import { ServerSpec, ServiceSpec } from "../models/joi-schemas.js";
+import { ServerSpec } from "../models/joi-schemas.js";
 import { analytics } from "../utils/analytics.js";
 
 const newDate = new Date();
@@ -10,12 +10,21 @@ export const dashboardController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
-      const servers = await db.serverStore.getAllServers();
+      // const t2 = request.params.servers.length;
+      let servers = await db.serverStore.getAllServers();
       const services = await db.serviceStore.getAllServices();
       const users = await db.userStore.getAllUsers();
       // const darkMode = request.query.darkmode === "true";
       // const theme = darkMode ? "dark" : "light";
-      // Other
+      // pie data
+      for (let i = 0; i < servers.length; i += 1) {
+        const purchaseDate = servers[i].pdate
+        const pieStat = await analytics.progressPie(purchaseDate);
+        // console.log(Object.keys(servers[i]))
+        // With pie status value gained above update piestatus in servers
+        servers[i].pieStatus = pieStat
+        // console.log(servers[i])
+      }
       const company = "[Company name]";
       const date = new Date().getFullYear();
       // display data
@@ -31,6 +40,23 @@ export const dashboardController = {
       };
       return h.view("dashboard-view", viewData);
     },
+  },
+
+  showPie: {
+    handler: async function (request, h) {
+      const server = await db.serverStore.getServerById(request.params.id);
+      const pdate = server.pdate;
+      const purchaseDate = new Date(pdate);
+      // pie data
+      const pie2 = await analytics.progressPie(purchaseDate);
+      console.log(pie2)
+      const viewData = {
+        title: "Pie",
+        server,
+        pie2,
+      };
+      return h.view("dashboard-view", viewData);
+    }
   },
 
   addServer: {
@@ -68,7 +94,7 @@ export const dashboardController = {
         desc: request.payload.desc,
         date: newDate.toISOString(), // date in ISO 8601 format.
         supportStatus: await analytics.supportCheck(request.payload.support),
-        pieStatus: await analytics.progressPie(await db.serverStore.getServerById(request.params.id)),
+        pieStatus: await analytics.progressPie(request.payload.pieStatus),
         maintenancecost: Number(0),
         hdd: request.payload.hdd,
       };

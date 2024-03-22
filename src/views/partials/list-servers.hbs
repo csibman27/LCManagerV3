@@ -34,6 +34,9 @@
 
                 <p class="medium">Bios {{bios}}</p>
                 <p>Firmware {{firmware}}</p>
+                {{#server}}
+                  {{log support}}
+                {{/server}}
                 {{#if supportStatus}}
                 <p class="text-green-600">{{supportStatus}}</p>
                 {{! if cannot find any support date will jump to the else statement }}

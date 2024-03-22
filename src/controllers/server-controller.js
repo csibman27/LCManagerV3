@@ -26,6 +26,8 @@ export const serverController = {
 
       // pie data
       const pie = await analytics.progressPie(purchaseDate);
+      console.log(pie)
+      // module.exports = { pie }
 
       const viewData = {
         title: "Servers",

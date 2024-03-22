@@ -98,6 +98,40 @@ export const analytics = {
     return "pie-5"; // Date is more than 10 years old
   },
 
+  // get progress chart function
+  async progressPie2() {
+
+    let providedDate = [];
+    let server = await db.serverStore.getAllServers();
+    server = await db.serverStore.getAllServers(server._id);
+    for (let i = 0; i < server.length; i += 1) {
+      let pdate = server[i].pdate
+
+    providedDate = new Date(pdate);
+      // console.log(providedDate)
+    }
+    const timeDiff = currentDate.getTime() - providedDate.getTime();
+    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysDiff <= 1095) {
+      return "pie"; // Date is within the first 3 years
+    }
+    if (daysDiff > 1095 && daysDiff <= 1825) {
+      return "pie-2"; // Date is between 3-5 years
+    }
+    if (daysDiff > 1825 && daysDiff <= 2555) {
+      return "pie-3"; // Date is between 5-7 years
+    }
+    if (daysDiff > 2555 && daysDiff <= 3650) {
+      return "pie-4"; // Date is between 7-10 years
+    }
+    return "pie-5"; // Date is more than 10 years old
+  },
+
+  async returnPie() {
+    return "pie";
+  },
+
   // support check for servers
   async supportCheckServer(supportDate) {
     const inputDate = new Date(supportDate);
