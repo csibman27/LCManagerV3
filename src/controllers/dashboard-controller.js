@@ -22,8 +22,14 @@ export const dashboardController = {
         const pieStat = await analytics.progressPie(purchaseDate);
         // console.log(Object.keys(servers[i]))
         // With pie status value gained above update piestatus in servers
-        servers[i].pieStatus = pieStat
+        servers[i].pieStatus = pieStat;
         // console.log(servers[i])
+      }
+      // support data
+      for (let i = 0; i < servers.length; i += 1) {
+        const supportDate = servers[i].support
+        const supDate = await analytics.supportCheck(supportDate);
+        servers[i].support = supDate;
       }
       const company = "[Company name]";
       const date = new Date().getFullYear();
@@ -40,23 +46,6 @@ export const dashboardController = {
       };
       return h.view("dashboard-view", viewData);
     },
-  },
-
-  showPie: {
-    handler: async function (request, h) {
-      const server = await db.serverStore.getServerById(request.params.id);
-      const pdate = server.pdate;
-      const purchaseDate = new Date(pdate);
-      // pie data
-      const pie2 = await analytics.progressPie(purchaseDate);
-      console.log(pie2)
-      const viewData = {
-        title: "Pie",
-        server,
-        pie2,
-      };
-      return h.view("dashboard-view", viewData);
-    }
   },
 
   addServer: {
@@ -93,7 +82,6 @@ export const dashboardController = {
         model: request.payload.model,
         desc: request.payload.desc,
         date: newDate.toISOString(), // date in ISO 8601 format.
-        supportStatus: await analytics.supportCheck(request.payload.support),
         pieStatus: await analytics.progressPie(request.payload.pieStatus),
         maintenancecost: Number(0),
         hdd: request.payload.hdd,

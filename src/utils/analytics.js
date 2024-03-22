@@ -148,15 +148,15 @@ export const analytics = {
     const supportEndDate = new Date(supportDate);
 
     if (currentDate > supportEndDate) {
-      return "Warning: Support has already expired.";
+      return " Warning: Support has already expired.";
     }
     const timeDiff = supportEndDate.getTime() - currentDate.getTime();
     const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
-    if (daysDiff <= 90) {
-      return `Warning: Support will expire in ${daysDiff} days.`;
+    if (daysDiff <= 180) {
+      return ` Warning: Support will expire in ${daysDiff} days.`;
     }
-    return "Support status: Active";
+    return;
   },
 
   async sum(maintenancecost, y) {
