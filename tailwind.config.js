@@ -13,26 +13,31 @@ module.exports = {
       },
     },
   },
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./node_modules/flowbite/**/*.js",
     "./src/**/*.{html,js}",
     "./src/views/**/*.{html,js}",
     "./src/views/*.{html,js}",
     "./src/views/partials/*.{html,js}",
-    "./src/views/partials/*.{html,js}"
+    "./src/views/partials/*.{html,js}",
   ],
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          "0% 100%": {
+            transform: "rotate(-3deg)",
+          },
+          "50%": { transform: "rotate(3de)" },
+        },
+      },
       animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
         "spin-slow": "spin 3s linear infinite",
       },
     },
   },
   // eslint-disable-next-line global-require
-  plugins: [
-    require("tailwindcss"), require("autoprefixer"),
-    require("flowbite/plugin")
-  ],
-
+  plugins: [require("tailwindcss"), require("autoprefixer"), require("flowbite/plugin")],
 };

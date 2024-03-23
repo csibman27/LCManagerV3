@@ -418,7 +418,6 @@
       "model": "Phonix-33000",
       "desc": "server for webshops",
       "date": "2024-03-20T23:06:03.725Z",
-      "supportStatus": "Support date is still valid. No action needed.",
       "pieStatus": "pie",
       "maintenancecost": 0,
       "_id": "ba7cd712-f14b-4370-949f-1381571a3e1c"
@@ -444,7 +443,6 @@
       "model": "MZ/X",
       "desc": "MZ/X file server",
       "date": "2024-03-20T23:27:59.362Z",
-      "supportStatus": "Warning: Support has already expired.",
       "pieStatus": "pie-2",
       "maintenancecost": 0,
       "_id": "98c0ff2d-a73d-4795-83b0-8df330367497"
