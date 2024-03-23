@@ -18,19 +18,24 @@
             <i class="fa-solid fa-server"></i>
             List of Servers </h2>
     </div>
+
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">{{company}} Data Center Server list.</p>
 
     <div>
     <!--    search bar -->
 <!--        filter menu is within the search form-->
     {{>search-server-form}}
+        <!--    Filter    -->
+        {{> server-filter }}
     {{>search-server-results}}
 <!--    search results end -->
     </div>
 
     <!-- list servers-->
+<!--    <div class="flex items-stretch pt-5 text-gray-500">-->
     <div>
     {{> list-servers}}
+
     </div>
 </section>
 
