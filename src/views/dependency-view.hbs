@@ -1,27 +1,29 @@
 {{> menu active="dependency"}}
 
 
-<div class="grid-cols-8 text-center space-x-5 mb-5">
-    <span class="bg-blue-100 text-blue-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Openstack</span>
-    <span class="bg-gray-100 text-gray-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Proxmox</span>
-    <span class="bg-red-100 text-red-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Vmware ESXI</span>
-    <span class="bg-green-100 text-green-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Solaris R720-17</span>
-    <span class="bg-yellow-100 text-yellow-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">Solaris X4450-2</span>
-    <span class="bg-indigo-100 text-indigo-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400">R420-5 LDAP Internal consumer</span>
-    <span class="bg-purple-100 text-purple-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">Solaris R720-21</span>
-    <span class="bg-pink-100 text-pink-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400">Solaris R720-20</span>
-</div>
+<!--<div class="grid-cols-8 text-center space-x-5 mb-5">-->
+<!--    <span class="bg-blue-100 text-blue-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Openstack</span>-->
+<!--    <span class="bg-gray-100 text-gray-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Proxmox</span>-->
+<!--    <span class="bg-red-100 text-red-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Vmware ESXI</span>-->
+<!--    <span class="bg-green-100 text-green-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Solaris R720-17</span>-->
+<!--    <span class="bg-yellow-100 text-yellow-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">Solaris X4450-2</span>-->
+<!--    <span class="bg-indigo-100 text-indigo-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400">R420-5 LDAP Internal consumer</span>-->
+<!--    <span class="bg-purple-100 text-purple-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">Solaris R720-21</span>-->
+<!--    <span class="bg-pink-100 text-pink-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400">Solaris R720-20</span>-->
+<!--</div>-->
+
+<h1 class="text-center mb-10 text-3xl text-amber-900 dark:text-gray-100">Service Dependency table</h1>
 <div class="h-screen">
-    <div class="grid grid-cols-3 grid-rows-3 gap-4 h-5/6 w-4/5 mx-auto">
+    <div class="grid grid-cols-3 auto-rows-auto gap-4 h-5/6 w-4/5 mx-auto">
         {{#each b}}
-        <div class="bg-green-100 row-span-1 col-span-1 h-56 grid grid-cols-2 gap-4">
-            <span class="bg-blue-100 text-blue-800 text-me font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+        <div class="bg-green-100 grid grid-flow-row auto-rows-auto col-span-1 h-auto gap-1">
+            <span class="bg-blue-100 text-blue-800 text-me font-medium me-5 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
                 <div class="text-blue-400 mb-2">{{service}}</div>
                 <p class="text-blue-800 dark:text-gray-400">{{desc}}</p>
             </span>
             <div class="row mb-2">
                 {{#services}}
-                    <span class="bg-purple-100 text-purple-800 text-me font-medium me-2 px-2 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">
+                    <span class="bg-purple-100 text-purple-800 text-me font-medium me-2 px-1.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">
                         {{serviceName}}
                 </span>
                     {{/services}}
