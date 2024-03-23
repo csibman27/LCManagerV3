@@ -39,13 +39,13 @@
                   <h2 class="text-rose-400"> {{support}}</h2>
                 {{! if cannot find any support date will jump to the else statement }}
                 {{else}}
-                  <h2 class="text-green-500">Support is active.</h2>
+                  <h2 class="text-green-500">Support is active. No action needed.</h2>
                 {{/if}}
             </div>
         </div>
 
     {{/each}}
-{{/if}}
+{{else}}
 {{#if resolution.length}}
     {{#each resolution}}
         <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow-md">
@@ -75,9 +75,10 @@
                     <h2 class="text-rose-400">{{support}}</h2>
                 {{! if cannot find any support date will jump to the else statement }}
                 {{else}}
-                  <h2 class="text-rose-400">Support is active</h2>
+                  <h2 class="text-rose-400">Support is active. No action needed.</h2>
                 {{/if}}
             </div>
         </div>
     {{/each}}
+{{/if}}
 {{/if}}

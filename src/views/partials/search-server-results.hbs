@@ -2,12 +2,12 @@
 
 {{#if results.length}}
     {{#each results}}
-        <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow-md">
+        <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-slate-700 dark:text-sky-50">
             <!--        Top Part of the card-->
             <h2 class="title" id="search">
                 <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{title}} </h2>
                 <div class="{{pieStatus}}"></div>
-                <p class="mb-3 font-normal text-gray-700">Cab {{cab}}, Purchased {{pdate}}</p>
+                <p class="mb-3 font-normal text-gray-700 dark:bg-slate-700 dark:text-sky-50">Cab {{cab}}, Purchased {{pdate}}</p>
             </h2>
             <!--        Bottom part of the card-->
 
@@ -21,16 +21,17 @@
                 <a href="/dashboard/confirmdelete/{{_id}}" class="button">
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
-                <!--                after the buttons-->
+                <!-- after the buttons-->
 
-                <p>Bios {{bios}}</p>
+                <p class="medium">Bios {{bios}}</p>
                 <p>Firmware {{firmware}}</p>
-              {{#if support}}
-                <h2 class="text-rose-400">{{support}}</h2>
-              {{! if cannot find any support date will jump to the else statement }}
-              {{else}}
-                <h2 class="text-rose-400">Support is active</h2>
-              {{/if}}
+
+                {{#if support}}
+                    <h2 class="text-rose-400"> {{support}}</h2>
+                {{! if cannot find any support date will jump to the else statement }}
+                {{else}}
+                    <h2 class="text-green-500">Support is active. No action needed.</h2>
+                {{/if}}
             </div>
         </div>
 
@@ -65,7 +66,7 @@
                 <h2 class="text-rose-400">{{support}}</h2>
               {{! if cannot find any support date will jump to the else statement }}
               {{else}}
-                <h2 class="text-rose-400">Support is active</h2>
+                <h2 class="text-rose-400">Support is active. No action needed,</h2>
               {{/if}}
             </div>
         </div>
