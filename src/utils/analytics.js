@@ -125,6 +125,18 @@ export const analytics = {
     return;
   },
 
+  async serverYearlyExpenseEstimate(server) {
+    let { cost } = server;
+    cost *= 0.06;
+    return cost;
+  },
+
+  async serverPowerUsageEstimation(servers) {
+    const power = servers * 0.75;
+    const quarterly = power * 2184;
+    return quarterly;
+  },
+
   async sum(maintenancecost, y) {
     return maintenancecost + y;
   },
