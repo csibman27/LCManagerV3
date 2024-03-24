@@ -137,8 +137,20 @@ export const analytics = {
     return quarterly;
   },
 
-  async sum(maintenancecost, y) {
-    return maintenancecost + y;
+  // Mutasd azokat a szervereket amiket ebben az evben lettek vasarolba azon belul az elso negyed evben
+  // Ezutan add ossze az osszeget
+  async serversFirstQuarter(serversPdate) {
+    let serversDate = new Date(serversPdate);
+
+    const currentYear = currentDate.getFullYear();
+    const startDate = new Date(currentYear, 0, 1); // January 1st of current year
+    const endDate = new Date(currentYear, 2, 31); // March 31st of current year
+
+    if (serversDate.getFullYear() === currentYear) {
+      const ser = serversDate.getMonth() > 0 && serversDate.getMonth() <= 2;
+      serversDate = ser;
+    }
+    return serversDate;
   },
 
   async sub(maintenancecost, y) {

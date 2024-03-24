@@ -34,6 +34,21 @@ export const aboutController = {
       const serversAddedYearMinusThree = await analytics.filterDatesByYearMinusThree(serverDates);
       const serversAddedYearMinusThreeGraph = await analytics.filterDatesByYearMinusThree(serverDates);
       const valueXYearMinusThree = serversAddedYearMinusThreeGraph * 10;
+      // barchart2
+
+      // Define how many servers are purchased this year
+      const thisQuarter = [];
+      for (let i = 0; i < allServer.length; i += 1) {
+        const purchaseDate = allServer[i].pdate;
+        const serversDate = new Date(purchaseDate);
+        if (serversDate.getFullYear() === date) {
+          const thisYearsMachines = serversDate.getMonth() + 1; // months starts with 1
+          if (thisYearsMachines > 0 && thisYearsMachines <= 2) {
+            thisQuarter.push(thisYearsMachines);
+          }
+        }
+      }
+
       const company = "[Company name]";
       // const data = await analytics.pieChartA();
       const viewData = {
@@ -52,6 +67,7 @@ export const aboutController = {
         valueXYearMinusTwo,
         serversAddedYearMinusThree,
         valueXYearMinusThree,
+        thisQuarter,
         // data,
       };
       return h.view("about-view", viewData);

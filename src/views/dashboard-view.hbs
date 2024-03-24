@@ -21,19 +21,15 @@
 
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">{{company}} Data Center Server list.</p>
 
-    <div class="grid grid-cols-2">
-    <div>
-    <!--    search bar -->
-<!--        filter menu is within the search form-->
-    {{>search-server-form}}
-
-<!--    search results end -->
-
-
+    <div class="flex justify-between items-start">
+        <div class="px-2 py-2 w-7/12 border-0 focus:outline-0 text-gray-900 dark:bg-slate-700 dark:text-white">
+            {{>search-server-form}}
+        </div>
+        <div class="items-end">
+            {{> server-filter }}
+        </div>
     </div>
-    <!--    Filter    -->
-    {{> server-filter }}
-    </div>
+
     {{>search-server-results}}
 
     <!-- list servers-->
