@@ -36,6 +36,14 @@ export const accountsController = {
       return h.redirect("/");
     },
   },
+
+  showUpdate: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("updates-view", { title: "Update screen" });
+    },
+  },
+
   showLogin: {
     auth: false,
     handler: function (request, h) {
