@@ -147,6 +147,7 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
         const serversSorted = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
         // console.log(serversSorted);
+      console.log(Object.keys(servers))
       const viewData = {
         title: "LCManager Dashboard",
         serversSorted
