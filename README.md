@@ -1,4 +1,4 @@
-# 👋 Welcome to Final Project of HDIP22
+# 👋 Welcome to the Final Project of Tibor Molnar in HDIP22
 
 # Name of project: LCManagerV3
  
@@ -35,7 +35,13 @@ LCManager is a web application designed specifically for system administrators t
 + Password authentication
 + CRUD for all listing elements
 + Provision a server
++ Decommission a server
++ Provision services belong to a server
 + Review all servers using visualized pie charts
++ Track servers age
++ Track servers detailed information
++ Monitor support status of each server
++ Service dependency table
 
 ## Ux / DX Approach adopted
 The general color scheme that I have implemented consists of light background colors complemented by shades of light blue, light orange, and gray. In addition, the application has been designed to support a dark mode option for users.
@@ -44,12 +50,6 @@ In terms of user navigation, the journey begins at the welcome screen, with priv
 
 To enhance data integrity and user experience, I have integrated validation checks using Joi for nearly all input forms within the application. This ensures that user inputs are validated before being processed, thereby reducing errors and enhancing overall data quality.
 
-Furthermore, in terms of the application's architecture, I have opted to rework the outdated Model-View-Controller (MVC) structure to create a more modern and scalable design that aligns with current best practices in software development.
-
-
-## Google Api
-
-I have already registered an APi key with google so I only had to go through the setting of adding another type of sign in mechanism through firebase consol.
 
 ## Git Approach Adopted 
 
@@ -60,24 +60,18 @@ To ensure a structured development process, I created a separate branch, distinc
 
 ## UML Class Diagrams
 
+> Login menu.
+![][login]
+
 > Navigation model screenshot.
 ![][nav_model]
 
 
-> Class sketch image.
-![][model_classes]
-
-
-> Login Menu.
-![][login]
-
+> Provision server.
+![][provision]
 
 > List of Servers.
 ![][list_menu]
-
-
-> Horizontal menu.
-![][drawer]
 
 
 
@@ -85,12 +79,12 @@ To ensure a structured development process, I created a separate branch, distinc
 
 * Layouts
 https://tailwindcss.com/docs/installation
+* Node.js
+https://nodejs.org/docs/latest/api/
+* Hapi framework
+https://hapi.dev/
 
-
-
-## About
-
-## Privacy Policy
+  
 
 ## Licensing
 
@@ -107,8 +101,7 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 
 * tibor.molnar@waltoninstitute.ie
 
-[nav_model]: ./images/nav_model.jpg
-[model_classes]: ./images/model_classes.jpg
-[login]: ./images/login.jpg
-[list_menu]: ./images/list_menu.jpg
-[drawer]: ./images/drawer.jpg
+[login]: ./public/misc/login.png
+[nav_model]: ./public/misc/menu.png
+[list_menu]: ./public/misc/list-servers.png
+[provision]: ./public/misc/provision-server.png
