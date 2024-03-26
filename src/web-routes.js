@@ -52,6 +52,7 @@ export const webRoutes = [
   { method: "GET", path: "/dashboard/filterserver", config: dashboardController.filterServer },
   { method: "GET", path: "/dashboard/easyfilterserver", config: dashboardController.easySortServer },
   { method: "GET", path: "/dashboard/confirmdelete/decommissionserver/{id}", config: dashboardController.decomissionServer },
+  { method: "GET", path: "/dashboard/testsort", config: dashboardController.index },
 
   { method: "GET", path: "/server/{id}/editserver", config: serverController.showServerDetails },
   { method: "POST", path: "/server/{id}/updateserver", config: serverController.update },

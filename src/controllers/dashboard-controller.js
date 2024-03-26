@@ -12,6 +12,8 @@ export const dashboardController = {
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       // const t2 = request.params.servers.length;
       let servers = await db.serverStore.getAllServers();
+      // servers.sort((a, b) => (a.title > b.title ? 1 : -1));
+      // servers.sort((a, b) => (a.title < b.title ? 1 : -1));
       const services = await db.serviceStore.getAllServices();
       const users = await db.userStore.getAllUsers();
       // const darkMode = request.query.darkmode === "true";
@@ -31,6 +33,9 @@ export const dashboardController = {
         const supDate = await analytics.supportCheck(supportDate);
         servers[i].support = supDate;
       }
+      const serversAz = analytics.filter(servers, "az");
+      const serversZa = analytics.filter(servers, "za");
+      const serversCab = analytics.filter(servers, "cabnum");
       const company = "[Company name]";
       const date = new Date().getFullYear();
       // display data
@@ -137,6 +142,20 @@ export const dashboardController = {
     },
   },
 
+  testSort: {
+    handler: async function(request, h) {
+      const servers = await db.serverStore.getAllServers();
+        const serversSorted = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
+        // console.log(serversSorted);
+      const viewData = {
+        title: "LCManager Dashboard",
+        serversSorted
+      };
+      await db.serverStore.sortServers();
+      return h.redirect("/dashboard",{ servers: serversSorted });
+    },
+  },
+
   easySortServer: {
     // it works over console but view not popping
     handler: async function (request, h) {
@@ -184,6 +203,7 @@ export const dashboardController = {
       return h.view("dashboard-view", { resolution: sortedData });
     },
   },
+
   decomissionServer: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
