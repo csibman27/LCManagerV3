@@ -10,10 +10,7 @@ export const dashboardController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
-      // const t2 = request.params.servers.length;
-      let servers = await db.serverStore.getAllServers();
-      // servers.sort((a, b) => (a.title > b.title ? 1 : -1));
-      // servers.sort((a, b) => (a.title < b.title ? 1 : -1));
+      const servers = await db.serverStore.getAllServers();
       const services = await db.serviceStore.getAllServices();
       const users = await db.userStore.getAllUsers();
       // const darkMode = request.query.darkmode === "true";
@@ -33,9 +30,6 @@ export const dashboardController = {
         const supDate = await analytics.supportCheck(supportDate);
         servers[i].support = supDate;
       }
-      const serversAz = analytics.filter(servers, "az");
-      const serversZa = analytics.filter(servers, "za");
-      const serversCab = analytics.filter(servers, "cabnum");
       const company = "[Company name]";
       const date = new Date().getFullYear();
       // display data
@@ -138,35 +132,23 @@ export const dashboardController = {
       const searchTerm = request.query.term;
       const servers = await db.serverStore.getAllServers();
       const searchResult = servers.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
-      return h.view("dashboard-view", { results: searchResult });
+      return h.view("dashboard-view", { servers: searchResult });
     },
   },
 
   testSort: {
     handler: async function(request, h) {
-      const servers = await db.serverStore.getAllServers();
-        const serversSorted = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
+      const loggedInUser = request.auth.credentials;
+      const servers = await db.serverStore.sortServers();
+        // const serversSorted = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
         // console.log(serversSorted);
       console.log(Object.keys(servers))
       const viewData = {
-        title: "LCManager Dashboard",
-        serversSorted
+        title: "LCManager sort",
+        user: loggedInUser,
+        servers: servers,
       };
-      await db.serverStore.sortServers();
-      return h.redirect("/dashboard",{ servers: serversSorted });
-    },
-  },
-
-  easySortServer: {
-    // it works over console but view not popping
-    handler: async function (request, h) {
-      const servers = await db.serverStore.getAllServers();
-      const so = analytics.filter(servers, "az");
-      const viewData = {
-        title: "LCManager Dashboard",
-        so,
-      };
-      console.log(so);
+      // await db.serverStore.sortServers();
       return h.view("dashboard-view", viewData);
     },
   },
@@ -201,7 +183,7 @@ export const dashboardController = {
       } else {
         sortedData = servers;
       }
-      return h.view("dashboard-view", { resolution: sortedData });
+      return h.view("dashboard-view", { servers: sortedData });
     },
   },
 

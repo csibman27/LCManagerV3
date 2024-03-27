@@ -446,6 +446,31 @@
       "pieStatus": "pie-2",
       "maintenancecost": 0,
       "_id": "98c0ff2d-a73d-4795-83b0-8df330367497"
+    },
+    {
+      "userid": "1576ebf9-c115-dba8-8c67-6971c0c9a791",
+      "title": "AlpterN10",
+      "tag": "cvbfg2",
+      "cab": 4,
+      "os": "Ubuntu 22.04",
+      "idrac": "10.23.65.11",
+      "nwcard": "3",
+      "backupTo": "Dubai",
+      "monitoredWith": "Zabix",
+      "support": "2025-03-14",
+      "virtualization": "None",
+      "service": "Emerald",
+      "bios": "2.11",
+      "firmware": "11.3",
+      "iaas": true,
+      "cost": "8900",
+      "pdate": "2024-02-23",
+      "model": "Emphase",
+      "desc": "Lokomotive GT",
+      "date": "2024-03-27T10:00:17.007Z",
+      "pieStatus": "pie-5",
+      "maintenancecost": 0,
+      "_id": "21a1f22d-1de2-4202-a12b-0aea23bb1dd1"
     }
   ]
 }

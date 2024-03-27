@@ -14,9 +14,19 @@ export const serverJsonStore = {
 
   async sortServers() {
     await db.read();
-    db.data.servers.sort((a, b) => (a.title < b.title ? 1 : -1));
+
     return db.data.servers
+      .sort(function (a, b) {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
   },
+
 
   async addServer(server) {
     await db.read();
