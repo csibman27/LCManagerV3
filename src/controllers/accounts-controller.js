@@ -35,7 +35,7 @@ export const accountsController = {
     },
     handler: async function (request, h) {
       const user = request.payload;
-      // user.password = await bcrypt.hash(user.password, saltRounds); // hash & salt the password
+      user.password = await bcrypt.hash(user.password, saltRounds); // hash & salt the password
       await db.userStore.addUser(user);
       return h.redirect("/");
     },
@@ -67,12 +67,12 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
-      // const passwordsMatch = await bcrypt.compare(password, user.password); // ADDED hashing & salting
-      if (!user || user.password !== password) {
+      const passwordsMatch = await bcrypt.compare(password, user.password); // ADDED hashing & salting
+      // if (!user || user.password !== password) {
         // const message = "Email address is not registered";
         // throw Boom.unauthorized(message);
         // OLD
-        // if (!user || !passwordsMatch) {
+        if (!user || !passwordsMatch) {
         // new statement for hashing
           // console.log(passwordsMatch);
         return h.redirect("/");
@@ -121,12 +121,13 @@ export const accountsController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       // const user = await db.userStore.getUserById(loggedInUser._id);
+      const hash = await bcrypt.hash(request.payload.password, saltRounds);
       const updatedUser = {
         firstName: request.payload.firstName,
         lastName: request.payload.lastName,
         email: request.payload.email,
-        password: request.payload.password,
-        // password: await bcrypt.hash(request.payload.password, saltRounds),
+        // password: request.payload.password,
+        password: hash,
       };
       try {
         await db.userStore.updateUser(loggedInUser, updatedUser);

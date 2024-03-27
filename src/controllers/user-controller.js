@@ -1,5 +1,8 @@
 import { db } from "../models/db.js";
 import { UserSpec } from "../models/joi-schemas.js";
+import bcrypt from "bcrypt";
+
+const saltRounds = 10; // ADDED hashing & salting
 
 export const userController = {
   index: {
@@ -37,6 +40,7 @@ export const userController = {
     },
     handler: async function (request, h) {
       const user = request.payload;
+      user.password = await bcrypt.hash(user.password, saltRounds); // hash & salt the password
       await db.userStore.addUser(user);
       return h.redirect("/users");
     },

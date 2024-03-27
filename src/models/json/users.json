@@ -1,18 +1,25 @@
 {
   "users": [
     {
-      "firstName": "Tibor",
-      "lastName": "Molnar",
-      "email": "1@1.com",
-      "password": "11",
-      "_id": "1576ebf9-c115-dba8-8c67-6971c0c9a791"
-    },
-    {
       "firstName": "Krisztina",
       "lastName": "Dravucz",
       "email": "k@k.com",
-      "password": "1",
+      "password": "$2a$10$WwL9kUm0MkqM/vOsG7lDMOSpQgo/ePcVrIGvlgp0eEsLvJ10XpZfm",
       "_id": "6576ebf8-ca15-4ba8-8c67-6971c0c9a790"
+    },
+    {
+      "firstName": "Tibor",
+      "lastName": "Molnar",
+      "email": "tibor.molnar@test.com",
+      "password": "$2a$10$WwL9kUm0MkqM/vOsG7lDMOSpQgo/ePcVrIGvlgp0eEsLvJ10XpZfm",
+      "_id": "8c36129a-02b7-43ed-ae21-50135b23f313"
+    },
+    {
+      "firstName": "T",
+      "lastName": "M",
+      "email": "1@1.com",
+      "password": "$2b$10$c7BfBdl2aSb1Mdi8vPz1IuNTgzTpmMpXSMTYSeh0Pk3ST0Z96Az2q",
+      "_id": "b9719604-82f0-42cf-b3e7-f5bdb10ee83f"
     }
   ]
 }
