@@ -8,6 +8,10 @@ LCManager is a web application designed specifically for system administrators t
 
 # Technical Report
 
+
+## Initial work and tests with SvelteKit that relates to another repository
+https://github.com/csibman27/LCManager
+
 ## Technolgies and modules used 🛠️
 
 + Node.js
