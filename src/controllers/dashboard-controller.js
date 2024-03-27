@@ -132,6 +132,18 @@ export const dashboardController = {
       const searchTerm = request.query.term;
       const servers = await db.serverStore.getAllServers();
       const searchResult = servers.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      for (let i = 0; i < servers.length; i += 1) {
+        const purchaseDate = servers[i].pdate
+        const pieStat = await analytics.progressPie(purchaseDate);
+        // With pie status value gained above update piestatus in servers
+        servers[i].pieStatus = pieStat;
+      }
+      // support data
+      for (let i = 0; i < servers.length; i += 1) {
+        const supportDate = servers[i].support
+        const supDate = await analytics.supportCheck(supportDate);
+        servers[i].support = supDate;
+      }
       return h.view("dashboard-view", { servers: searchResult });
     },
   },
@@ -159,6 +171,18 @@ export const dashboardController = {
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       const servers = await db.serverStore.getAllServers();
       // Other
+      for (let i = 0; i < servers.length; i += 1) {
+        const purchaseDate = servers[i].pdate
+        const pieStat = await analytics.progressPie(purchaseDate);
+        // With pie status value gained above update piestatus in servers
+        servers[i].pieStatus = pieStat;
+      }
+      // support data
+      for (let i = 0; i < servers.length; i += 1) {
+        const supportDate = servers[i].support
+        const supDate = await analytics.supportCheck(supportDate);
+        servers[i].support = supDate;
+      }
       const company = "[Company name]";
       const date = new Date().getFullYear();
       // display data
