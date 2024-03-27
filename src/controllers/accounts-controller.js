@@ -2,6 +2,9 @@
 import bcrypt from "bcrypt"; // ADDED hashing & salting
 import { UserSpec, UserCredentialsSpec, UserSpecPlus } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import Boom from "@hapi/boom";
+
+const saltRounds = 10; // ADDED hashing & salting
 
 function sleep(ms) {
   return new Promise((resolve) => {
@@ -32,6 +35,7 @@ export const accountsController = {
     },
     handler: async function (request, h) {
       const user = request.payload;
+      // user.password = await bcrypt.hash(user.password, saltRounds); // hash & salt the password
       await db.userStore.addUser(user);
       return h.redirect("/");
     },
@@ -65,15 +69,21 @@ export const accountsController = {
       const user = await db.userStore.getUserByEmail(email);
       // const passwordsMatch = await bcrypt.compare(password, user.password); // ADDED hashing & salting
       if (!user || user.password !== password) {
+        // const message = "Email address is not registered";
+        // throw Boom.unauthorized(message);
         // OLD
         // if (!user || !passwordsMatch) {
         // new statement for hashing
+          // console.log(passwordsMatch);
         return h.redirect("/");
       }
-      await sleep(1000);
-      request.cookieAuth.set({ id: user._id });
-      // console.log(user._id);
-      return h.redirect("/dashboard").unstate("data");
+      else {
+        await sleep(1000);
+        request.cookieAuth.set({ id: user._id });
+
+        // console.log(user._id);
+        return h.redirect("/dashboard").unstate("data");
+      }
     },
   },
   // Clear cookie on logout
@@ -109,17 +119,18 @@ export const accountsController = {
       },
     },
     handler: async function (request, h) {
-      // const loggedInUser = request.auth.credentials;
-      const user = await db.userStore.getUserById(request.params.userid);
+      const loggedInUser = request.auth.credentials;
+      // const user = await db.userStore.getUserById(loggedInUser._id);
       const updatedUser = {
         firstName: request.payload.firstName,
         lastName: request.payload.lastName,
         email: request.payload.email,
         password: request.payload.password,
+        // password: await bcrypt.hash(request.payload.password, saltRounds),
       };
       try {
-        // await db.userStore.updateUser(loggedInUser._id, updatedUser);
-        await db.userStore.updateUser(user, updatedUser);
+        await db.userStore.updateUser(loggedInUser, updatedUser);
+        // await db.userStore.updateUser(user, updatedUser);
       } catch (error) {
         console.log(error);
       }

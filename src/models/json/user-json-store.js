@@ -44,7 +44,7 @@ export const userJsonStore = {
   },
 
   async updateUser(user, updatedUser) {
-    await db.read();
+    // await db.read();
     user.firstName = updatedUser.firstName;
     user.lastName = updatedUser.lastName;
     user.email = updatedUser.email;

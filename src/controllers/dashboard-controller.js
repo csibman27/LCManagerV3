@@ -85,6 +85,7 @@ export const dashboardController = {
         maintenancecost: Number(0),
         hdd: request.payload.hdd,
       };
+      // Check for the same tilte when server added
       const serverTitles = [];
       for (let a = 0; a < servers.length; a += 1) {
         const server = servers[a].title;
