@@ -121,3 +121,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 .env
+
+# TLS
+*.crt
+*.key
+*.csr

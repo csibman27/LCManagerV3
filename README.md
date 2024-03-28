@@ -90,6 +90,8 @@ https://tailwindcss.com/docs/installation
 https://nodejs.org/docs/latest/api/
 * Hapi framework
 https://hapi.dev/
+* Handlebars
+https://handlebarsjs.com/
 
   
 
