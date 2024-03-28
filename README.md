@@ -3,6 +3,7 @@
 # Name of project: LCManagerV3
 # Student name: Tibor Molnar
 # Student number: 20074237
+# Project Website: https://csibman27.github.io/
  
 # Abstract
 
@@ -10,6 +11,7 @@ LCManager is a web application designed specifically for system administrators t
 
 # Technical Report
 
++ Technical report available from the project website
 
 ## Initial work and tests with SvelteKit that relates to another repository
 https://github.com/csibman27/LCManager
@@ -92,6 +94,11 @@ https://nodejs.org/docs/latest/api/
 https://hapi.dev/
 * Handlebars
 https://handlebarsjs.com/
+* Bcrypt
+https://codahale.com/how-to-safely-store-a-password/
+* NodeJS MVC
+https://www.sitepoint.com/node-js-mvc-application/
+
 
   
 
