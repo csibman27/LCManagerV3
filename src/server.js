@@ -14,6 +14,7 @@ import jwt from "hapi-auth-jwt2";
 import HapiSwagger from "hapi-swagger";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import pkg from "handlebars-paginate";
+import fs from "fs";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
@@ -51,6 +52,10 @@ async function init() {
     // host: process.env.HOST,
     routes: {
       cors: true,
+    },
+    tls: {
+    key: fs.readFileSync("keys/private/webserver.key"),
+    cert: fs.readFileSync("keys/webserver.crt"),
     },
   });
 

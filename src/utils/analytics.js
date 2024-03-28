@@ -125,20 +125,21 @@ export const analytics = {
     return;
   },
 
+  // Expense calculator for server maintenance
   async serverYearlyExpenseEstimate(server) {
     let { cost } = server;
     cost *= 0.06;
     return cost;
   },
 
+  // Expense calculator for servers quarterly usage
   async serverPowerUsageEstimation(servers) {
     const power = servers * 0.75;
     const quarterly = power * 2184;
     return quarterly;
   },
 
-  // Mutasd azokat a szervereket amiket ebben az evben lettek vasarolba azon belul az elso negyed evben
-  // Ezutan add ossze az osszeget
+  // Show servers that were purchased in this years quarter
   async serversFirstQuarter(serversPdate) {
     let serversDate = new Date(serversPdate);
 
@@ -176,6 +177,7 @@ export const analytics = {
     });
   },
 
+  // filter dates for this year
   async filterDatesByThisYear(dateArray) {
     const currentYear = currentDate.getFullYear();
     const filteredDates = dateArray.filter((date) => {
@@ -185,6 +187,7 @@ export const analytics = {
     return filteredDates.length;
   },
 
+  // filter dates for last year
   async filterDatesByLastYear(dateArray) {
     const currentYear = currentDate.getFullYear() - 1;
     const filteredDates = dateArray.filter((date) => {
@@ -194,6 +197,7 @@ export const analytics = {
     return filteredDates.length;
   },
 
+  // filter dates that was 2 years ago
   async filterDatesByYearMinusTwo(dateArray) {
     const currentYear = currentDate.getFullYear() - 2;
     const filteredDates = dateArray.filter((date) => {
@@ -203,6 +207,7 @@ export const analytics = {
     return filteredDates.length;
   },
 
+  // filter dates that was 3 years ago
   async filterDatesByYearMinusThree(dateArray) {
     const currentYear = currentDate.getFullYear() - 3;
     const filteredDates = dateArray.filter((date) => {
