@@ -8,8 +8,6 @@ const newDate = new Date();
 export const serverController = {
   index: {
     handler: async function (request, h) {
-      const servers = await db.serverStore.getAllServers();
-      const serversNum = servers.length;
       const loggedInUser = request.auth.credentials;
       const loggedInUserInitials = loggedInUser.firstName[0] + loggedInUser.lastName[0];
       // analytics about server age and other server information
@@ -30,10 +28,6 @@ export const serverController = {
       const pie = await analytics.progressPie(purchaseDate);
       // console.log(pie)
       // module.exports = { pie }
-      // server stats
-      const serverStat = await analytics.serverYearlyExpenseEstimate(server);
-      const serverPowerStat = await analytics.serverPowerUsageEstimation(serversNum);
-
       const viewData = {
         title: "Servers",
         server: server,
@@ -43,9 +37,6 @@ export const serverController = {
         loggedInUserInitials,
         pie,
         eSupport,
-        serverStat,
-        serverPowerStat,
-        serversNum,
       };
       return h.view("server-view", viewData);
     },

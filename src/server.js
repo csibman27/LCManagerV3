@@ -53,10 +53,10 @@ async function init() {
     routes: {
       cors: true,
     },
-    tls: {
-    key: fs.readFileSync("keys/private/webserver.key"),
-    cert: fs.readFileSync("keys/webserver.crt"),
-    },
+    // tls: {
+    // key: fs.readFileSync("keys/private/webserver.key"),
+    // cert: fs.readFileSync("keys/webserver.crt"),
+    // },
   });
 
   const result = dotenv.config({ silent: true }); // change to silent: true can help to deploy it to heroku it is failing otherwise

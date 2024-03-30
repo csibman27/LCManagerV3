@@ -17,7 +17,7 @@ export const dashboardController = {
       // const theme = darkMode ? "dark" : "light";
       // pie data
       for (let i = 0; i < servers.length; i += 1) {
-        const purchaseDate = servers[i].pdate
+        const purchaseDate = servers[i].pdate;
         const pieStat = await analytics.progressPie(purchaseDate);
         // console.log(Object.keys(servers[i]))
         // With pie status value gained above update piestatus in servers
@@ -26,12 +26,15 @@ export const dashboardController = {
       }
       // support data
       for (let i = 0; i < servers.length; i += 1) {
-        const supportDate = servers[i].support
+        const supportDate = servers[i].support;
         const supDate = await analytics.supportCheck(supportDate);
         servers[i].support = supDate;
       }
       const company = "[Company name]";
       const date = new Date().getFullYear();
+      const serversNum = servers.length;
+      // const serverStat = await analytics.serverYearlyExpenseEstimate(server);
+      const serverPowerStat = await analytics.serverPowerUsageEstimation(serversNum);
       // display data
       const viewData = {
         title: "LCManager Dashboard",
@@ -42,6 +45,8 @@ export const dashboardController = {
         servers: servers,
         services,
         users,
+        serverPowerStat,
+        serversNum,
       };
       return h.view("dashboard-view", viewData);
     },
@@ -134,14 +139,14 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
       const searchResult = servers.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
       for (let i = 0; i < servers.length; i += 1) {
-        const purchaseDate = servers[i].pdate
+        const purchaseDate = servers[i].pdate;
         const pieStat = await analytics.progressPie(purchaseDate);
         // With pie status value gained above update piestatus in servers
         servers[i].pieStatus = pieStat;
       }
       // support data
       for (let i = 0; i < servers.length; i += 1) {
-        const supportDate = servers[i].support
+        const supportDate = servers[i].support;
         const supDate = await analytics.supportCheck(supportDate);
         servers[i].support = supDate;
       }
@@ -150,12 +155,12 @@ export const dashboardController = {
   },
 
   testSort: {
-    handler: async function(request, h) {
+    handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const servers = await db.serverStore.sortServers();
-        // const serversSorted = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
-        // console.log(serversSorted);
-      console.log(Object.keys(servers))
+      // const serversSorted = servers.sort((a, b) => (a.title < b.title ? 1 : -1));
+      // console.log(serversSorted);
+      console.log(Object.keys(servers));
       const viewData = {
         title: "LCManager sort",
         user: loggedInUser,
@@ -173,14 +178,14 @@ export const dashboardController = {
       const servers = await db.serverStore.getAllServers();
       // Other
       for (let i = 0; i < servers.length; i += 1) {
-        const purchaseDate = servers[i].pdate
+        const purchaseDate = servers[i].pdate;
         const pieStat = await analytics.progressPie(purchaseDate);
         // With pie status value gained above update piestatus in servers
         servers[i].pieStatus = pieStat;
       }
       // support data
       for (let i = 0; i < servers.length; i += 1) {
-        const supportDate = servers[i].support
+        const supportDate = servers[i].support;
         const supDate = await analytics.supportCheck(supportDate);
         servers[i].support = supDate;
       }
