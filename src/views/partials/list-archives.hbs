@@ -1,30 +1,51 @@
 <!--Archives-->
-
+{{#if dispservers.length}}
 {{#each dispservers}}
-  <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-slate-700 dark:text-sky-50">
-        <!--        Top Part of the card-->
-        <h2 class="title">
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{title}} </h2>
-            <p class="mb-3 font-normal text-gray-700 dark:bg-slate-700 dark:text-sky-50">Cab {{cab}}, Purchased {{pdate}}</p>
-        </h2>
-        <!--        Bottom part of the card-->
-        <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-950 bg-sky-50 rounded-lg hover:bg-blue-600 focus:outline-none flex flex-row space-x-2.5 dark:bg-slate-700">
-        <a href="/archive/{{_id}}/editserver" class="button">
-                <i class="fas fa-edit fa-lg"></i>
-            </a>
-            <a href="/archive/confirmdelete/{{_id}}" class="button">
-                <i class="fa-solid fa-trash-can fa-lg"></i>
-            </a>
-            <a href="/archive/recommissionserver/{{_id}}" class="button">
-                <i class="fa-solid fa-reply fa-lg"></i>
-            </a>
-            <!-- after the buttons-->
+<!--  <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-slate-700 dark:text-sky-50">-->
+<!--        &lt;!&ndash;        Top Part of the card&ndash;&gt;-->
+<!--        <h2 class="title">-->
+<!--            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{title}} </h2>-->
+<!--            <p class="mb-3 font-normal text-gray-700 dark:bg-slate-700 dark:text-sky-50">Cab {{cab}}, Purchased {{pdate}}</p>-->
+<!--        </h2>-->
+<!--        &lt;!&ndash;        Bottom part of the card&ndash;&gt;-->
+<!--        <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-950 bg-sky-50 rounded-lg hover:bg-blue-600 focus:outline-none flex flex-row space-x-2.5 dark:bg-slate-700">-->
+<!--        <a href="/archive/{{_id}}/editserver" class="button">-->
+<!--                <i class="fas fa-edit fa-lg"></i>-->
+<!--            </a>-->
+<!--            <a href="/archive/confirmdelete/{{_id}}" class="button">-->
+<!--                <i class="fa-solid fa-trash-can fa-lg"></i>-->
+<!--            </a>-->
+<!--            <a href="/archive/recommissionserver/{{_id}}" class="button">-->
+<!--                <i class="fa-solid fa-reply fa-lg"></i>-->
+<!--            </a>-->
+<!--            &lt;!&ndash; after the buttons&ndash;&gt;-->
 
-            <p class="medium">Bios {{bios}}</p>
-            <p>Firmware {{firmware}}</p>
-            <h2 class="text-rose-500">Not tracking support.</h2>
-        </div>
-        </div>
-    </div>
+<!--            <p class="medium">Bios {{bios}}</p>-->
+<!--            <p>Firmware {{firmware}}</p>-->
+<!--            <h2 class="text-rose-500">Not tracking support.</h2>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </div>-->
+  <div class="border border-gray-200 rounded-lg bg-gray-100 p-1 text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+      <h5 class="mb-2 text-xl font-medium leading-tight">{{title}}</h5>
+      <!-- after the buttons-->
+      <div class="parent p-0 mx-0">
+      <div class="child">Bios {{bios}}</div>
+          <div class="child">Firmware {{firmware}}</div>
+      </div>
+      <!--        Bottom part of the card-->
+      <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-950 bg-sky-50 rounded-lg hover:bg-gray-500 focus:outline-none flex flex-row space-x-2.5 dark:bg-slate-700">
+          <a href="/archive/{{_id}}/editserver" class="button">
+              <i class="fas fa-edit fa-lg"></i>
+          </a>
+          <a href="/archive/confirmdelete/{{_id}}" class="button">
+              <i class="fa-solid fa-trash-can fa-lg"></i>
+          </a>
+          <a href="/archive/recommissionserver/{{_id}}" class="button">
+              <i class="fa-solid fa-reply fa-lg"></i>
+          </a>
+      </div>
+  </div>
 
 {{/each}}
+{{/if}}

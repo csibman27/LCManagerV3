@@ -50,7 +50,8 @@ https://github.com/csibman27/LCManager
 + Track servers detailed information
 + Monitor support status of each server
 + Service dependency table
-+ Dark mode that when themes changed
++ Dark mode theme support
++ Global system messages logged 
 
 ## Ux / DX Approach adopted
 The general color scheme that I have implemented consists of light background colors complemented by shades of light blue, light orange, and gray. In addition, the application has been designed to support a dark mode option for users.

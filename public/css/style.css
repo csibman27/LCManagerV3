@@ -330,6 +330,15 @@ body {
     font-family: sans-serif;
 }
 
+.parent {
+    margin: 1rem;
+    text-align: left;
+}
+.child {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*Pie charts over*/
 
 /*emt11 {*/
