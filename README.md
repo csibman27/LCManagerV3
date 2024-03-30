@@ -51,10 +51,11 @@ https://github.com/csibman27/LCManager
 + Monitor support status of each server
 + Service dependency table
 + Dark mode theme support
++ Dark mode toogle button within application
 + Global system messages logged 
 
 ## Ux / DX Approach adopted
-The general color scheme that I have implemented consists of light background colors complemented by shades of light blue, light orange, and gray. In addition, the application has been designed to support a dark mode option for users.
+The general color scheme that I have implemented consists of light background colors complemented by shades of light blue, light orange, and gray. In addition, the application provides compatibility with a dark mode theme and includes a toggle button for users to switch between light and dark modes seamlessly within the interface.
 
 In terms of user navigation, the journey begins at the welcome screen, with privileged users having the additional option to log in and access the dashboard. The navigation flow is intentionally kept simple and straightforward, with clear menu options guiding users through the application's functionalities.
 
