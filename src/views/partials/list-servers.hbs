@@ -14,13 +14,13 @@
         <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-slate-700 dark:text-sky-50">
             <!--        Top Part of the card-->
             <h2 class="title" id="search">
-                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{title}} </h2>
+                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-sky-50"> {{title}} </h2>
                 <div class="{{pieStatus}}"></div>
                 <p class="mb-3 font-normal text-gray-700 dark:bg-slate-700 dark:text-sky-50">Cab {{cab}}, Purchased {{pdate}}</p>
             </h2>
             <!--        Bottom part of the card-->
 
-            <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-950 bg-sky-50 rounded-lg hover:bg-gray-500 focus:outline-none flex flex-row space-x-2.5 dark:bg-slate-700">
+            <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-950 bg-sky-50 rounded-lg hover:bg-gray-500 focus:outline-none flex flex-row space-x-2.5 dark:bg-slate-700 dark:hover:bg-gray-600">
                 <a href="/server/{{_id}}" class="button">
                     <i class="fa-solid fa-server fa-xl"></i>
                 </a>
@@ -32,8 +32,8 @@
                 </a>
                <!-- after the buttons-->
 
-                <p class="medium">Bios {{bios}}</p>
-                <p>Firmware {{firmware}}</p>
+                <p class="medium dark:text-sky-200">Bios {{bios}}</p>
+                <p class="medium dark:text-sky-200">Firmware {{firmware}}</p>
 
                 {{#if support}}
                   <h2 class="text-rose-400"> {{support}}</h2>
