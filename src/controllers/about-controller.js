@@ -1,5 +1,4 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Chart from "chart.js/auto";
 import { analytics } from "../utils/analytics.js";
 import { db } from "../models/db.js";
 
