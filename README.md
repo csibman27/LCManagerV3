@@ -1,9 +1,10 @@
 # 👋 Welcome to the Final Project for HDIP22
 
-# Name of project: LCManagerV3
-# Student name: Tibor Molnar
-# Student number: 20074237
-# Project Website: https://csibman27.github.io/
+# Introduction
+## Name of project: LCManagerV3
+## Student name: Tibor Molnar
+## Student number: 20074237
+## Project Website: https://csibman27.github.io/
  
 # Abstract
 
